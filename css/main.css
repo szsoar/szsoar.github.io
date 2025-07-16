@@ -1,1 +1,487 @@
+:root {
+    --primary-color: #0085a1;
+    --dark-color: #404040;
+    --light-color: #f8f8f8;
+    --gray-color: #777;
+    --border-color: #e7e7e7;
+    --code-bg: #f5f5f5;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--dark-color);
+    background-color: #fff;
+    line-height: 1.6;
+    padding-top: 70px; /* 为固定导航栏留出空间 */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: #00657b;
+    text-decoration: underline;
+}
+
+/* 导航栏样式 */
+.navbar-custom {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 0;
+}
+
+.navbar-custom.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 800;
+    color: var(--dark-color);
+    font-size: 20px;
+}
+
+.navbar-custom .nav li a {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--dark-color);
+}
+
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    padding: 10px 0;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 首页横幅 */
+.intro-header {
+    background-color: #808080;
+    background: no-repeat center center;
+    background-size: cover;
+    margin-bottom: 50px;
+    padding: 100px 0;
+    position: relative;
+}
+
+.intro-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.site-heading {
+    padding: 100px 0 50px;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.site-heading h1 {
+    font-size: 50px;
+    margin-top: 0;
+    font-weight: 800;
+}
+
+.site-heading .subheading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 10px 0 0;
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 文章列表 */
+.post-preview {
+    margin-bottom: 30px;
+}
+
+.post-preview > a {
+    color: var(--dark-color);
+}
+
+.post-preview > a:hover,
+.post-preview > a:focus {
+    text-decoration: none;
+}
+
+.post-preview > a > .post-title {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.post-preview > a > .post-subtitle {
+    font-weight: 300;
+    margin: 0 0 10px;
+    color: var(--gray-color);
+}
+
+.post-preview .post-meta {
+    color: var(--gray-color);
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.post-entry {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+hr {
+    border-top: 1px solid var(--border-color);
+    margin: 30px 0;
+}
+
+/* 分页 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 4px;
+    color: var(--primary-color);
+}
+
+.pagination a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination .page-number {
+    padding: 8px 16px;
+    color: var(--gray-color);
+}
+
+/* 文章详情页 */
+.post-container {
+    margin-bottom: 60px;
+}
+
+.post-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.post-header .post-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.post-header .post-subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--gray-color);
+    margin-bottom: 25px;
+}
+
+.post-meta {
+    color: var(--gray-color);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.post-meta i {
+    margin-right: 5px;
+}
+
+.post-meta a {
+    color: var(--gray-color);
+}
+
+.post-meta a:hover {
+    color: var(--primary-color);
+}
+
+.post-content {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.post-content h2, 
+.post-content h3, 
+.post-content h4 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.post-content h2 {
+    font-size: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.post-content h3 {
+    font-size: 24px;
+}
+
+.post-content h4 {
+    font-size: 20px;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 4px;
+}
+
+.post-content pre {
+    background-color: var(--code-bg);
+    border-radius: 4px;
+    padding: 15px;
+    overflow-x: auto;
+    margin: 25px 0;
+    font-size: 16px;
+}
+
+.post-content code {
+    background-color: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding: 10px 20px;
+    margin: 25px 0;
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 25px 0;
+}
+
+.post-navigation a {
+    display: flex;
+    align-items: center;
+    color: var(--dark-color);
+    max-width: 45%;
+}
+
+.post-navigation a.prev {
+    text-align: left;
+}
+
+.post-navigation a.next {
+    text-align: right;
+    margin-left: auto;
+}
+
+.post-navigation a:hover {
+    color: var(--primary-color);
+}
+
+.post-navigation .post-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.post-navigation .fa {
+    margin: 0 10px;
+}
+
+/* 页脚 */
+footer {
+    background-color: var(--light-color);
+    padding: 50px 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.copyright {
+    font-size: 14px;
+    color: var(--gray-color);
+    margin-top: 20px;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--dark-color);
+    color: white;
+    margin: 0 8px;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .site-heading h1 {
+        font-size: 36px;
+    }
+    
+    .site-heading .subheading {
+        font-size: 18px;
+    }
+    
+    .post-preview > a > .post-title {
+        font-size: 24px;
+    }
+    
+    .post-header .post-title {
+        font-size: 28px;
+    }
+    
+    .post-header .post-subtitle {
+        font-size: 20px;
+    }
+    
+    .post-content {
+        font-size: 16px;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .post-navigation a {
+        max-width: 100%;
+    }
+    
+    .navbar-header {
+        float: none;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+    
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    
+    .navbar-nav>li {
+        float: none;
+    }
+    
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-header .post-title {
+        font-size: 24px;
+    }
+    
+    .post-header .post-subtitle {
+        font-size: 18px;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+}
