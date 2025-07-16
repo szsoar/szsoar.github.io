@@ -1,5 +1,25 @@
 title: 我的博客
-description: 记录技术与生活
+description: 记录AE脚本插件开发经验
 baseurl: "" 
-url: "https://szsoar.github.io" 
-theme: minima 
+url: "https://szsoar.github.io"
+
+# 分页设置
+paginate: 5
+paginate_path: "/page:num/"
+
+# 作者信息
+author:
+  name: szsoar
+  email: hlm_0904@163.com
+  github: szsoar
+  twitter: szsoar
+  linkedin: szsoar
+
+# 社交媒体
+github_username: szsoar
+twitter_username: szsoar
+linkedin_username: szsoar
+email: hlm_0904@163.com
+
+# 主题设置
+theme: jekyll-theme-minimal
