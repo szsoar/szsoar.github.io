@@ -1,0 +1,5 @@
+title: 我的博客
+description: 记录技术与生活
+baseurl: "" 
+url: "https://szsoar.github.io" 
+theme: minima 
