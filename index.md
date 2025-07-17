@@ -25,7 +25,7 @@ header-img: "img/home-bg.jpg"
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
             <!-- 文章列表 -->
-            {% for post in site.posts %}
+            {% for post in paginator.posts %}
             <div class="post-preview">
                 <a href="{{ post.url | prepend: site.baseurl }}">
                     <h2 class="post-title">{{ post.title }}</h2>
