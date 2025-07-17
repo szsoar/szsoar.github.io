@@ -26,3 +26,8 @@ email: hlm_0904@163.com
 
 # 主题设置
 theme: jekyll-theme-minimal
+
+# 排除无关目录（避免符号链接错误）
+exclude:
+  - vendor/
+  - Gemfile.lock
