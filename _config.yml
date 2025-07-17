@@ -1,3 +1,6 @@
+plugins:
+  - jekyll-paginate
+
 timezone: Asia/Shanghai  # 指定为北京时间（UTC+8）
 future: false            # 明确禁止未来文章（默认值，但建议显式声明）
 
@@ -31,3 +34,5 @@ theme: jekyll-theme-minimal
 exclude:
   - vendor/
   - Gemfile.lock
+
+
