@@ -3,59 +3,58 @@ layout: default
 ---
 
 <article class="post-container">
-    <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        {% if page.subtitle %}
-        <h2 class="post-subtitle">{{ page.subtitle }}</h2>
-        {% endif %}
-        <div class="post-meta">
-            <span class="post-date">
-                <i class="fa fa-calendar"></i> {{ page.date | date: "%Y年%m月%d日" }}
-            </span>
-            {% if page.categories.size > 0 %}
-            <span class="post-categories">
-                <i class="fa fa-folder"></i> 
-                {% for category in page.categories %}
-                <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>
-                {% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-            </span>
-            {% endif %}
-            {% if page.tags.size > 0 %}
-            <span class="post-tags">
-                <i class="fa fa-tags"></i> 
-                {% for tag in page.tags %}
-                <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}">{{ tag }}</a>
-                {% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-            </span>
-            {% endif %}
-        </div>
-    </header>
-    
-    <div class="post-content">
-        {{ content }}
-    </div>
-    
-    <div class="post-navigation">
-        {% if page.previous %}
-        <a href="{{ site.baseurl }}{{ page.previous.url }}" class="prev">
-            <i class="fa fa-arrow-left"></i>
-            <span class="post-title">{{ page.previous.title }}</span>
-        </a>
-        {% endif %}
-        
-        {% if page.next %}
-        <a href="{{ site.baseurl }}{{ page.next.url }}" class="next">
-            <span class="post-title">{{ page.next.title }}</span>
-            <i class="fa fa-arrow-right"></i>
-        </a>
-        {% endif %}
-    </div>
-    
-    {% if site.disqus_shortname %}
-    <div class="post-comments">
-        {% include disqus.html %}
-    </div>
+  <!-- 文章头部 -->
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <h2 class="post-subtitle">{{ page.subtitle }}</h2>
     {% endif %}
+    <div class="post-meta">
+      <span class="post-date">
+        <i class="fa fa-calendar"></i> {{ page.date | date: "%Y年%m月%d日" }}
+      </span>
+      {% if page.categories.size > 0 %}
+      <span class="post-categories">
+        <i class="fa fa-folder"></i> 
+        {% for category in page.categories %}
+        <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>
+        {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+      {% endif %}
+      {% if page.tags.size > 0 %}
+      <span class="post-tags">
+        <i class="fa fa-tags"></i> 
+        {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}">{{ tag }}</a>
+        {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </header>
+  
+  <!-- 文章内容区域（添加居中容器） -->
+  <div class="post-content-container">
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+  
+  <!-- 文章导航 -->
+  <div class="post-navigation">
+    {% if page.previous %}
+    <a href="{{ site.baseurl }}{{ page.previous.url }}" class="prev">
+      <i class="fa fa-arrow-left"></i>
+      <span class="post-title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %}
+    
+    {% if page.next %}
+    <a href="{{ site.baseurl }}{{ page.next.url }}" class="next">
+      <span class="post-title">{{ page.next.title }}</span>
+      <i class="fa fa-arrow-right"></i>
+    </a>
+    {% endif %}
+  </div>
 </article>
