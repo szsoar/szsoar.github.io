@@ -711,3 +711,35 @@ footer {
   border-radius: 0 4px 4px 0;
 }
 
+/* 归档/分类/标签页面样式 */
+.container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.container ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.container ul li {
+    margin-bottom: 10px;
+}
+
+/* 头像样式 */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
