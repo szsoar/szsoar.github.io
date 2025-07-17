@@ -485,3 +485,229 @@ footer {
         font-size: 16px;
     }
 }
+
+/* ================== */
+/* 文章详情页居中样式 */
+/* ================== */
+
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.post-title {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+  color: #333;
+}
+
+.post-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.post-meta {
+  color: #777;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.post-meta i {
+  margin-right: 5px;
+}
+
+.post-meta a {
+  color: #777;
+  transition: color 0.3s;
+}
+
+.post-meta a:hover {
+  color: #0085a1;
+  text-decoration: none;
+}
+
+.post-content-container {
+  display: flex;
+  justify-content: center;
+}
+
+.post-content {
+  max-width: 700px;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.post-content h2, 
+.post-content h3, 
+.post-content h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.post-content h2 {
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.post-content h3 {
+  font-size: 1.5rem;
+}
+
+.post-content h4 {
+  font-size: 1.3rem;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.post-content pre {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  font-size: 1rem;
+  border-left: 4px solid #0085a1;
+}
+
+.post-content code {
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 0.95rem;
+}
+
+.post-content blockquote {
+  border-left: 4px solid #0085a1;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background-color: #f9f9f9;
+  color: #555;
+  font-style: italic;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .post-container {
+    padding: 0 15px;
+  }
+  
+  .post-title {
+    font-size: 1.8rem;
+  }
+  
+  .post-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+  }
+  
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ================== */
+/* 文章内容美化 */
+/* ================== */
+
+/* 段落首行缩进 */
+.post-content p {
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* 列表样式 */
+.post-content ul, 
+.post-content ol {
+  margin-left: 2em;
+  margin-bottom: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* 表格样式 */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post-content th, 
+.post-content td {
+  padding: 0.8rem;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.post-content th {
+  background-color: #f8f9fa;
+  font-weight: 700;
+}
+
+/* 图片说明 */
+.post-content .image-caption {
+  text-align: center;
+  font-style: italic;
+  color: #6c757d;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+/* 提示框 */
+.post-content .note {
+  background-color: #e7f4ff;
+  border-left: 4px solid #4da6ff;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.post-content .warning {
+  background-color: #fff8e6;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
