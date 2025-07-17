@@ -1,3 +1,6 @@
+timezone: Asia/Shanghai  # 指定为北京时间（UTC+8）
+future: false            # 明确禁止未来文章（默认值，但建议显式声明）
+
 title: 我的博客
 description: 记录AE脚本插件开发经验
 baseurl: "" 
