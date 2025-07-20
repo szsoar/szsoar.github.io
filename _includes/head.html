@@ -1,13 +1,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
+    <!--<title>
         {% if page.title %}
             {{ page.title }} | {{ site.title }}
         {% else %}
             {{ site.title }}
-        {% endif %}
+        {% endif %}       
     </title>
+    -->
+    <title>
+  {% if site.display_settings.browser_title %}
+    {{ site.display_settings.browser_title }}
+  {% else %}
+    {% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}
+  {% endif %}
+</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
