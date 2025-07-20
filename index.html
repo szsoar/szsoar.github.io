@@ -6,6 +6,7 @@ header-img: "img/home-bg.jpg"
 ---
 
 <!-- 首页横幅 -->
+<!--
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
     <div class="container">
         <div class="row">
@@ -13,6 +14,20 @@ header-img: "img/home-bg.jpg"
                 <div class="site-heading">
                     <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
                     <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+-->
+<!-- 首页横幅 -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ site.display_settings.header_title | default: "老胡的技术博客" }}</h1>
+                    <span class="subheading">{{ site.display_settings.header_subtitle | default: "专注After Effects脚本插件开发 | 分享AE扩展开发经验" }}</span>
                 </div>
             </div>
         </div>
