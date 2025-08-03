@@ -4,14 +4,15 @@ title: 关于我
 permalink: /about/
 ---
 
-<div class="page">
-  <div>
+<div class="about-container">
+  <div class="about-content">
     <h1>{{ page.title }}</h1>
     
-    <div style="text-align: center; margin: 30px 0;">
+    <div class="avatar-container" style="text-align: center; margin: 30px 0;">
       <img src="{{ site.baseurl }}/img/avatar.jpg" alt="我的头像" class="avatar" 
            style="width:200px;height:200px;border-radius:50%;">
     </div>
+    
 🛠️ **创意工具开发者 | Adobe & 3D软件扩展专家 | 全栈工程师**
 
 > 专注于 **Adobe系列(AE/PR)及3D软件(C4D/MAX)的脚本与插件开发**，结合**现代Web前端技术**，为影视后期与三维创作打造高效工具链。
