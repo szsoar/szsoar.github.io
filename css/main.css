@@ -638,3 +638,49 @@ footer {
         border: 1px solid #ddd;
     }
 }
+/* ======== 关于页面 ======== */
+.page {
+  position: relative;
+  max-width: 700px;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+.page > div {
+  padding: 40px 0;
+}
+
+.page h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+  text-align: center; /* 保持标题居中 */
+}
+
+.page h2 {
+  margin: 40px 0 20px;
+  font-size: 1.8em;
+}
+
+.page p {
+  margin: 0 0 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.page a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.page a:hover {
+  text-decoration: underline;
+}
+
+/* 响应式调整 */
+@media (max-width: 720px) {
+  .page {
+    padding: 0 15px;
+  }
+}
