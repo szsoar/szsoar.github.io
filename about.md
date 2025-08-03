@@ -4,15 +4,15 @@ title: 关于我
 permalink: /about/
 ---
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h1>关于我</h1>
-            
-            <div style="text-align: center; margin: 30px 0;">
-                <img src="{{ site.baseurl }}/img/avatar.jpg" alt="我的头像" class="avatar">
-            </div>
- 🛠️ **创意工具开发者 | Adobe & 3D软件扩展专家 | 全栈工程师**
+<div class="page">
+  <div>
+    <h1>{{ page.title }}</h1>
+    
+    <div style="text-align: center; margin: 30px 0;">
+      <img src="{{ site.baseurl }}/img/avatar.jpg" alt="我的头像" class="avatar" 
+           style="width:200px;height:200px;border-radius:50%;">
+    </div>
+🛠️ **创意工具开发者 | Adobe & 3D软件扩展专家 | 全栈工程师**
 
 > 专注于 **Adobe系列(AE/PR)及3D软件(C4D/MAX)的脚本与插件开发**，结合**现代Web前端技术**，为影视后期与三维创作打造高效工具链。
 
@@ -75,7 +75,6 @@ permalink: /about/
 
 1. 查看实战项目 → **[项目库](#)**  
 2. 学习开发技巧 → **[技术博客](https://szsoar.github.io/archive/)**  
-3. 有 **项目合作、技术讨论** 或只是想聊聊 **AE/PR/3D 自动化/插件开发**   欢迎 → **立即邮件联系！**
-        </div>
+3. 有 **项目合作、技术讨论** 或只是想聊聊 **AE/PR/3D 自动化/插件开发**   欢迎 → **立即邮件联系！**       
     </div>
 </div>
