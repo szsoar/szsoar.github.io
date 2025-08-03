@@ -5,11 +5,11 @@ permalink: /about/
 ---
 
 <div class="about-container">
-  <div class="about-content">
+  <div class="about-content" markdown="1">
     <h1>{{ page.title }}</h1>
     
-    <div class="avatar-container" style="text-align: center; margin: 30px 0;">
-      <img src="{{ site.baseurl }}/img/avatar.jpg" alt="我的头像" class="avatar" 
+    <div style="text-align: center; margin: 30px 0;">
+      <img src="/img/avatar.jpg" alt="我的头像" class="avatar" 
            style="width:200px;height:200px;border-radius:50%;">
     </div>
     
