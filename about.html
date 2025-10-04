@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - AE极客工坊</title>
+
+  <!-- CSS文件 -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/about.css">
+
+  <!-- Markdown渲染样式 -->
+  <link rel="stylesheet" href="css/markdown.css">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-row">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">AE</div>
+          <span>极客工坊</span>
+        </a>
+      </div>
+
+      <div class="nav-links-row">
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="content/ae-effects/index.html">AE特效</a></li>
+          <li><a href="content/ae-expressions/index.html">AE表达式</a></li>
+          <li><a href="content/ae-scripting/index.html">AE脚本</a></li>
+          <li><a href="content/ae-plugins/index.html">AE插件</a></li>
+          <li><a href="content/downloads/index.html">资源下载</a></li>
+          <li><a href="about.html" class="active">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 关于页面主要内容 -->
+  <main class="about-container">
+    <!-- 页面标题 -->
+
+    <!--   <section class="about-header">
+      <h1>关于AE极客工坊</h1>
+      <p class="subtitle">探索After Effects的无限可能，分享专业知识和创意灵感</p>
+    </section> -->
+
+    <!-- 主要内容区域 -->
+    <div class="about-content">
+      <!-- Markdown内容区域 -->
+      <article class="markdown-content" id="markdown-content">
+        <!-- Markdown内容将通过JavaScript动态加载 -->
+        <div class="loading">内容加载中...</div>
+      </article>
+
+      <!-- 团队信息侧边栏 -->
+      <aside class="about-sidebar">
+        <div class="team-card">
+          <h3>我们的团队</h3>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="./assets/images/p_hlm.jpg" alt="Mr. Hu - AE极客工坊创始人">
+            </div>
+            <div class="member-info">
+              <h4>Mr. Hu</h4>
+              <p>创始人 & 首席教程设计师</p>
+              <p>20年AE使用及插件开发经验</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="./assets/images/p_glg.jpg" alt="Mr. Ge - UI设计师">
+            </div>
+            <div class="member-info">
+              <h4>Mr. Ge</h4>
+              <p>UI设计师</p>
+              <p>专注于插件UI设计</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="./assets/images/p_chs.jpg" alt="Ms. Zhang - 内容策划">
+            </div>
+            <div class="member-info">
+              <h4>Ms. Zhang</h4>
+              <p>内容策划</p>
+              <p>用户体验专家</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>联系我们</h3>
+          <ul class="contact-list">
+            <li>
+              <svg class="contact-icon" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />
+              </svg>
+              <span>admin@szsoar.com</span>
+            </li>
+            <li>
+              <svg class="contact-icon" viewBox="0 0 24 24">
+                <path
+                  d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
+              </svg>
+              <span>+86 139 **** ****</span>
+            </li>
+            <li>
+              <svg class="contact-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              <span>江苏省苏州市吴中区</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stats-card">
+          <h3>网站数据</h3>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">精品教程</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">60+</div>
+              <div class="stat-label">实用脚本</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">专业插件</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">20,000+</div>
+              <div class="stat-label">资源下载次数</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-card">
+          <h3>关注我们</h3>
+          <div class="social-links">
+            <a href="https://space.bilibili.com/3546734150028132" class="social-link bilibili" target="_blank">
+              <img src="./assets/images/bilibili.jpg" alt="B站">
+              <span>Bilibili</span>
+            </a>
+            <a href="https://v.douyin.com/Y6r0eNKeK10" class="social-link douyin" target="_blank">
+              <img src="./assets/images/douyin.png" alt="抖音">
+              <span>抖音</span>
+            </a>
+            <!--  <a href="https://www.xiaohongshu.com/" class="social-link xiaohongshu" target="_blank">
+              <img src="images/social/xiaohongshu.png" alt="小红书">
+              <span>小红书</span>
+            </a> -->
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <div data-include-footer="templates/footer.html"></div>
+
+  <!-- JavaScript文件 -->
+  <script src="js/main.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/include-footer.js"></script>
+
+</body>
+
+</html>

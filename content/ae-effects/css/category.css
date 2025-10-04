@@ -1,0 +1,139 @@
+/* 分类页面专用样式 */
+.category-header {
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.category-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.category-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 修复文章网格布局 - 每行5个 */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* 分页样式 - 确保与您的设计系统一致 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 8px;
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: var(--border);
+  background: var(--primary);
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  box-shadow: var(--card-shadow);
+}
+
+.pagination-button:hover {
+  background: var(--secondary);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagination-button.active {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(78, 110, 242, 0.3);
+  border-color: var(--accent-dark);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--card-shadow);
+}
+
+.pagination-button:disabled:hover {
+  background: var(--primary);
+  color: var(--text);
+}
+
+/* 页码组样式 */
+.pagination-pages {
+  display: flex;
+  gap: 4px;
+  margin: 0 12px;
+}
+
+/* 省略号样式 */
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .articles-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .articles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .pagination-pages {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin: 0 0 10px 0;
+  }
+
+  .pagination-button {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+}

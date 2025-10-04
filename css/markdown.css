@@ -1,0 +1,123 @@
+/* Markdown内容样式 */
+.markdown-content {
+  line-height: 1.8;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.markdown-content h2 {
+  font-size: 1.8rem;
+  margin: 2.5rem 0 1.5rem;
+  color: var(--accent);
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.markdown-content h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1.2rem;
+  color: var(--accent-dark);
+}
+
+.markdown-content h4 {
+  font-size: 1.3rem;
+  margin: 1.8rem 0 1rem;
+  color: var(--text);
+}
+
+.markdown-content p {
+  margin: 1.5rem 0;
+  text-align: justify;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.markdown-content li {
+  margin: 0.8rem 0;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  background: var(--secondary);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+.markdown-content pre {
+  background: var(--secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-left: 4px solid var(--accent);
+}
+
+.markdown-content code {
+  background: var(--secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: var(--accent-dark);
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.markdown-content hr {
+  border: none;
+  height: 2px;
+  background: var(--secondary);
+  margin: 2.5rem 0;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 0.8rem;
+  border: 1px solid var(--secondary);
+}
+
+.markdown-content th {
+  background: var(--secondary);
+  font-weight: bold;
+}
+
+.markdown-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.markdown-content strong {
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.markdown-content em {
+  font-style: italic;
+}

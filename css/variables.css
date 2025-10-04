@@ -1,0 +1,49 @@
+/* CSS变量定义 */
+/* :root {
+  --primary: #ffffff;
+  --secondary: #f8f9fa;
+  --accent: #4e6ef2;
+  --accent-dark: #3b5be3;
+  --text: #333333;
+  --text-secondary: #666666;
+  --card-bg: #ffffff;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --border: 1px solid #eaeaea;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text);
+  line-height: 1.6;
+} */
+
+
+:root {
+  --primary: #ffffff;
+  --secondary: #f8f9fa;
+  --accent: #4e6ef2;
+  --accent-dark: #3b5be3;
+  --text: #333333;
+  --text-secondary: #666666;
+  --card-bg: #ffffff;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --border: 1px solid #eaeaea;
+
+  /* 新增变量用于分页组件 */
+  --pagination-bg: var(--primary);
+  --pagination-color: var(--text);
+  --pagination-hover-bg: var(--secondary);
+  --pagination-hover-color: var(--accent);
+  --pagination-active-bg: var(--accent);
+  --pagination-active-color: var(--primary);
+  --pagination-shadow: var(--card-shadow);
+  --pagination-border: var(--border);
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text);
+  line-height: 1.6;
+}

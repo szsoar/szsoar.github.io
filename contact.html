@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关注我们的社交媒体</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .social-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #eee;
+            page-break-inside: avoid;
+            /* 防止PDF分页时卡片被切断 */
+        }
+
+        .card-header {
+            padding: 25px 20px 15px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .card-header i {
+            font-size: 28px;
+            margin-right: 12px;
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 25px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qrcode {
+            width: 200px;
+            height: 200px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .qrcode img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* 保持图片比例，完整显示 */
+        }
+
+        .card-footer {
+            padding: 15px 20px 25px;
+            text-align: center;
+            color: #666;
+        }
+
+        .card-footer p {
+            margin-bottom: 8px;
+        }
+
+        .follow-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        /* 平台特定样式 */
+        .qq-group .card-header {
+            background: linear-gradient(135deg, #12b7f5, #0084ff);
+        }
+
+        .qq-group .follow-btn {
+            color: #12b7f5;
+            border: 2px solid #12b7f5;
+        }
+
+        .qq-group .follow-btn:hover {
+            background: #12b7f5;
+            color: white;
+        }
+
+        .qq-personal .card-header {
+            background: linear-gradient(135deg, #68c3e9, #12b7f5);
+        }
+
+        .qq-personal .follow-btn {
+            color: #68c3e9;
+            border: 2px solid #68c3e9;
+        }
+
+        .qq-personal .follow-btn:hover {
+            background: #68c3e9;
+            color: white;
+        }
+
+        .bilibili .card-header {
+            background: linear-gradient(135deg, #fb7299, #ffafc9);
+        }
+
+        .bilibili .follow-btn {
+            color: #fb7299;
+            border: 2px solid #fb7299;
+        }
+
+        .bilibili .follow-btn:hover {
+            background: #fb7299;
+            color: white;
+        }
+
+        .douyin .card-header {
+            background: linear-gradient(135deg, #000000, #69c9d0);
+        }
+
+        .douyin .follow-btn {
+            color: #000000;
+            border: 2px solid #000000;
+        }
+
+        .douyin .follow-btn:hover {
+            background: #000000;
+            color: white;
+        }
+
+        .website .card-header {
+            background: linear-gradient(135deg, #4a6cf7, #6a11cb);
+        }
+
+        .website .follow-btn {
+            color: #4a6cf7;
+            border: 2px solid #4a6cf7;
+        }
+
+        .website .follow-btn:hover {
+            background: #4a6cf7;
+            color: white;
+        }
+
+        .wechat .card-header {
+            background: linear-gradient(135deg, #07c160, #00a650);
+        }
+
+        .wechat .follow-btn {
+            color: #07c160;
+            border: 2px solid #07c160;
+        }
+
+        .wechat .follow-btn:hover {
+            background: #07c160;
+            color: white;
+        }
+
+        .footer-note {
+            text-align: center;
+            max-width: 700px;
+            margin: 40px auto 0;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            page-break-inside: avoid;
+            /* 防止PDF分页时被切断 */
+            border: 1px solid #eee;
+        }
+
+        .footer-note h3 {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .footer-note p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+        /* 打印样式 - 确保PDF输出效果良好 */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0;
+                margin: 0;
+            }
+
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .social-card {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                page-break-inside: avoid;
+                border: 1px solid #ddd !important;
+                margin-bottom: 20px;
+            }
+
+            .card-header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .footer-note {
+                box-shadow: none;
+                border: 1px solid #ddd !important;
+            }
+
+            .qrcode {
+                width: 180px;
+                height: 180px;
+            }
+
+            /* 确保背景色在打印时显示 */
+            .qq-group .card-header {
+                background: #12b7f5 !important;
+            }
+
+            .qq-personal .card-header {
+                background: #68c3e9 !important;
+            }
+
+            .bilibili .card-header {
+                background: #fb7299 !important;
+            }
+
+            .douyin .card-header {
+                background: #000000 !important;
+                color: white;
+            }
+
+            .website .card-header {
+                background: #4a6cf7 !important;
+            }
+
+            .wechat .card-header {
+                background: #07c160 !important;
+            }
+
+            /* 隐藏交互元素 */
+            .follow-btn {
+                display: none;
+            }
+        }
+
+        .qrcode-tips {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>关注我们的社交媒体</h1>
+            <p class="subtitle">获取最新内容、独家资讯和更多精彩！扫描下方二维码，从更多渠道关注我们，与我们保持联系。</p>
+        </header>
+
+        <div class="social-grid">
+            <!-- QQ群 -->
+            <div class="social-card qq-group">
+                <div class="card-header">
+                    <i class="fab fa-qq"></i>
+                    <h2>QQ群</h2>
+                </div>
+                <div class="card-body">
+                    <div class="qrcode">
+                        <!-- 使用500x500的图片，但显示为200x200 -->
+                        <img src="assets/contact/qq_group.png" alt="QQ群二维码">
+                    </div>
+                    <p>加入我们的QQ群，与更多用户交流互动</p>
+                </div>
+                <div class="card-footer">
+                    <p>扫描二维码加入QQ群</p>
+                    <a href="#" class="follow-btn">立即加入</a>
+                </div>
+            </div>
+
+            <!-- 个人QQ -->
+            <div class="social-card qq-personal">
+                <div class="card-header">
+                    <i class="fab fa-qq"></i>
+                    <h2>个人QQ</h2>
+                </div>
+                <div class="card-body">
+                    <div class="qrcode">
+                        <img src="assets/contact/qq.png" alt="个人QQ二维码">
+                    </div>
+                    <p>添加我们的个人QQ，获取一对一服务</p>
+                </div>
+                <div class="card-footer">
+                    <p>扫描二维码添加QQ</p>
+                    <a href="#" class="follow-btn">立即添加</a>
+                </div>
+            </div>
+
+            <!-- B站 -->
+            <div class="social-card bilibili">
+                <div class="card-header">
+                    <i class="fas fa-play-circle"></i>
+                    <h2>哔哩哔哩</h2>
+                </div>
+                <div class="card-body">
+                    <div class="qrcode">
+                        <img src="assets/contact/bili.png" alt="B站二维码">
+                    </div>
+                    <p>订阅我们的B站频道，观看高质量视频内容</p>
+                </div>
+                <div class="card-footer">
+                    <p>扫描二维码关注B站</p>
+                    <a href="https://space.bilibili.com/3546734150028132" class="follow-btn" target="_blank">立即关注</a>
+                </div>
+            </div>
+
+            <!-- 抖音 -->
+            <div class="social-card douyin">
+                <div class="card-header">
+                    <i class="fab fa-tiktok"></i>
+                    <h2>抖音</h2>
+                </div>
+                <div class="card-body">
+                    <div class="qrcode">
+                        <img src="assets/contact/douyin.png" alt="抖音二维码">
+                    </div>
+                    <p>关注我们的抖音账号，观看精彩短视频内容</p>
+                </div>
+                <div class="card-footer">
+                    <p>扫描二维码关注抖音</p>
+                    <a href="https://v.douyin.com/Y6r0eNKeK10" class="follow-btn" target="_blank">立即关注</a>
+                </div>
+            </div>
+
+            <!-- 网站 -->
+            <div class="social-card website">
+                <div class="card-header">
+                    <i class="fas fa-globe"></i>
+                    <h2>官方网站</h2>
+                </div>
+                <div class="card-body">
+                    <div class="qrcode">
+                        <img src="assets/contact/website.png" alt="网站二维码">
+                    </div>
+                    <p>访问我们的官方网站，获取完整产品信息</p>
+                </div>
+                <div class="card-footer">
+                    <p>扫描二维码访问网站</p>
+                    <a href="https://szsoar.github.io" class="follow-btn" target="_blank">立即访问</a>
+                </div>
+            </div>
+
+            <!-- 微信公众号 -->
+            <div class="social-card wechat">
+                <div class="card-header">
+                    <i class="fab fa-weixin"></i>
+                    <h2>微信公众号</h2>
+                </div>
+                <div class="card-body">
+                    <div class="qrcode">
+                        <img src="assets/contact/wechat_public.jpg" alt="公众号二维码">
+                    </div>
+                    <p>订阅我们的公众号，获取深度内容和专业见解</p>
+                </div>
+                <div class="card-footer">
+                    <p>扫描二维码关注公众号</p>
+                    <a href="#" class="follow-btn">立即关注</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <h3>多平台关注，不错过任何精彩</h3>
+            <p>每个平台都有独特的内容和互动方式，关注我们的所有社交媒体账号，获取最全面的资讯和最丰富的体验。我们会在不同平台发布适合该平台特性的内容，确保您在每个渠道都能获得最佳体验。</p>
+        </div>
+
+        <!-- <div class="qrcode-tips">
+            <p><strong>二维码使用提示：</strong> 我们已确保所有二维码均为正方形且尺寸合适，保证在各种设备上都能正常扫描。如果您遇到扫描问题，请尝试调整手机与二维码的距离或光线条件。</p>
+        </div> -->
+    </div>
+
+    <script>
+        // 添加简单的交互效果
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.social-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-10px)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // 打印优化提示
+            console.log("打印提示：在浏览器打印设置中，请确保选中'背景图形'选项，以获得最佳打印效果");
+        });
+    </script>
+</body>
+
+</html>

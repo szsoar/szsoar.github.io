@@ -1,81 +1,395 @@
----
-layout: default
-title: 我的个人博客
-description: 记录AE脚本插件开发
-header-img: "img/home-bg.jpg"
----
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-<!-- 首页横幅 -->
-<!--
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-                    <span class="subheading">{{ page.description }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
--->
-<!-- 首页横幅 -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{{ site.display_settings.header_title | default: "老胡的技术博客" }}</h1>
-                    <span class="subheading">{{ site.display_settings.header_subtitle | default: "专注After Effects脚本插件开发 | 分享AE扩展开发经验" }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE极客工坊 - After Effects专业技巧与教程</title>
 
-<!-- 主要内容区 -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-            <!-- 文章列表 -->
-            {% for post in paginator.posts %}
-            <div class="post-preview">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                    <h2 class="post-title">{{ post.title }}</h2>
-                    {% if post.subtitle %}
-                    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-                    {% endif %}
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+
+    <header>
+        <nav class="navbar">
+            <div class="logo-row">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">AE</div>
+                    <span>极客工坊</span>
                 </a>
-                <p class="post-meta">
-                    发布于 {{ post.date | date: "%Y年%m月%d日" }}
-                    {% if post.categories.size > 0 %}
-                    &middot; 分类: 
-                    {% for category in post.categories %}
-                    <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>
-                    {% unless forloop.last %}, {% endunless %}
-                    {% endfor %}
-                    {% endif %}
-                </p>
-                <div class="post-entry">
-                    {{ post.excerpt | strip_html | truncate:200 }}
-                    <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">阅读全文</a>
-                </div>
             </div>
-            <hr>
-            {% endfor %}
-            
-            <!-- 分页导航 -->
-            <div class="pagination">
-                {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path }}" class="previous">上一页</a>
-                {% endif %}
-                <span class="page-number">第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页</span>
-                {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
-                {% endif %}
+
+            <div class="nav-links-row">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="./content/ae-effects/index.html">AE特效</a></li>
+                    <li><a href="./content/ae-expressions/index.html">AE表达式</a></li>
+                    <li><a href="./content/ae-scripting/index.html">AE脚本</a></li>
+                    <li><a href="./content/ae-plugins/index.html">AE插件</a></li>
+                    <li><a href="./content/downloads/index.html">资源下载</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索After Effects的<span>无限可能</span></h1>
+            <p>专业教程、高级技巧和创意灵感，帮助您提升视频特效、动态图形设计和插件开发技能</p>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="搜索教程、技巧或资源...">
+                <button onclick="performSearch()">搜索</button>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- 精选文章 -->
+    <section class="container">
+        <div class="section-title">
+            <span>精选教程</span>
+        </div>
+
+        <div class="articles-grid">
+            <!-- 文章卡片 1 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-effects/index.html">
+                        <img src="./assets/images/home/Choiceness_2025_0101.jpg" alt="AE特效教程">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">特效教程</span>
+                    <h3><a href="./content/ae-effects/index.html">高级炫酷的特效技巧商业实战</a></h3>
+                    <p>由浅入深学习如何创建令人惊叹的效果，提升您的视觉项目质量...</p>
+                    <a href="./content/ae-effects/index.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2015-06-15</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 2 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-expressions/index.html">
+                        <img src="./assets/images/home/Choiceness_2025_0102.jpg" alt="AE表达式">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">表达式</span>
+                    <h3><a href="./content/ae-expressions/index.html">掌握AE表达式：从入门到精通</a></h3>
+                    <p>了解如何利用表达式自动化动画流程，节省时间并创建复杂动画...</p>
+                    <a href="./content/ae-expressions/index.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2020-10-10</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 3 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-scripting/index.html">
+                        <img src="./assets/images/home/Choiceness_2025_0103.jpg" alt="AE脚本开发">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">脚本开发</span>
+                    <h3><a href="./content/ae-scripting/index.html">ExtendScript入门：自定义你的AE工作流</a></h3>
+                    <p>学习如何编写自己的AE脚本，自动化重复任务并提高工作效率...</p>
+                    <a href="./content/ae-scripting/index.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2021-10-05</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 4 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-plugins/index.html">
+                        <img src="./assets/images/home/Choiceness_2025_0104.jpg" alt="AE插件开发">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">插件开发</span>
+                    <h3><a href="./content/ae-plugins/index.html">开发你的第一个AE插件：完整指南</a></h3>
+                    <p>深入了解After Effects插件开发的世界，从设置开发环境到发布...</p>
+                    <a href="./content/ae-plugins/index.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2025-09-01</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 5 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="#">
+                        <img src="./assets/images/home/Choiceness_2025_0105.jpg" alt="动态图形">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">软件联动</span>
+                    <h3><a href="#">AE与三维/剪辑等软件高效协作</a></h3>
+                    <p>掌握AE与C4D、PR等软件的联动技巧，大幅提升创作效率。...</p>
+                    <a href="#" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2022-09-28</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 特色文章 -->
+    <section class="featured">
+        <div class="container">
+            <div class="section-title">
+                <span>本站特色</span>
+                <!-- <a href="featured.html" class="view-all">查看全部</a> -->
+            </div>
+
+            <article class="featured-article">
+                <div class="featured-img">
+                    <a href="./content/ae-plugins/plugin-lead.html">
+                        <img src="./assets/images/home/feature_plugin_dev20250101.jpg" alt="AE插件开发">
+                    </a>
+                </div>
+                <div class="featured-content">
+                    <span class="category">插件开发</span>
+                    <h2><a href="./content/ae-plugins/plugin-lead.html">开发你的第一个AE插件：完整指南</a></h2>
+                    <p>深入了解After Effects插件开发的世界。从设置开发环境到发布你的第一个插件，本教程将带你一步步完成整个过程...</p>
+                    <p>学习JS、CSS、HTML基础、UXP-API的核心概念以及如何创建具有实用功能的插件。无论你是初学者还是有经验的开发者，这篇文章都将为你提供宝贵的指导。</p>
+                    <a href="./content/ae-plugins/plugin-lead.html" class="read-more">
+                        阅读完整教程
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2025-09-01</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 下载中心 -->
+    <section class="container">
+        <div class="section-title">
+            <span>资源下载</span>
+            <!-- <a href="downloads/index.html" class="view-all">查看全部</a> -->
+        </div>
+
+        <div class="downloads">
+            <div class="downloads-grid">
+                <!-- 下载项目 1 -->
+                <div class="download-item">
+                    <div class="download-icon">⚙️</div>
+                    <h3>AE脚本合集</h3>
+                    <p>包含60+个实用AE脚本，持续更新，提高您的工作效率</p>
+                    <a href="./content/downloads/index.html" class="download-btn">查看</a>
+                </div>
+
+                <!-- 下载项目 2 -->
+                <div class="download-item">
+                    <div class="download-icon">🔄</div>
+                    <h3>项目模板</h3>
+                    <p>30+个专业级AE工程模板，可直接使用</p>
+                    <a href="./content/downloads/index.html" class="download-btn">查看</a>
+                </div>
+
+                <!-- 下载项目 3 - UXP插件 -->
+                <div class="download-item">
+                    <div class="download-icon">🧩</div>
+                    <h3>UXP插件</h3>
+                    <p>增强Adobe生态系统的扩展功能和工具集</p>
+                    <a href="./content/downloads/index.html" class="download-btn">查看</a>
+                </div>
+
+                <!-- 下载项目 4 - 工具包 -->
+                <div class="download-item">
+                    <div class="download-icon">🧰</div>
+                    <h3>工具包</h3>
+                    <p>全套AE辅助工具，提升您的工作流程效率</p>
+                    <a href="./content/downloads/index.html" class="download-btn">查看</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更多文章 -->
+    <section class="container">
+        <div class="section-title">
+            <span>最新教程</span>
+            <!-- <a href="articles.html" class="view-all">查看全部</a> -->
+        </div>
+
+        <div class="articles-grid">
+            <!-- 文章卡片 6 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-effects/effect-01.html">
+                        <img src="./assets/images/home/LatestTutorial_20250101.jpg" alt="视觉效果">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">视觉效果</span>
+                    <h3><a href="./content/ae-effects/effect-01.html">摄像机运镜技巧：伏羲驯六畜</a></h3>
+                    <p>展示如何通过AE摄像机以及相关技巧制作丝滑流畅的运镜效果...</p>
+                    <a href="./content/ae-effects/effect-01.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2025-07-08</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 7 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-scripting/script-chap-intro.html">
+                        <img src="./assets/images/home/LatestTutorial_20250102.jpg" alt="脚本开发">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">脚本开发</span>
+                    <h3><a href="./content/ae-scripting/script-chap-intro.html">AE脚本开发入门到精通介绍篇</a></h3>
+                    <p>介绍本套AE脚本开发教程目录结构，引导用户由浅入深去学习...</p>
+                    <a href="./content/ae-scripting/script-chap-intro.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2024-09-20</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 8 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-expressions/expr-chap-intro-02.html">
+                        <img src="./assets/images/home/LatestTutorial_20250103.jpg" alt="表达式">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">表达式</span>
+                    <h3><a href="./content/ae-expressions/expr-chap-intro-02.html">表达式保姆级教程之导言</a></h3>
+                    <p>介绍本套表达式教程内容结构、所需要的知识储备以及相应的交流路径...</p>
+                    <a href="./content/ae-expressions/expr-chap-intro-02.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2024-09-15</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 9 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-expressions/expr-chap-intro-01.html">
+                        <img src="./assets/images/home/LatestTutorial_20250104.jpg" alt="表达式">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">表达式</span>
+                    <h3><a href="./content/ae-expressions/expr-chap-intro-01.html">表达式保姆级教程之片头</a></h3>
+                    <p>学习如何使用表达式创建复杂的动态动画效果，提升项目水平...</p>
+                    <a href="./content/ae-expressions/expr-chap-intro-01.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2024-09-10</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 10 -->
+            <article class="article-card">
+                <div class="card-img">
+                    <a href="./content/ae-scripting/script-chap-01-01.html">
+                        <img src="./assets/images/home/LatestTutorial_20250105.jpg" alt="脚本开发">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="category">脚本开发</span>
+                    <h3><a href="./content/ae-scripting/script-chap-01-01.html">AE脚本开发入门到精通第一章第一节</a></h3>
+                    <p>介绍什么是ExtendScript以及学习AE脚本开发需要的知识基础...</p>
+                    <a href="./content/ae-scripting/script-chap-01-01.html" class="read-more">
+                        阅读更多
+                        <svg class="read-more-icon" viewBox="0 0 24 24">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                    <div class="card-meta">
+                        <span>2024-09-05</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div data-include-footer="templates/footer.html"></div>
+
+    <!-- JavaScript文件 -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/include-footer.js"></script>
+</body>
+
+</html>

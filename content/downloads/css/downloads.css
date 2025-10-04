@@ -1,0 +1,391 @@
+/* 下载页面专用样式 */
+.downloads-header {
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.downloads-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.downloads-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 下载分类筛选 */
+.downloads-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: var(--border);
+  background: var(--primary);
+  color: var(--text);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+}
+
+/* 下载资源网格 */
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* 修复下载项布局 - 使用Flexbox确保按钮在底部 */
+.download-item {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: var(--border);
+  margin-bottom: 20px;
+
+  /* 新增：使用Flexbox布局 */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* 确保所有卡片高度一致 */
+  min-height: 420px;
+  /* 设置最小高度确保一致性 */
+}
+
+.download-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.download-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.download-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--text);
+  text-align: center;
+}
+
+.download-item p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
+  flex-grow: 1;
+  /* 允许描述文本区域扩展 */
+}
+
+.download-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+/* 价格标签样式 */
+.price-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price-tag.free {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.price-tag.paid {
+  background-color: #FF9800;
+  color: white;
+}
+
+/* 价格显示样式 */
+.price-display {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.price-amount {
+  color: #FF9800;
+}
+
+/* 按钮容器 - 新增 */
+.download-btn-container {
+  margin-top: auto;
+  /* 将按钮推到容器底部 */
+  text-align: center;
+  padding-top: 15px;
+}
+
+/* 统一按钮样式 */
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  min-width: 140px;
+  /* 设置最小宽度确保按钮大小一致 */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.free-btn {
+  background-color: #4CAF50;
+}
+
+.free-btn:hover {
+  background-color: #388E3C;
+}
+
+.paid-btn {
+  background-color: #FF9800;
+  position: relative;
+  /* 为二维码提示框定位 */
+}
+
+.paid-btn:hover {
+  background-color: #F57C00;
+}
+
+/* 二维码提示框样式 */
+.qr-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  width: 280px;
+  text-align: center;
+  margin-bottom: 15px;
+  border: 2px solid #f0f0f0;
+}
+
+.qr-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: white;
+}
+
+.qr-tooltip img {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+}
+
+.qr-tooltip p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* 关键修复：当鼠标悬停在收费按钮上时显示二维码 */
+.paid-btn:hover .qr-tooltip {
+  display: block;
+}
+
+/* 分页样式 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 8px;
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: var(--border);
+  background: var(--primary);
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  box-shadow: var(--card-shadow);
+}
+
+.pagination-button:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagination-button.active {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(78, 110, 242, 0.3);
+  border-color: var(--accent-dark);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--card-shadow);
+}
+
+.pagination-button:disabled:hover {
+  background: var(--primary);
+  color: var(--text);
+}
+
+.pagination-pages {
+  display: flex;
+  gap: 4px;
+  margin: 0 12px;
+}
+
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .downloads-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .downloads-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .downloads-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .downloads-filters {
+    gap: 10px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .pagination-pages {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin: 0 0 10px 0;
+  }
+
+  .pagination-button {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  /* 移动端二维码优化 */
+  .qr-tooltip {
+    width: 260px;
+    padding: 15px;
+  }
+
+  .qr-tooltip img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .download-item {
+    min-height: 380px;
+    /* 移动端减小最小高度 */
+  }
+
+  .qr-tooltip {
+    width: 240px;
+    padding: 12px;
+  }
+
+  .qr-tooltip img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .download-btn {
+    min-width: 120px;
+    /* 移动端减小按钮最小宽度 */
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,365 @@
+/* 搜索页面特有样式 */
+.search-hero {
+  padding: 2rem 5%;
+  background: var(--secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  background: var(--card-bg);
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: var(--border);
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  height: auto;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar button {
+  padding: 1rem 1.8rem;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.search-bar button:hover {
+  background: var(--accent-dark);
+}
+
+.search-bar button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.search-meta {
+  color: var(--text-secondary);
+  min-height: 1.5rem;
+}
+
+.search-meta strong {
+  color: var(--accent);
+}
+
+/* 搜索结果区域 */
+.search-results {
+  padding: 0 5% 2rem;
+}
+
+/* 无图片文章列表样式 */
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list-item {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: var(--transition);
+  box-shadow: var(--card-shadow);
+  border: var(--border);
+}
+
+.list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.list-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.list-item-category {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.list-item-date {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.list-item-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.list-item-title a {
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.list-item-title a:hover {
+  color: var(--accent);
+}
+
+.list-item-desc {
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.list-item-meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.list-item-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* 下载项目样式 */
+.downloads-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.download-list-item {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: var(--transition);
+  box-shadow: var(--card-shadow);
+  border: var(--border);
+}
+
+.download-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-list-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.download-list-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.download-list-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.download-list-desc {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.download-list-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-list-info {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.download-list-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-list-btn:hover {
+  background: var(--accent-dark);
+}
+
+/* 无结果样式 */
+.no-results {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-secondary);
+}
+
+.no-results-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.search-tips {
+  margin-top: 1.5rem;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-tips h4 {
+  margin-bottom: 0.6rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.search-tips ul {
+  list-style-type: none;
+  font-size: 0.9rem;
+}
+
+.search-tips li {
+  padding: 0.2rem 0;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.search-tips li:before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+/* 分页样式 */
+.pagination {
+  padding: 0 5% 2rem;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.page-btn,
+.page-num {
+  padding: 0.4rem 0.8rem;
+  border: var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.page-btn:hover,
+.page-num:hover {
+  background: var(--secondary);
+}
+
+.page-num.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.page-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-dots {
+  padding: 0 0.3rem;
+  color: var(--text-secondary);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .downloads-list {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    border-radius: 8px;
+  }
+
+  .search-bar input {
+    padding: 0.8rem 1rem;
+  }
+
+  .search-bar button {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .list-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .list-item-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar button span {
+    display: none;
+  }
+
+  .search-bar button {
+    padding: 0.8rem;
+  }
+
+  .search-bar button svg {
+    margin: 0;
+  }
+}

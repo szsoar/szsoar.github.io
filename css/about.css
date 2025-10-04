@@ -1,0 +1,293 @@
+/* 关于页面样式 */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 2.8rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.about-header .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 50px;
+  align-items: start;
+}
+
+/* 侧边栏样式 */
+.about-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.team-card,
+.contact-card,
+.stats-card,
+.social-card {
+  background: var(--primary);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: var(--card-shadow);
+  border: var(--border);
+}
+
+.team-card h3,
+.contact-card h3,
+.stats-card h3,
+.social-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 1.3rem;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* 团队成员样式 */
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: var(--secondary);
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.team-member:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:last-child {
+  margin-bottom: 0;
+}
+
+.member-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  flex-shrink: 0;
+  border: 3px solid var(--accent);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info h4 {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.member-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* 联系信息样式 */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: var(--secondary);
+  border-radius: 8px;
+}
+
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  fill: var(--accent);
+  flex-shrink: 0;
+}
+
+/* 统计数据样式 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 15px;
+  background: var(--secondary);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* 社交媒体样式 */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background: var(--secondary);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateX(5px);
+}
+
+.social-link img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-sidebar {
+    position: static;
+    order: -1;
+    margin-bottom: 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-header .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .member-avatar {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-link {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .social-link img {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card,
+  .contact-card,
+  .stats-card,
+  .social-card {
+    padding: 20px 15px;
+  }
+}
+
+/* Markdown内容区域 */
+.markdown-content {
+  background: var(--primary);
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: var(--card-shadow);
+  border: var(--border);
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+  font-style: italic;
+}

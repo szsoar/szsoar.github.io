@@ -1,0 +1,126 @@
+/* 导航栏样式 */
+header {
+  background-color: var(--primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links-row {
+  display: flex;
+  justify-content: flex-end;
+  border-top: var(--border);
+  padding: 0.8rem 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  background-color: rgba(78, 110, 242, 0.1);
+}
+
+.nav-links a.active::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* 登录注册按钮样式 */
+
+/* .auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.auth-btn:hover {
+  background: var(--accent);
+  color: white;
+} */

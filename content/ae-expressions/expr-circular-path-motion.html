@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE极客工坊 - 文章详情</title>
+
+    <!-- 外部CSS -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+
+    <style>
+        /* 仅添加必要的样式，不影响原有页头页脚 */
+        .article-detail-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* 修复文章标题居中问题 */
+        .article-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-align: center;
+            width: 100%;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* 视频容器 */
+        .video-container {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .video-player {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .video-header {
+            padding: 15px 20px;
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* 使用padding-top保持16:9比例 */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* B站iframe样式 */
+        .bilibili-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .video-note {
+            padding: 10px 15px;
+            background: #e9ecef;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #dee2e6;
+        }
+
+        /* 文章内容区域优化 - 关键修复 */
+        .article-content {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            width: 100%;
+            line-height: 1.8;
+            /* 增加行高 */
+        }
+
+        /* Markdown内容样式优化 */
+        .markdown-content {
+            color: #333;
+            font-size: 1.1rem;
+            /* 与主页一致的字体大小 */
+            line-height: 1.8;
+            /* 增加行高 */
+        }
+
+        .markdown-content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            /* 增加上下边距 */
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            color: #2c3e50;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            /* 增加上下边距 */
+            color: #2c3e50;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1.5rem;
+            /* 增加段落间距 */
+            font-size: 1.1rem;
+            /* 与主页一致的字体大小 */
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin-bottom: 1.5rem;
+            /* 增加列表间距 */
+            padding-left: 2rem;
+            /* 增加列表缩进 */
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.8rem;
+            /* 增加列表项间距 */
+            font-size: 1.1rem;
+            /* 与主页一致的字体大小 */
+        }
+
+        .markdown-content code {
+            background: #f5f7fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        .markdown-content pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .markdown-content pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+            font-size: 0.95rem;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #3498db;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: #f8f9fa;
+            color: #555;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .markdown-content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .markdown-content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .article-content {
+                padding: 25px;
+            }
+
+            .markdown-content {
+                font-size: 1rem;
+            }
+
+            .markdown-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .markdown-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 保持您原有的页头 -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-row">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-icon">AE</div>
+                    <span>极客工坊</span>
+                </a>
+            </div>
+
+            <div class="nav-links-row">
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
+                    <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
+                    <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
+                    <li><a href="../../content/ae-plugins/index.html">AE插件</a></li>
+                    <li><a href="../../content/downloads/index.html">资源下载</a></li>
+                    <li><a href="../../about.html">关于</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 文章内容 -->
+    <main class="article-detail-container">
+        <div class="article-header">
+            <h1 class="article-title">正余弦三角形绕圆周路径运动</h1>
+            <div class="article-meta">
+                <div class="article-author">
+                    <span>作者: 老胡</span>
+                </div>
+                <div class="article-date">
+                    <span>发布日期: 2025-01-21</span>
+                </div>
+                <div class="article-category">
+                    <span>分类: 表达式实例</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 视频播放器区域 -->
+        <div class="video-container">
+            <!-- B站视频播放器 -->
+            <div class="video-player">
+                <div class="video-header">视频教程</div>
+                <div class="video-wrapper">
+                    <!-- 使用B站的标准嵌入代码 -->
+                    <iframe class="bilibili-iframe"
+                        src="https://player.bilibili.com/player.html?isOutside=true&aid=113865606037795&bvid=BV139w8eKEfQ&cid=27994033371&p=1"
+                        scrolling="no" allowfullscreen="true">
+                    </iframe>
+                </div>
+                <div class="video-note">
+                    提示: 若视频无法播放请检查网络并联系我们解决！
+                </div>
+            </div>
+
+            <!-- 本地视频播放器 (已注释) -->
+            <!--
+            <div class="video-player">
+                <div class="video-header">本地视频教程</div>
+                <div class="video-wrapper">
+                    <video controls id="local-video" style="width:100%;height:100%">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        您的浏览器不支持HTML5视频播放。
+                    </video>
+                </div>
+                <div class="video-note">
+                    提示: 此视频为本地存储版本，加载更快且不受网络限制
+                </div>
+            </div>
+            -->
+        </div>
+
+        <!-- 文章内容区域 - 优化后的样式 -->
+        <div class="article-content">
+            <div class="markdown-content">
+                <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
+                <p>表达式代码如下：</p>
+                <p>
+                <pre>
+<code>
+radius =thisComp.layer("circle").content("Ellipse 1").transform;
+createPath(points = [radius.position,[radius.position[0]+Math.cos(time)*400,radius.position[1]+-(Math.sin(time)*400)]], inTangents = [], outTangents = [], is_closed = false)
+
+</code>
+</pre>
+                </p>
+
+
+                <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <div data-include-footer="../../templates/footer.html"></div>
+
+    <!-- 页脚JS -->
+    <script src="../../js/include-footer.js"></script>
+
+    <!-- 使用JavaScript确保B站iframe正确显示 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 等待页面完全加载
+            setTimeout(function () {
+                const iframe = document.querySelector('.bilibili-iframe');
+                if (iframe) {
+                    // 移除B站iframe可能携带的所有内联样式
+                    iframe.removeAttribute('width');
+                    iframe.removeAttribute('height');
+                    iframe.removeAttribute('style');
+
+                    // 强制设置iframe尺寸
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                }
+            }, 1000); // 延迟1秒确保B站iframe完全加载
+
+            // 添加resize事件监听
+            window.addEventListener('resize', function () {
+                const iframe = document.querySelector('.bilibili-iframe');
+                if (iframe) {
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

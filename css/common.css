@@ -1,0 +1,59 @@
+/* 通用样式 */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 5%;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.view-all {
+  font-size: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+.read-more {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.read-more:hover {
+  gap: 0.6rem;
+}
+
+.read-more-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}

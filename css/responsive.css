@@ -1,0 +1,103 @@
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .articles-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .downloads-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .articles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured-article {
+    grid-template-columns: 1fr;
+  }
+
+  .downloads-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 5%;
+  }
+
+  .nav-links-row {
+    justify-content: center;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .downloads-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 2.5rem 5%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .search-bar input {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .search-bar button {
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  .featured-content {
+    padding: 1.5rem;
+  }
+
+  .featured-content h2 {
+    font-size: 1.5rem;
+  }
+}
