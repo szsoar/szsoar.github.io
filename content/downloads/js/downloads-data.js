@@ -76,7 +76,21 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
-
+  {
+    id: 6,
+    title: "图片转码脚本Base64Imager v1.0",
+    category: "script",
+    description: "Base64Imager v1.0 是一款能够将图片文件转换成Base64编码格式脚本，适合网页动画制作、UI设计和需要内嵌图片资源的项目",
+    icon: "⚙️",
+    fileSize: "682 KB",
+    version: "原创脚本",
+    downloadCount: 1957,
+    url: "https://pan.baidu.com/s/1vDiSgpvgxEaNeQHojMxW5w?pwd=p8pf",
+    date: "2018-08-08",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
   // ==================== 表达式分类  ====================
   {
