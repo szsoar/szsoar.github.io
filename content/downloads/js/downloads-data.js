@@ -91,6 +91,36 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
+  {
+    id: 7,
+    title: "素材搜索器MaterialSearch v1.0",
+    category: "script",
+    description: "素材搜索器是一款专为Adobe After Effects设计的效率工具，支持模糊搜索项目面板中的素材，并通过直观的界面快速定位目标素材，大幅提升工作流程效率。",
+    icon: "⚙️",
+    fileSize: "726 KB",
+    version: "原创脚本",
+    downloadCount: 1153,
+    url: "https://pan.baidu.com/s/14rHo6-Yrur059jOido6xJw?pwd=u5xh",
+    date: "2025-10-10",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
+  {
+    id: 8,
+    title: "素材搜索器MaterialSearch v2.0",
+    category: "script",
+    description: "素材搜索器 v2.0在v1.0搜索功能基础上新增了素材导入和替换功能。支持模糊搜索项目面板中的素材，快速定位目标素材，并能够安全地导入和替换素材。",
+    icon: "⚙️",
+    fileSize: "782 KB",
+    version: "原创脚本",
+    downloadCount: 1641,
+    url: "https://pan.baidu.com/s/1Urg9_sVvMeVTXwK4Gh-lCQ?pwd=c4u6",
+    date: "2025-10-13",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
   // ==================== 表达式分类  ====================
   {
