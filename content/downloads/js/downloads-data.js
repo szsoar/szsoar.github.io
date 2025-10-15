@@ -136,6 +136,36 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
+  {
+    id: 10,
+    title: "字符串转Unicode v1.0",
+    category: "script",
+    description: "一款专为AE脚本开发者设计的专业安全工具。通过将明文字符串转换为Unicode转义序列，保护脚本中的敏感信息，如注册密钥、授权码等，防止普通用户直接查看源代码中的关键数据。",
+    icon: "🔧",
+    fileSize: "765 KB",
+    version: "原创脚本",
+    downloadCount: 1052,
+    url: "https://pan.baidu.com/s/1byMUc6T5GvlfbN8-cwNtkg?pwd=a673",
+    date: "2025-10-16",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
+  {
+    id: 11,
+    title: "Unicode转义序列转字符串 v1.0",
+    category: "script",
+    description: "Unicode转义序列转字符串工具是一款专为After Effects脚本开发者设计的专业安全工具。本产品通过将Unicode转义序列转换为明文字符串。",
+    icon: "🔧",
+    fileSize: "713 KB",
+    version: "原创脚本",
+    downloadCount: 1627,
+    url: "https://pan.baidu.com/s/1vPcRUo_RXBh6Rkh_Ucxq3g?pwd=s5yh",
+    date: "2025-10-16",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
   // ==================== 表达式分类  ====================
   {
