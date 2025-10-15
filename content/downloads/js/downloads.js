@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log('DOM loaded, initializing downloads page...');
 
   // 分页配置
-  const itemsPerPage = 8; // 每页显示8个项目
+  const itemsPerPage = 4; // 每页显示8个项目
   let currentPage = 1;
   let currentFilter = 'all';
   let totalPages = 1;

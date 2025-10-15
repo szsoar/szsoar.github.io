@@ -121,6 +121,21 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
+  {
+    id: 9,
+    title: "图层离散器Layer Disperser v1.0",
+    category: "script",
+    description: "图层离散器是一款专业图层离散化脚本。它通过先进的离散算法，将单一图层智能拆解为具有空间分布的多元素组合，广泛应用于动态图形设计、视觉特效制作、片头包装等领域.",
+    icon: "⚙️",
+    fileSize: "823 KB",
+    version: "原创脚本",
+    downloadCount: 3521,
+    url: "https://pan.baidu.com/s/1Rq_s8uSqjP_GFZkegl7TQw?pwd=e7i9",
+    date: "2025-10-15",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
   // ==================== 表达式分类  ====================
   {
