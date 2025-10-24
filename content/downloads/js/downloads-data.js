@@ -166,6 +166,21 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
+  {
+    id: 12,
+    title: "属性路径获取工具 v1.0",
+    category: "script",
+    description: "Property Path Generator 是一款专业的 After Effects 脚本工具，专门为 AE 脚本开发者设计。它可以自动生成精确的属性引用路径代码，极大提高开发效率。",
+    icon: "🔧",
+    fileSize: "773 KB",
+    version: "原创脚本",
+    downloadCount: 2162,
+    url: "https://pan.baidu.com/s/1JbbKiBCtIvFbTfFMfQPlig?pwd=jy7d",
+    date: "2025-10-24",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
   // ==================== 表达式分类  ====================
   {
