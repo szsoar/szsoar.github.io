@@ -181,6 +181,21 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
+  {
+    id: 13,
+    title: "预合成助手 PreComp Assistant v2.0",
+    category: "script",
+    description: "预合成助手是一款专业的After Effects脚本工具，用于简化预合成和解预合成操作。通过智能的时间保持和图层顺序管理，让您的合成工作流程更加高效顺畅。",
+    icon: "📜",
+    fileSize: "763 KB",
+    version: "原创脚本",
+    downloadCount: 3018,
+    url: "https://pan.baidu.com/s/1Zy1U_dvVeT7FbF1qTpf6rw?pwd=ixf3",
+    date: "2025-10-27",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
   // ==================== 表达式分类  ====================
   {
