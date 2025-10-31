@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE极客工坊 - 文章详情</title>
+
+  <!-- 外部CSS -->
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edee0718cc500c919471d2aaa92877f6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <style>
+    /* 仅添加必要的样式，不影响原有页头页脚 */
+    .article-detail-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* 修复文章标题居中问题 */
+    .article-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      text-align: center;
+      width: 100%;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* 视频容器 */
+    .video-container {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .video-player {
+      background: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .video-header {
+      padding: 15px 20px;
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+
+    /* 使用padding-top保持16:9比例 */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* B站iframe样式 */
+    .bilibili-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-note {
+      padding: 10px 15px;
+      background: #e9ecef;
+      font-size: 0.85rem;
+      color: #666;
+      border-top: 1px solid #dee2e6;
+    }
+
+    /* 文章内容区域优化 - 关键修复 */
+    .article-content {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      width: 100%;
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    /* Markdown内容样式优化 */
+    .markdown-content {
+      color: #333;
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    .markdown-content h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      /* 增加上下边距 */
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+      color: #2c3e50;
+    }
+
+    .markdown-content h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      /* 增加上下边距 */
+      color: #2c3e50;
+    }
+
+    .markdown-content p {
+      margin-bottom: 1.5rem;
+      /* 增加段落间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+      margin-bottom: 1.5rem;
+      /* 增加列表间距 */
+      padding-left: 2rem;
+      /* 增加列表缩进 */
+    }
+
+    .markdown-content li {
+      margin-bottom: 0.8rem;
+      /* 增加列表项间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content code {
+      background: #f5f7fa;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .markdown-content pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content blockquote {
+      border-left: 4px solid #3498db;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: #f8f9fa;
+      color: #555;
+      font-style: italic;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .markdown-content a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .markdown-content a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .article-content {
+        padding: 25px;
+      }
+
+      .markdown-content {
+        font-size: 1rem;
+      }
+
+      .markdown-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .markdown-content h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 保持您原有的页头 -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-row">
+        <a href="../../index.html" class="logo">
+          <div class="logo-icon">AE</div>
+          <span>极客工坊</span>
+        </a>
+      </div>
+
+      <div class="nav-links-row">
+        <ul class="nav-links">
+          <li><a href="../../index.html">首页</a></li>
+          <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
+          <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
+          <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
+          <li><a href="../../content/ae-plugins/index.html">AE插件</a></li>
+          <li><a href="../../content/software/index.html">软件指南</a></li>
+          <li><a href="../../content/downloads/index.html">资源下载</a></li>
+          <li><a href="../../about.html">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 文章内容 -->
+  <main class="article-detail-container">
+    <div class="article-header">
+      <h1 class="article-title">AE脚本UI设计器安装激活教程</h1>
+      <div class="article-meta">
+        <div class="article-author">
+          <span>作者: 老胡</span>
+        </div>
+        <div class="article-date">
+          <span>发布日期: 2025-10-29</span>
+        </div>
+        <div class="article-category">
+          <span>分类: 软件指南</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 视频播放器区域 -->
+    <div class="video-container">
+
+      <!-- B站视频播放器 -->
+
+      <div class="video-player">
+        <div class="video-header">安装激活教程</div>
+        <div class="video-wrapper">
+
+          <iframe class="bilibili-iframe" src="../../assets/videos/scriptui-setup.mp4" scrolling="no"
+            allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+
+      <!-- 本地视频播放器 (已注释) -->
+      <!--
+            <div class="video-player">
+                <div class="video-header">本地视频教程</div>
+                <div class="video-wrapper">
+                    <video controls id="local-video" style="width:100%;height:100%">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        您的浏览器不支持HTML5视频播放。
+                    </video>
+                </div>
+                <div class="video-note">
+                    提示: 若视频无法播放请检查网络并联系我们解决！
+                </div>
+            </div>
+            -->
+    </div>
+
+    <!-- 文章内容区域 - 优化后的样式 -->
+    <div class="article-content">
+      <div class="markdown-content">
+        <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
+
+
+        <h1>AE脚本UI设计器 安装与使用指南</h1>
+        </p>
+        <p>
+        <h2>产品简介</h2>
+        </p>
+        <p>AE脚本UI设计器是一款专业的After Effects脚本用户界面设计工具，帮助用户快速设计和生成AE脚本的UI界面。</p>
+        <p>
+        <h2>安装步骤</h2>
+        </p>
+        <p>
+        <h3>系统要求</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>操作系统</strong>: Windows 10/11 (64位)
+          </li>
+          <li>
+            <strong>存储空间</strong>: 至少200MB可用空间
+          </li>
+          <li>
+            <strong>其他要求</strong>: 无需安装After Effects即可使用
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>安装流程</h3>
+        </p>
+        <p>
+        <ol>
+          <li>下载安装程序 <code>AE脚本UI设计器 Setup.exe</code>
+          </li>
+          <li>双击运行安装程序</li>
+          <li>按照安装向导完成安装</li>
+          <li>安装完成后，可从桌面快捷方式或开始菜单启动程序</li>
+        </ol>
+        </p>
+        <p>
+        <h2>激活说明</h2>
+        </p>
+        <p>
+        <h3>试用版激活</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>试用期限</strong>: 3天完整功能试用
+          </li>
+          <li>
+            <strong>激活次数</strong>: 每个试用激活码可在2台设备使用
+          </li>
+          <li>
+            <strong>到期后</strong>: 试用期满后需要购买正式版激活码继续使用
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>永久版激活</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>使用期限</strong>: 永久使用
+          </li>
+          <li>
+            <strong>激活次数</strong>: 每个激活码可在2台设备使用
+          </li>
+          <li>
+            <strong>升级政策</strong>: 大版本更新可能需要重新购买
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>激活流程</h3>
+        </p>
+        <p>
+        <ol>
+          <li>首次启动程序，出现激活窗口</li>
+          <li>输入获得的激活码</li>
+          <li>点击"激活"按钮</li>
+          <li>查看激活结果提示</li>
+          <li>激活成功后自动进入主界面</li>
+        </ol>
+        </p>
+        <p>
+        <h2>使用提示</h2>
+        </p>
+        <p>
+        <h3>首次使用</h3>
+        </p>
+        <p>
+        <ul>
+          <li>建议先使用试用版熟悉功能</li>
+          <li>试用期间所有功能完全开放</li>
+          <li>试用期满前会收到提醒</li>
+        </ul>
+        </p>
+        <p>
+        <h3>多设备使用</h3>
+        </p>
+        <p>
+        <ul>
+          <li>每个激活码支持2台设备同时使用</li>
+          <li>如需在更多设备使用，请购买额外激活码</li>
+          <li>更换设备时，请确保总使用设备不超过2台</li>
+        </ul>
+        </p>
+        <p>
+        <h2>常见问题</h2>
+        </p>
+        <p>
+        <h3>激活相关问题</h3>
+        </p>
+        <p>
+          <strong>Q: 激活码显示"已达到最大使用次数"怎么办？</strong>
+        </p>
+        <p>A: 说明该激活码已在2台设备激活，如需在新设备使用，请购买新激活码</p>
+        <p>
+          <strong>Q: 试用版到期后数据会丢失吗？</strong>
+        </p>
+        <p>A: 不会，所有设计数据都会保留，购买正式版后可以继续使用</p>
+        <p>
+          <strong>Q: 激活失败怎么办？</strong>
+        </p>
+        <p>A: 请检查网络连接，确认激活码正确，或联系技术支持</p>
+        <p>
+        <h3>安装相关问题</h3>
+        </p>
+        <p>
+          <strong>Q: 安装时被杀毒软件拦截怎么办？</strong>
+        </p>
+        <p>A: 这是正常现象，请添加信任或暂时关闭杀毒软件</p>
+        <p>
+          <strong>Q: 程序无法启动怎么办？</strong>
+        </p>
+        <p>A: 请以管理员身份运行，或重新安装程序</p>
+        <p>
+        <h2>技术支持与联系</h2>
+        </p>
+        <p>如您遇到任何使用问题或有功能建议，欢迎通过以下方式联系我们：</p>
+        <p>📧 邮箱：<a href="https://mailto:admin@szsoar.com/" target="_blank">admin@szsoar.com</a>
+        </p>
+        <p>🌐 官网：<a href="https://www.szsoar.com/" target="_blank">https://www.szsoar.com</a>
+        </p>
+        <p>💬 用户交流QQ群：399317510</p>
+        <p>👥 微信公众号：AE极客工坊</p>
+        <p>
+        <h2>重要提醒</h2>
+        </p>
+        <p>
+        <ol>
+          <li>请妥善保管激活码，避免泄露</li>
+          <li>官方不会通过任何非官方渠道销售激活码</li>
+          <li>如有任何疑问，请通过官方渠道联系</li>
+        </ol>
+        </p>
+        <p>
+        <h2>更新日志</h2>
+        </p>
+        <p>
+          <strong>当前版本: v1.0.0</strong>
+        </p>
+        <p>更新日期:2025-10</p>
+        <p>
+        <h2>版权声明 </h2>
+        </p>
+        <p>本软件由szsoar开发，未经作者书面许可不得擅自修改或分发。</p>
+        <p>
+        <h2>免责声明</h2>
+        </p>
+        <p>本软件按"原样"提供，开发者不承担任何因使用本软件而导致的直接或间接损失。建议定期备份项目文件。</p>
+        <p>------</p>
+        <p>
+          <em>感谢您选择AE脚本UI设计器！祝您使用愉快！</em>
+
+
+          <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <div data-include-footer="../../templates/footer.html"></div>
+
+  <!-- 页脚JS -->
+  <script src="../../js/include-footer.js"></script>
+
+  <!-- 使用JavaScript确保B站iframe正确显示 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 等待页面完全加载
+      setTimeout(function () {
+        const iframe = document.querySelector('.bilibili-iframe');
+        if (iframe) {
+          // 移除B站iframe可能携带的所有内联样式
+          iframe.removeAttribute('width');
+          iframe.removeAttribute('height');
+          iframe.removeAttribute('style');
+
+          // 强制设置iframe尺寸
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+        }
+      }, 1000); // 延迟1秒确保B站iframe完全加载
+
+      // 添加resize事件监听
+      window.addEventListener('resize', function () {
+        const iframe = document.querySelector('.bilibili-iframe');
+        if (iframe) {
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

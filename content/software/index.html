@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>软件指南 - AE极客工坊</title>
+
+  <!-- CSS文件 -->
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/articles-grid.css">
+  <link rel="stylesheet" href="css/category.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edee0718cc500c919471d2aaa92877f6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-row">
+        <a href="../../index.html" class="logo">
+          <div class="logo-icon">AE</div>
+          <span>极客工坊</span>
+        </a>
+      </div>
+
+      <div class="nav-links-row">
+        <ul class="nav-links">
+          <li><a href="../../index.html">首页</a></li>
+          <li><a href="../ae-effects/index.html">AE特效</a></li>
+          <li><a href="../ae-expressions/index.html">AE表达式</a></li>
+          <li><a href="../ae-scripting/index.html">AE脚本</a></li>
+          <li><a href="../ae-plugins/index.html">AE插件</a></li>
+          <li><a href="../software/index.html" class="active">软件指南</a></li>
+          <li><a href="../downloads/index.html">资源下载</a></li>
+          <li><a href="../../about.html">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 页面标题和描述 -->
+  <section class="category-header container">
+    <h1>软件全面指南</h1>
+    <p>提供从安装、激活到精通应用的完整专业支持，确保您能无忧、高效地使用软件</p>
+  </section>
+
+  <!-- 文章网格 -->
+  <section class="container">
+    <div class="section-title">
+      <span>全部指南</span>
+    </div>
+
+    <div class="articles-grid" id="articles-container">
+      <!-- 文章卡片将通过JavaScript动态加载 -->
+    </div>
+
+    <!-- 分页控件 -->
+    <div class="pagination" id="pagination">
+      <!-- 分页按钮将通过JavaScript动态生成 -->
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <div data-include-footer="../../templates/footer.html"></div>
+
+  <!-- JavaScript文件 -->
+  <script src="../../js/main.js"></script>
+  <script src="js/category-data.js"></script>
+  <script src="js/category.js"></script>
+  <script src="../../js/include-footer.js"></script>
+
+</body>
+
+</html>
