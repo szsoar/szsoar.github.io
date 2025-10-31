@@ -324,9 +324,29 @@ const downloadsData = [
     qrCode: ""
   },
 
-  // ==================== 工具包分类  ====================
+
+  // ==================== 自研软件分类  ====================
+
   {
     id: 401,
+    title: "AE脚本界面设计器ScriptUI Designer v1.0.0",
+    category: "software",
+    description: "AE脚本UI设计器是一款专业的After Effects脚本用户界面设计工具，帮助用户快速设计和生成AE脚本的UI界面。请在AE脚本栏目查看相关安装、激活、使用视频",
+    icon: "🖥️",
+    fileSize: "92 MB",
+    version: "自研软件",
+    downloadCount: 271,
+    url: "https://pan.baidu.com/s/16jn8BpSuvXqceltcQjLdBw?pwd=b26n",
+    date: "2025-10-29",
+    priceType: "收费",
+    price: "¥58.00",
+    qrCode: "../../assets/images/qq_image.png"
+  },
+
+
+  // ==================== 外部工具分类  ====================
+  {
+    id: 501,
     title: "Adobe UXP Developer Tools",
     category: "toolkit",
     description: "Adobe官方提供的插件开发工具集，专门用于在现代 UXP 平台上为 Creative Cloud 应用程序（如 PS、PR、AE）开发插件。",
@@ -341,7 +361,7 @@ const downloadsData = [
     qrCode: ""
   },
   {
-    id: 402,
+    id: 502,
     title: "RGB颜色对照表",
     category: "toolkit",
     description: "该文档汇编了各种颜色的英文名称、RGB数值、实色效果块及其对应的16进制颜色代码。",
@@ -356,7 +376,7 @@ const downloadsData = [
     qrCode: ""
   },
   {
-    id: 403,
+    id: 503,
     title: "Adobe ExtendScript Toolkit CC",
     category: "toolkit",
     description: "ESTK是Adobe系列软件的专用脚本编辑器，用于编写和调试ExtendScript脚本，以自动化执行Photoshop、AE等软件任务。",
@@ -371,7 +391,7 @@ const downloadsData = [
     qrCode: ""
   },
   {
-    id: 404,
+    id: 504,
     title: "Visual Studio Code",
     category: "toolkit",
     description: "VS Code是一款轻量级代码编辑器，支持多种编程语言，具备强大的扩展功能，帮助开发者高效编写、调试和管理项目。",
