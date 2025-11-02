@@ -6,7 +6,7 @@ const softwareArticles = [
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251030-170001.jpg",
-    url: "scriptui-setup.html",
+    url: "scriptui-designer-install.html",
     date: "2025-10-29"
   },
 
@@ -16,7 +16,7 @@ const softwareArticles = [
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251030-170002.jpg",
-    url: "plugin-lead.html",
+    url: "scriptui-designer-use.html",
     date: "2025-10-29"
   },
 

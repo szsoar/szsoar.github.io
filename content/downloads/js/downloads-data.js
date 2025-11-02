@@ -331,7 +331,7 @@ const downloadsData = [
     id: 401,
     title: "AE脚本界面设计器ScriptUI Designer v1.0.0",
     category: "software",
-    description: "AE脚本UI设计器是一款专业的After Effects脚本用户界面设计工具，帮助用户快速设计和生成AE脚本的UI界面。请在AE脚本栏目查看相关安装、激活、使用视频",
+    description: "AE脚本UI设计器是一款专业的AE脚本用户界面设计工具，帮助用户快速设计和生成AE脚本的UI界面。请在【软件指南】栏目查看相关下载以及购买使用视频",
     icon: "🖥️",
     fileSize: "92 MB",
     version: "自研软件",
