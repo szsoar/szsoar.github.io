@@ -22,12 +22,12 @@ const softwareArticles = [
 
   {
     id: 3,
-    title: "AE脚本UI设计器安装激活向导",
+    title: "MarkdwonToHtml转换器",
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251101-190001.jpg",
-    url: "plugin-lead.html",
-    date: "2025-09-29"
+    url: "mdtohtml-use.html",
+    date: "2025-11-11"
   },
 
   {

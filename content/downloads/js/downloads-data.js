@@ -335,12 +335,27 @@ const downloadsData = [
     icon: "🖥️",
     fileSize: "92 MB",
     version: "自研软件",
-    downloadCount: 271,
+    downloadCount: 276,
     url: "https://pan.baidu.com/s/16jn8BpSuvXqceltcQjLdBw?pwd=b26n",
     date: "2025-10-29",
     priceType: "收费",
     price: "¥58.00",
     qrCode: "../../assets/images/qq_image.png"
+  },
+  {
+    id: 402,
+    title: "MarkdownToHtml转换器Markdown Wizard v1.0.0",
+    category: "software",
+    description: "一款轻量级桌面应用，集编辑、转换、预览于一体，让你的写作与发布流程无缝衔接。请在【软件指南】栏目查看相关使用视频",
+    icon: "🔄",
+    fileSize: "73.5 MB",
+    version: "自研软件",
+    downloadCount: 953,
+    url: "https://pan.baidu.com/s/1D3d7UhWkZ27FFjYii_It-A?pwd=k8xd",
+    date: "2025-11-11",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
   },
 
 
