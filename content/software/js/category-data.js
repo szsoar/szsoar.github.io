@@ -22,7 +22,7 @@ const softwareArticles = [
 
   {
     id: 3,
-    title: "MarkdwonToHtml转换器",
+    title: "MarkdownToHtml转换器",
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251101-190001.jpg",
@@ -32,12 +32,12 @@ const softwareArticles = [
 
   {
     id: 4,
-    title: "AE脚本UI设计器安装激活向导",
+    title: "其他软件正在更新，尽请期待",
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251101-190002.jpg",
-    url: "plugin-lead.html",
-    date: "2025-09-29"
+    url: "#",
+    date: "2025-11-29"
   },
 
 ];
