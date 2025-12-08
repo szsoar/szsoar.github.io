@@ -9,7 +9,6 @@ const softwareArticles = [
     url: "scriptui-designer-install.html",
     date: "2025-10-29"
   },
-
   {
     id: 2,
     title: "AE脚本UI设计器使用指南",
@@ -19,25 +18,41 @@ const softwareArticles = [
     url: "scriptui-designer-use.html",
     date: "2025-10-29"
   },
-
   {
     id: 3,
-    title: "MarkdownToHtml转换器",
+    title: "MarkdownToHtml转换器使用指南",
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251101-190001.jpg",
     url: "mdtohtml-use.html",
     date: "2025-11-11"
   },
-
   {
     id: 4,
+    title: "PDF水印添加工具使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/software-articles/20251101-190002.jpg",
+    url: "pdfwatermarktool-use.html",
+    date: "2025-11-24"
+  },
+  {
+    id: 5,
+    title: "AE英文界面学习助手使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/software-articles/20251101-190002.jpg",
+    url: "AE-Terminology-learning-use.html",
+    date: "2025-12-08"
+  },
+  {
+    id: 6,
     title: "其他软件正在更新，尽请期待",
     category: "软件指南",
     description: "",
     image: "../../assets/images/software-articles/20251101-190002.jpg",
     url: "#",
-    date: "2025-11-29"
+    date: "2025-12-29"
   },
 
 ];
