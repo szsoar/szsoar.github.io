@@ -87,6 +87,7 @@
       overflow: hidden;
     }
 
+    /* B站iframe样式 */
     .bilibili-iframe {
       position: absolute;
       top: 0;
@@ -97,16 +98,6 @@
       display: block;
     }
 
-    /* 本地视频播放器样式  */
-    .local-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
     .video-note {
       padding: 10px 15px;
       background: #e9ecef;
@@ -115,6 +106,7 @@
       border-top: 1px solid #dee2e6;
     }
 
+    /* 文章内容区域优化 - 关键修复 */
     .article-content {
       background: white;
       border-radius: 12px;
@@ -123,6 +115,108 @@
       margin-bottom: 40px;
       width: 100%;
       line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    /* Markdown内容样式优化 */
+    .markdown-content {
+      color: #333;
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    .markdown-content h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      /* 增加上下边距 */
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+      color: #2c3e50;
+    }
+
+    .markdown-content h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      /* 增加上下边距 */
+      color: #2c3e50;
+    }
+
+    .markdown-content p {
+      margin-bottom: 1.5rem;
+      /* 增加段落间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+      margin-bottom: 1.5rem;
+      /* 增加列表间距 */
+      padding-left: 2rem;
+      /* 增加列表缩进 */
+    }
+
+    .markdown-content li {
+      margin-bottom: 0.8rem;
+      /* 增加列表项间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content code {
+      background: #f5f7fa;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .markdown-content pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content blockquote {
+      border-left: 4px solid #3498db;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: #f8f9fa;
+      color: #555;
+      font-style: italic;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .markdown-content a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .markdown-content a:hover {
+      color: #2980b9;
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -151,6 +245,16 @@
       .markdown-content h3 {
         font-size: 1.3rem;
       }
+    }
+
+    /* 本地视频播放器样式  */
+    .local-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   </style>
 </head>
@@ -199,20 +303,19 @@
     <div class="video-container">
       <!-- 外链视频播放器（使用iframe） -->
 
-
-      <!-- <div class="video-player">
+      <!--
+      <div class="video-player">
         <div class="video-header">安装激活教程</div>
         <div class="video-wrapper">
-          <iframe class="bilibili-iframe"
-            src="https://player.bilibili.com/player.html?isOutside=true&aid=114817176177471&bvid=BV1LgGJzhEBd&cid=30920542488&p=1"
-            scrolling="no" allowfullscreen="true">
+          <iframe class="bilibili-iframe" src="https://player.bilibili.com/player.html?isOutside=true&aid=114817176177471&bvid=BV1LgGJzhEBd&cid=30920542488&p=1" scrolling="no"
+            allowfullscreen="true">
           </iframe>
         </div>
         <div class="video-note">
           提示: 若视频无法播放请检查网络并联系我们解决！
         </div>
-      </div> -->
-
+      </div>
+      -->
 
       <!-- 本地视频播放器（使用HTML5 video标签） -->
       <div class="video-player">
@@ -233,8 +336,8 @@
 
     <div class="article-content">
       <div class="markdown-content">
-
         <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
 
         <h1>After Effects英文界面学习助手 - 用户手册</h1>
         </p>
@@ -623,7 +726,6 @@
 
 
           <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
-
       </div>
     </div>
   </main>
