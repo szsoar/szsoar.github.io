@@ -38,21 +38,21 @@ const softwareArticles = [
   },
   {
     id: 5,
-    title: "AE英文界面学习助手使用指南",
+    title: "AE英文界面学习助手v1.0.0使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20251101-190002.jpg",
+    image: "../../assets/images/software-articles/20260114-140001.jpg",
     url: "AE-Terminology-learning-use.html",
     date: "2025-12-08"
   },
   {
     id: 6,
-    title: "其他软件正在更新，尽请期待",
+    title: "AE英文界面学习助手v2.0.0更新指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20251101-190002.jpg",
-    url: "#",
-    date: "2025-12-29"
+    image: "../../assets/images/software-articles/20260114-140001.jpg",
+    url: "wordmaster-use.html",
+    date: "2026-01-14"
   },
 
 ];

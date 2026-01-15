@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE极客工坊 - 文章详情</title>
+
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edee0718cc500c919471d2aaa92877f6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <style>
+    .article-detail-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      text-align: center;
+      width: 100%;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .video-container {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .video-player {
+      background: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .video-header {
+      padding: 15px 20px;
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .bilibili-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* 本地视频播放器样式  */
+    .local-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .video-note {
+      padding: 10px 15px;
+      background: #e9ecef;
+      font-size: 0.85rem;
+      color: #666;
+      border-top: 1px solid #dee2e6;
+    }
+
+    .article-content {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      width: 100%;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .article-content {
+        padding: 25px;
+      }
+
+      .markdown-content {
+        font-size: 1rem;
+      }
+
+      .markdown-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .markdown-content h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo-row">
+        <a href="../../index.html" class="logo">
+          <div class="logo-icon">AE</div>
+          <span>极客工坊</span>
+        </a>
+      </div>
+
+      <div class="nav-links-row">
+        <ul class="nav-links">
+          <li><a href="../../index.html">首页</a></li>
+          <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
+          <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
+          <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
+          <li><a href="../../content/ae-plugins/index.html">AE插件</a></li>
+          <li><a href="../../content/software/index.html">软件指南</a></li>
+          <li><a href="../../content/downloads/index.html">资源下载</a></li>
+          <li><a href="../../about.html">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="article-detail-container">
+    <div class="article-header">
+      <h1 class="article-title">AE英文界面学习助手v2.0.0</h1>
+      <div class="article-meta">
+        <div class="article-author">
+          <span>作者: 老胡</span>
+        </div>
+        <div class="article-date">
+          <span>发布日期: 2026-01-14</span>
+        </div>
+        <div class="article-category">
+          <span>分类: 软件指南</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <!-- 外链视频播放器（使用iframe） -->
+
+
+      <!-- <div class="video-player">
+        <div class="video-header">安装激活教程</div>
+        <div class="video-wrapper">
+          <iframe class="bilibili-iframe"
+            src="https://player.bilibili.com/player.html?isOutside=true&aid=114817176177471&bvid=BV1LgGJzhEBd&cid=30920542488&p=1"
+            scrolling="no" allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div> -->
+
+
+      <!-- 本地视频播放器（使用HTML5 video标签） -->
+      <div class="video-player">
+        <div class="video-header">软件使用指南</div>
+        <div class="video-wrapper">
+          <video class="local-video" id="local-video" controls controlslist="nodownload" preload="metadata"
+            style="background-color: #000;">
+            <source src="../../assets/videos/aewordmaster.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频播放。
+          </video>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-content">
+      <div class="markdown-content">
+
+        <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
+        <h1>After Effects英文界面学习助手 - 用户手册</h1>
+        </p>
+        <p>
+        <h2>产品概述</h2>
+        </p>
+        <p>
+          <strong>AE Word Master</strong> 是一款专为After Effects（AE）用户设计的桌面应用软件，旨在帮助英文基础薄弱的用户快速熟悉和掌握After
+          Effects英文版界面中的专业术语。通过系统化的学习和练习，用户能够无障碍使用英文版After Effects，提升工作效率和专业水平。
+        </p>
+        <p>
+        <h2>环境要求</h2>
+        </p>
+        <p>
+        <h3>1. 操作系统</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>推荐系统：</strong> Windows 10 或 Windows 11（64位）
+          </li>
+          <li>
+            <strong>部分兼容系统：</strong> Windows 7 SP1（64位）
+          </li>
+          <li>
+            <strong>不支持的系统：</strong> macOS、iOS、Android、Linux 及 Windows 32位系统
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>2. 硬件配置</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>内存：</strong> 4GB 及以上（建议 8GB 以获得更好体验）
+          </li>
+          <li>
+            <strong>处理器：</strong> Intel Core i3 或更高性能处理器
+          </li>
+          <li>
+            <strong>硬盘空间：</strong> 1GB 可用空间
+          </li>
+          <li>
+            <strong>显示器：</strong> 1920×1080 分辨率
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h2>安装指南</h2>
+        </p>
+        <p>
+        <h3>Windows系统安装</h3>
+        </p>
+        <p>
+        <ol>
+          <li>下载解压安装文件 <code>AE Word Master Setup 2.0.0.exe</code>
+          </li>
+          <li>双击运行安装程序</li>
+          <li>在安装向导中，选择您希望的安装模式：</li>
+        </ol>
+        </p>
+        <p>
+        <ul>
+          <li>✅<strong>为所有用户安装</strong>：需要管理员权限，将应用安装在 <code>C:\Program Files\</code>
+          </li>
+          <li>✅<strong>仅为当前用户安装</strong>：无需管理员权限，将应用安装在您的个人目录下</li>
+        </ul>
+        </p>
+        <p>
+        <ol>
+          <li>选择安装路径（或使用默认路径）</li>
+          <li>点击“安装”并等待完成，安装完成后，桌面和开始菜单将创建快捷方式</li>
+        </ol>
+        </p>
+        <p>
+        <h2>分区与模块核心功能详解</h2>
+        </p>
+        <p>应用界面采用经典的三栏式布局，顶部为功能操作区，左侧为术语导航区，中央为学习浏览区。整体设计注重高效浏览与深度学习。</p>
+        <p> <strong>1. 顶部操作栏（Header）</strong>
+        </p>
+        <p>位于窗口最上方，包含品牌标识和核心操作按钮。</p>
+        <p>
+        <ul>
+          <li>
+            <strong>品牌标识区</strong>：左侧显示“<strong>AE英文界面学习助手</strong>”。
+          </li>
+          <li>
+            <strong>功能按钮区</strong>：中部排列的快捷按钮是核心操作入口。
+          </li>
+          <li>
+            <strong>“＋ 添加单词”</strong>：点击顶部 <strong>“＋ 添加单词”</strong>，在弹出的窗口中填写英文、中文和详细描述后保存，该术语会出现在
+            <strong>“个人添加”</strong> 分类中。
+          </li>
+          <li>
+            <strong>“📥 导入”</strong>：点击 <strong>“📥 导入”</strong>，可选择导入标准JSON词库文件(需要了解json结构)，或以“英文=中文”格式的文本笔记。
+          </li>
+          <li>
+            <strong>“📤 导出个人笔记”</strong>：点击<strong>“📤 导出个人笔记”</strong> 可以导出自行添加的单词以备份自定义内容。
+          </li>
+          <li>
+            <strong>“💎 导出全量 (VIP)”</strong>：点击<strong>“💎 导出全量 (VIP)”</strong> 用于获取包含官方数据的完整包。（需VIP激活）。
+          </li>
+        </ul>
+        </p>
+        <p> ​ <strong>VIP与激活系统</strong>
+        </p>
+        <p>
+        <ul>
+          <li>点击 <strong>“💎导出全量 (VIP)”</strong> 按钮，会触发VIP模态框。界面会显示一个付款二维码和唯一的<strong>机器码</strong>
+          </li>
+          <li>用户需按下方的价格扫码支付，并复制机器码，做好记录。</li>
+          <li>将机器码发给开发者，将获得一个<strong>12位激活码</strong>，输入即可解锁全量导出功能。</li>
+          <li>
+            <strong>“❤️ 支持开发者”</strong>：查看赞助二维码与支持信息。
+          </li>
+          <li>如果本软件对你有用，可以扫码支持开发者，你的支持是我们持续更新的动力。</li>
+          <li>
+            <strong>学习进度区</strong>：右侧显示“<strong>已掌握 X / Y</strong>”，实时反馈学习成果。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>2. 左侧导航栏（Sidebar）</strong>
+        </p>
+        <p>位于窗口左侧，是管理和筛选所有学习内容的核心面板。</p>
+        <p>
+        <ul>
+          <li>
+            <strong>搜索框</strong>：支持输入中英文关键词，实时筛选术语列表。
+          </li>
+          <li>
+            <strong>分类筛选下拉菜单</strong>：用于切换不同视图。
+          </li>
+          <li>
+            <strong>“📁 所有分类”</strong>：浏览全部术语。
+          </li>
+          <li>
+            <strong>“✅ 已掌握”</strong>：仅查看已被<strong>标记掌握</strong>的术语。
+          </li>
+          <li>
+            <strong>“⭐ 我的收藏”</strong>：查看所有收藏的术语。
+          </li>
+          <li>
+            <strong>“🚩 难点标记”</strong>：查看所有标记为“难点”的术语。
+          </li>
+          <li>
+            <strong>“👤 个人添加”</strong>：查看所有用户自定义添加的术语。
+          </li>
+          <li>
+            <strong>术语列表</strong>：按所选分类动态加载，以列表形式展示所有术语。<strong>点击列表中的任意术语，中央详情区将立即显示其完整内容。</strong>
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>3. 中央学习浏览区（Main Viewer）</strong>
+        </p>
+        <p>占据界面主要区域，用于详细展示和交互学习。包含两种视图：</p>
+        <p>
+        <ul>
+          <li>
+            <strong>欢迎视图</strong>：应用启动时默认显示，仅展示品牌标识 <code>szsoar</code>。
+          </li>
+          <li>
+            <strong>术语详情视图</strong>：点击左侧列表任意术语后激活，是学习的主要界面。
+          </li>
+        </ul>
+        </p>
+        <p> 1.
+          <strong>术语元信息栏</strong>：顶部显示该术语的<strong>所属分类标签</strong>、<strong>“官方原版”标识</strong>，以及其<strong>收藏</strong>、<strong>难点</strong>状态徽章。
+        </p>
+        <p> 2. <strong>核心术语展示区</strong>：</p>
+        <p>
+        <ul>
+          <li>
+            <strong>英文术语</strong>：以大号字体突出显示（如 <code>Keyframe</code>）。
+          </li>
+          <li>
+            <strong>音标与发音</strong>：显示音标，并提供 <strong>“🔊” 发音按钮</strong>。
+          </li>
+          <li>
+            <strong>中文释义</strong>：清晰展示对应中文翻译。
+          </li>
+        </ul>
+        </p>
+        <p> 3. <strong>状态操作栏</strong>：</p>
+        <p>
+        <ul>
+          <li>
+            <strong>“✅ 标记掌握” / “⭐ 收藏” / “🚩 难点”</strong>：三个核心按钮，用于更新该术语的个人学习状态。
+          </li>
+          <li>
+            <strong>“📝 编辑” / “🗑️ 删除”</strong>：仅对用户<strong>个人添加</strong>的术语可见，用于管理自定义内容。
+          </li>
+          <li>
+            <strong>“自动隐藏已学内容”复选框</strong>：勾选后，左侧列表将自动隐藏已掌握的术语。
+          </li>
+        </ul>
+        </p>
+        <p> 4. <strong>功能详细说明面板</strong>：</p>
+        <p>
+        <ul>
+          <li>标题注明“<strong>功能详细说明 (OFFLINE DATA)</strong>”。</li>
+          <li>下方大段文字区域展示该术语在After Effects中的<strong>详细功能描述、应用场景及操作要点</strong>。</li>
+        </ul>
+        </p>
+        <p> 5. <strong>导航控制栏</strong>：位于面板底部。</p>
+        <p>
+        <ul>
+          <li>
+            <strong>“⬅ 上一个” / “下一个 ➡”</strong>：在<strong>当前筛选出的列表</strong>中顺序切换。
+          </li>
+          <li>
+            <strong>“🎲 随机测试”</strong>：随机跳转到列表中的一个术语，用于复习和自测。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>4. 页脚（Footer）</strong>
+        </p>
+        <p>位于窗口底部，仅显示版权信息：<code>© 2026 szsoar. All Rights Reserved.</code>
+        </p>
+        <p>
+        <h2>常见问题解答</h2>
+        </p>
+        <p>
+        <h4>Q1：软件支持离线使用吗？</h4>
+        </p>
+        <p>A：完全支持离线使用。所有功能均不需要网络连接，确保您在任何环境下都能学习。</p>
+        <p>
+        <h4>Q2：我能添加多少自定义术语？</h4>
+        </p>
+        <p>A：理论上没有限制，但建议每个术语提供完整信息以获得最佳学习效果。</p>
+        <p>
+        <h4>Q3：软件会收集我的数据吗？</h4>
+        </p>
+        <p>A：不会。所有数据都存储在本地，我们不会收集任何用户数据。请定期备份重要数据。</p>
+        <p>
+        <h4>Q4：如何将学习数据迁移到新电脑？</h4>
+        </p>
+        <p>A：使用"导出个人笔记"功能备份，然后在新电脑上安装软件后使用"导入"功能恢复。</p>
+        <p>
+        <h4>Q5：软件支持多用户吗？</h4>
+        </p>
+        <p>A：当前版本为单用户设计。如需多用户支持，请为每个用户单独安装并管理数据。</p>
+        <p>
+        <h4>Q6：发音功能需要额外安装吗？</h4>
+        </p>
+        <p>A：不需要。软件使用系统自带的语音合成功能，Windows系统可直接使用。</p>
+        <p>
+        <h4>Q7：软件支持哪些After Effects版本？</h4>
+        </p>
+        <p>A：术语覆盖After Effects CC 2014到最新版本，核心术语适用于所有版本，并在后期持续更新</p>
+        <p>
+        <h4>Q8: 学习进度会同步吗？</h4>
+        </p>
+        <p>当前版本为单机应用，所有学习数据保存在本地。未来版本可能考虑加入云同步功能。</p>
+        <p>
+        <h2>故障排除</h2>
+        </p>
+        <p>
+        <h4>问题1：软件无法启动</h4>
+        </p>
+        <p>
+          <strong>解决方案：</strong>
+        </p>
+        <p>
+        <ol>
+          <li>确保系统满足最低要求</li>
+          <li>以管理员身份运行（Windows）</li>
+          <li>重新安装最新版本</li>
+          <li>检查防病毒软件是否误拦截</li>
+        </ol>
+        </p>
+        <p>
+        <h4>问题2：发音功能无法使用</h4>
+        </p>
+        <p>
+          <strong>解决方案：</strong>
+        </p>
+        <p>
+        <ol>
+          <li>检查系统语音设置</li>
+          <li>确保安装了语音包</li>
+        </ol>
+        </p>
+        <p>
+        <h4>问题3：数据丢失</h4>
+        </p>
+        <p>
+          <strong>解决方案：</strong>
+        </p>
+        <p>
+        <ol>
+          <li>检查是否有最近的备份文件</li>
+          <li>如无法恢复，可重装软件以恢复基础术语</li>
+        </ol>
+        </p>
+        <p>
+        <h4>问题4：界面显示异常</h4>
+        </p>
+        <p>
+          <strong>解决方案：</strong>
+        </p>
+        <p>
+        <ol>
+          <li>重启软件</li>
+          <li>检查显示分辨率设置</li>
+          <li>更新显卡驱动</li>
+          <li>调整界面缩放</li>
+        </ol>
+        </p>
+        <p>
+        <h4>问题5：搜索功能不工作</h4>
+        </p>
+        <p>
+          <strong>解决方案：</strong>
+        </p>
+        <p>
+        <ol>
+          <li>确保输入了搜索关键词</li>
+          <li>检查当前分类中是否有匹配内容</li>
+          <li>尝试重新启动软件</li>
+          <li>软件可能正在加载词库有延迟</li>
+        </ol>
+        </p>
+        <p>
+        <h2>版本与更新信息</h2>
+        </p>
+        <p>
+          <strong>历史版本</strong>
+        </p>
+        <p>| 项目 | 内容 |</p>
+        <p>| :--------------- | :----------------------------- |</p>
+        <p>| <strong>历史版本</strong> | 版本号 v1.0.0 |</p>
+        <p>| <strong>文档更新日期</strong> | 2025年12月 |</p>
+        <p>| <strong>更新说明</strong> | 初始版本发布，包含基础学习功能 |</p>
+        <p>
+          <strong>当前版本</strong>
+        </p>
+        <p>| 项目 | 内容 |</p>
+        <p>| :--------------- | :--------------------------------- |</p>
+        <p>| <strong>当前版本</strong> | 版本号 v2.0.0 |</p>
+        <p>| <strong>文档更新日期</strong> | 2026年1月 |</p>
+        <p>| <strong>更新说明</strong> | 全面更新--包括整体界面、功能模块等 |</p>
+        <p>
+        <h2>技术支持与联系</h2>
+        </p>
+        <p>如您遇到任何使用问题或有功能建议，欢迎通过以下方式联系我们：</p>
+        <p>📧 邮箱：<a href="https://mailto:admin@szsoar.com/" target="_blank">admin@szsoar.com</a>
+        </p>
+        <p>🌐 官网：<a href="https://www.szsoar.com/" target="_blank">https://www.szsoar.com</a>
+        </p>
+        <p>💬 用户交流QQ群：399317510</p>
+        <p>👥 微信公众号：AE极客工坊</p>
+        <p>
+        <h2>许可协议</h2>
+        </p>
+        <p>
+        <h3>个人使用许可</h3>
+        </p>
+        <p>
+        <ul>
+          <li>允许个人学习使用</li>
+          <li>可在一台设备上安装和使用</li>
+          <li>禁止商业用途</li>
+        </ul>
+        </p>
+        <p>
+        <h2>版权声明</h2>
+        </p>
+        <p>
+          <strong>© 2026 szsoar. All rights reserved.</strong>
+        </p>
+        <p>本软件及其所有相关内容（包括但不限于界面设计、功能逻辑、术语库等）的版权归szsoar所有。未经书面许可，任何个人或组织不得复制、修改或用于任何商业用途。</p>
+        <p>
+          <strong>After Effects</strong>是Adobe公司的注册商标，本软件为独立开发的学习辅助工具，与Adobe公司无关联。
+        </p>
+        <p>
+        <h2>免责声明</h2>
+        </p>
+        <p>本软件按"原样"提供，因用户不当操作、设备不兼容或私自破解导致的软件问题，本公司不承担责任。最终解释权归 SZSOAR 所有。</p>
+        <p>------</p>
+        <p>
+          <em>感谢您选择AE 英文界面学习助手，祝您使用愉快！</em>
+
+
+          <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+
+      </div>
+    </div>
+  </main>
+
+  <div data-include-footer="../../templates/footer.html"></div>
+  <script src="../../js/include-footer.js"></script>
+  <script src="../../js/video-player-handler.js"></script>
+</body>
+
+</html>
