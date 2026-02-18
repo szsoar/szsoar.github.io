@@ -402,6 +402,21 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
+  {
+    id: 406,
+    title: "文本转语音合成工具TTS",
+    category: "software",
+    description: "文本转语音合成工具TTS是一款能够将文本转成语音的工具。请在【软件指南】栏目查看相关使用视频",
+    icon: "🔊",
+    fileSize: "73 MB",
+    version: "自研软件",
+    downloadCount: 568,
+    url: "#",
+    date: "2026-01-19",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
 
 
   // ==================== 外部工具分类  ====================

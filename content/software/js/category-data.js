@@ -54,5 +54,14 @@ const softwareArticles = [
     url: "wordmaster-use.html",
     date: "2026-01-14"
   },
+  {
+    id: 7,
+    title: "文本转语音工具TTS v1.0.0使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/software-articles/20260119-150001.jpg",
+    url: "tts-use.html",
+    date: "2026-01-19"
+  },
 
 ];
