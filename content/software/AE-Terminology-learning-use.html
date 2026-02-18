@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AE极客工坊 - 文章详情</title>
 
-  <!-- 外部CSS -->
   <link rel="stylesheet" href="../../css/reset.css">
   <link rel="stylesheet" href="../../css/variables.css">
   <link rel="stylesheet" href="../../css/header.css">
@@ -25,7 +24,6 @@
   </script>
 
   <style>
-    /* 仅添加必要的样式，不影响原有页头页脚 */
     .article-detail-container {
       max-width: 1200px;
       margin: 40px auto;
@@ -33,7 +31,6 @@
       width: 100%;
     }
 
-    /* 修复文章标题居中问题 */
     .article-header {
       margin-bottom: 30px;
       text-align: center;
@@ -60,7 +57,6 @@
       width: 100%;
     }
 
-    /* 视频容器 */
     .video-container {
       width: 100%;
       margin-bottom: 40px;
@@ -82,7 +78,6 @@
       font-weight: 600;
     }
 
-    /* 使用padding-top保持16:9比例 */
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -224,7 +219,6 @@
       text-decoration: underline;
     }
 
-    /* 响应式调整 */
     @media (max-width: 768px) {
       .article-title {
         font-size: 2rem;
@@ -252,11 +246,20 @@
         font-size: 1.3rem;
       }
     }
+
+    /* 本地视频播放器样式  */
+    .local-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   </style>
 </head>
 
 <body>
-  <!-- 保持您原有的页头 -->
   <header>
     <nav class="navbar">
       <div class="logo-row">
@@ -281,7 +284,6 @@
     </nav>
   </header>
 
-  <!-- 文章内容 -->
   <main class="article-detail-container">
     <div class="article-header">
       <h1 class="article-title">AE英文界面学习助手</h1>
@@ -298,16 +300,14 @@
       </div>
     </div>
 
-    <!-- 视频播放器区域 -->
     <div class="video-container">
+      <!-- 外链视频播放器（使用iframe） -->
 
-      <!-- B站视频播放器 -->
-
+      <!--
       <div class="video-player">
-        <div class="video-header">软件使用指南</div>
+        <div class="video-header">安装激活教程</div>
         <div class="video-wrapper">
-
-          <iframe class="bilibili-iframe" src="../../assets/videos/AE-Terminology-learning-use.mp4" scrolling="no"
+          <iframe class="bilibili-iframe" src="https://player.bilibili.com/player.html?isOutside=true&aid=114817176177471&bvid=BV1LgGJzhEBd&cid=30920542488&p=1" scrolling="no"
             allowfullscreen="true">
           </iframe>
         </div>
@@ -315,25 +315,25 @@
           提示: 若视频无法播放请检查网络并联系我们解决！
         </div>
       </div>
+      -->
 
-      <!-- 本地视频播放器 (已注释) -->
-      <!--
-            <div class="video-player">
-                <div class="video-header">本地视频教程</div>
-                <div class="video-wrapper">
-                    <video controls id="local-video" style="width:100%;height:100%">
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                        您的浏览器不支持HTML5视频播放。
-                    </video>
-                </div>
-                <div class="video-note">
-                    提示: 若视频无法播放请检查网络并联系我们解决！
-                </div>
-            </div>
-            -->
+      <!-- 本地视频播放器（使用HTML5 video标签） -->
+      <div class="video-player">
+        <div class="video-header">软件使用指南</div>
+        <div class="video-wrapper">
+          <video class="local-video" id="local-video" controls controlslist="nodownload" preload="metadata"
+            style="background-color: #000;">
+            <source src="../../assets/videos/AE-Terminology-learning-use.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频播放。
+          </video>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+
     </div>
 
-    <!-- 文章内容区域 - 优化后的样式 -->
     <div class="article-content">
       <div class="markdown-content">
         <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
@@ -808,47 +808,14 @@
           <em>感谢您选择AE 英文界面学习助手，祝您使用愉快！</em>
 
 
-
           <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
-
       </div>
     </div>
   </main>
 
-  <!-- 页脚 -->
   <div data-include-footer="../../templates/footer.html"></div>
-
-  <!-- 页脚JS -->
   <script src="../../js/include-footer.js"></script>
-
-  <!-- 使用JavaScript确保B站iframe正确显示 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // 等待页面完全加载
-      setTimeout(function () {
-        const iframe = document.querySelector('.bilibili-iframe');
-        if (iframe) {
-          // 移除B站iframe可能携带的所有内联样式
-          iframe.removeAttribute('width');
-          iframe.removeAttribute('height');
-          iframe.removeAttribute('style');
-
-          // 强制设置iframe尺寸
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-        }
-      }, 1000); // 延迟1秒确保B站iframe完全加载
-
-      // 添加resize事件监听
-      window.addEventListener('resize', function () {
-        const iframe = document.querySelector('.bilibili-iframe');
-        if (iframe) {
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-        }
-      });
-    });
-  </script>
+  <script src="../../js/video-player-handler.js"></script>
 </body>
 
 </html>
