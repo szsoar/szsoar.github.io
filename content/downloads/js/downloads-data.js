@@ -221,7 +221,7 @@ const downloadsData = [
     icon: "▶️",
     fileSize: "7.8 GB",
     version: "视频教程",
-    downloadCount: 149,
+    downloadCount: 552,
     url: "../../assets/downloads/expressions/expression-presets.zip",
     date: "2024-09-15",
     priceType: "收费",
@@ -407,17 +407,46 @@ const downloadsData = [
     title: "文本转语音合成工具TTS",
     category: "software",
     description: "文本转语音合成工具TTS是一款能够将文本转成语音的工具。请在【软件指南】栏目查看相关使用视频",
-    icon: "🔊",
+    icon: "🔉📄",
     fileSize: "73 MB",
     version: "自研软件",
     downloadCount: 568,
     url: "#",
-    date: "2026-01-19",
+    date: "2026-01-26",
     priceType: "免费",
     price: "免费",
     qrCode: ""
   },
-
+  {
+    id: 407,
+    title: "音梳 v1.0.0",
+    category: "software",
+    description: "音梳(Audio Comber)是一款专业音效管理工具。它能够帮助您高效地管理、预览、处理和导出音频素材。请在【软件指南】栏目查看相关使用视频",
+    icon: "🎵",
+    fileSize: "98.6 MB",
+    version: "自研软件",
+    downloadCount: 1236,
+    url: "https://pan.baidu.com/s/1ESdpjIE62YJJZPhRpmVVfA?pwd=2g7b",
+    date: "2026-01-26",
+    priceType: "免费",
+    price: "免费",
+    qrCode: ""
+  },
+  {
+    id: 408,
+    title: "音梳 v2.0.0",
+    category: "software",
+    description: "音梳(Audio Comber)是一款专业音效管理工具。它能够帮助您高效地管理、预览、处理和导出音频素材。请在【软件指南】栏目查看相关使用视频",
+    icon: "🎵",
+    fileSize: "175 MB",
+    version: "自研软件",
+    downloadCount: 669,
+    url: "#",
+    date: "2026-02-12",
+    priceType: "收费",
+    price: "¥29.80",
+    qrCode: "../../assets/images/qq_image.png"
+  },
 
   // ==================== 外部工具分类  ====================
   {

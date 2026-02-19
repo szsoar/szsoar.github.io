@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE极客工坊 - 文章详情</title>
+
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edee0718cc500c919471d2aaa92877f6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <style>
+    .article-detail-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      text-align: center;
+      width: 100%;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .video-container {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .video-player {
+      background: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .video-header {
+      padding: 15px 20px;
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* B站iframe样式 */
+    .bilibili-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-note {
+      padding: 10px 15px;
+      background: #e9ecef;
+      font-size: 0.85rem;
+      color: #666;
+      border-top: 1px solid #dee2e6;
+    }
+
+    /* 文章内容区域优化 - 关键修复 */
+    .article-content {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      width: 100%;
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    /* Markdown内容样式优化 */
+    .markdown-content {
+      color: #333;
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    .markdown-content h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      /* 增加上下边距 */
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+      color: #2c3e50;
+    }
+
+    .markdown-content h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      /* 增加上下边距 */
+      color: #2c3e50;
+    }
+
+    .markdown-content p {
+      margin-bottom: 1.5rem;
+      /* 增加段落间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+      margin-bottom: 1.5rem;
+      /* 增加列表间距 */
+      padding-left: 2rem;
+      /* 增加列表缩进 */
+    }
+
+    .markdown-content li {
+      margin-bottom: 0.8rem;
+      /* 增加列表项间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content code {
+      background: #f5f7fa;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .markdown-content pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content blockquote {
+      border-left: 4px solid #3498db;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: #f8f9fa;
+      color: #555;
+      font-style: italic;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .markdown-content a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .markdown-content a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .article-content {
+        padding: 25px;
+      }
+
+      .markdown-content {
+        font-size: 1rem;
+      }
+
+      .markdown-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .markdown-content h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* 本地视频播放器样式  */
+    .local-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo-row">
+        <a href="../../index.html" class="logo">
+          <div class="logo-icon">AE</div>
+          <span>极客工坊</span>
+        </a>
+      </div>
+
+      <div class="nav-links-row">
+        <ul class="nav-links">
+          <li><a href="../../index.html">首页</a></li>
+          <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
+          <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
+          <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
+          <li><a href="../../content/ae-plugins/index.html">AE插件</a></li>
+          <li><a href="../../content/software/index.html">软件指南</a></li>
+          <li><a href="../../content/downloads/index.html">资源下载</a></li>
+          <li><a href="../../about.html">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="article-detail-container">
+    <div class="article-header">
+      <h1 class="article-title">音梳 Audio Comber v2.0.0</h1>
+      <div class="article-meta">
+        <div class="article-author">
+          <span>作者: 老胡</span>
+        </div>
+        <div class="article-date">
+          <span>发布日期: 2026-02-12</span>
+        </div>
+        <div class="article-category">
+          <span>分类: 软件指南</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <!-- 外链视频播放器（使用iframe） -->
+
+      <!--
+      <div class="video-player">
+        <div class="video-header">安装激活教程</div>
+        <div class="video-wrapper">
+          <iframe class="bilibili-iframe" src="https://player.bilibili.com/player.html?isOutside=true&aid=114817176177471&bvid=BV1LgGJzhEBd&cid=30920542488&p=1" scrolling="no"
+            allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+      -->
+
+      <!-- 本地视频播放器（使用HTML5 video标签） -->
+      <div class="video-player">
+        <div class="video-header">软件使用指南</div>
+        <div class="video-wrapper">
+          <video class="local-video" id="local-video" controls controlslist="nodownload" preload="metadata"
+            style="background-color: #000;">
+            <source src="../../assets/videos/audiocomber02.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频播放。
+          </video>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-content">
+      <div class="markdown-content">
+        <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
+
+        <h1>Audio Comber - 音梳 使用说明文档</h1>
+        </p>
+        <p>
+        <h2>软件简介</h2>
+        </p>
+        <p>
+          <strong>Audio Comber (音梳)</strong> 是一款为视频剪辑师、音频工作者和内容创作者设计的专业音效管理工具。它能够帮助您高效地管理、预览、处理和导出音频素材。
+        </p>
+        <p>
+          <strong>核心亮点</strong>：
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>高效管理</strong>：直观的分类、标签和搜索系统，让海量音效库井然有序。
+          </li>
+          <li>
+            <strong>实时处理</strong>：在应用内直接调整音频的速度、音量、淡入淡出，并支持<strong>精准裁剪</strong>。
+          </li>
+          <li>
+            <strong>无损输出</strong>：所有处理都在后台完成，支持导出为多种格式，确保音质。
+          </li>
+          <li>
+            <strong>高效注入</strong>：一键将音频注入 After Effects 或拖拽至 Premiere Pro等外部软件
+          </li>
+          <li>
+            <strong>完全离线</strong>：所有操作均在本地完成，不会上传到任何服务器，保护您的素材隐私。
+          </li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h2>安装与启动</h2>
+        </p>
+        <p>
+        <h3>环境要求</h3>
+        </p>
+        <p>
+        <h4>1. 操作系统</h4>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>推荐系统：</strong> Windows 10 或 更高版本
+          </li>
+          <li>
+            <strong>不支持的系统：</strong> macOS、iOS、Android、Linux 及 Windows 32位系统
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h4>2. 硬件配置</h4>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>内存：</strong> 至少 4 GB RAM（推荐 8 GB 或更高）
+          </li>
+          <li>
+            <strong>处理器：</strong> Intel i3 或同等性能以上
+          </li>
+          <li>
+            <strong>硬盘空间：</strong> 至少保留 1GB 以上可用空间（音频库额外存储）
+          </li>
+          <li>
+            <strong>音频支持：</strong> 声卡设备及驱动程序正常工作
+          </li>
+          <li>
+            <strong>显示设备：</strong> 分辨率不低于 1920x1080 的显示器
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>安装流程</h3>
+        </p>
+        <p>
+        <ul>
+          <li>找到压缩包，解压后双击运行 <strong>
+              <code>Audio Comber Setup 2.0.0.exe</code>
+            </strong>。</li>
+          <li>如出现 <strong>“Windows 已保护您的电脑”</strong> 或杀毒软件警告，请点击 <strong>“更多信息”</strong> → <strong>“仍要运行”</strong>。</li>
+          <li>进入安装向导后，依次点击 <strong>“下一步”</strong>，可选择默认安装路径，也可选择其他路径。</li>
+          <li>安装完成后，桌面上将生成一个 <strong>启动图标</strong>，名称即为“<code>Audio Comber</code>”。</li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h2>激活说明</h2>
+        </p>
+        <p>
+        <h3>永久激活</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>使用期限</strong>: 一次激活，永久使用
+          </li>
+          <li>
+            <strong>激活次数</strong>: 激活码与硬件绑定，每个激活码支持一台电脑激活使用
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>激活流程</h3>
+        </p>
+        <p>
+        <ol>
+          <li>首次启动程序，出现激活窗口</li>
+          <li>复制界面中的机器码，发给开发者</li>
+          <li>完整的粘贴开发者提供的激活码</li>
+          <li>确保网络畅通的情况下，点击"立即激活"按钮</li>
+          <li>激活成功后自动进入主界面</li>
+          <li>下次启动无需连网，完全离线使用</li>
+        </ol>
+        </p>
+        <p>------</p>
+        <p>
+        <h2>界面导览</h2>
+        </p>
+        <p>| 顶部工具栏 | 全局搜索、视图切换（网格/列表）、排序 |</p>
+        <p>| -------------- | ------------------------------------------------------------ |</p>
+        <p>| 顶部栏 | 应用名称、搜索框 |</p>
+        <p>| 右侧边栏 | 导入、系统预设分类、我的音频（自定义分类）、智能筛选、统计信息、存储显示 |</p>
+        <p>| 中央区域上部分 | 视图排序选项、音频卡片/列表，显示音频名称、时长、格式、分类等信息、音频波形 |</p>
+        <p>| 中央区域下部分 | 裁剪设置、速度/音量滑块、淡入淡出设置、播放控制器、导出/注入按钮 |</p>
+        <p>| 底部栏 | 应用版本信息、总音频数量、版权及关于、帮助、支持链接 |</p>
+        <p>------</p>
+        <p>
+        <h2>核心工作流程</h2>
+        </p>
+        <p>
+        <h3>导入音频</h3>
+        </p>
+        <p>
+        <ol>
+          <li>点击"导入音频资产库"按钮、直接拖拽音频打开导入模态框</li>
+          <li>选择导入模式（单文件/文件夹）</li>
+          <li>浏览或拖拽选择音频文件/文件夹</li>
+          <li>选择目标分类（系统预设库/我的音频 + 子分类）</li>
+          <li>点击“确认导入”，进度条完成后文件即加入库中</li>
+        </ol>
+        </p>
+        <p>
+          支持格式：<code>.mp3</code>、<code>.wav</code>、<code>.m4a</code>、<code>.aac</code>、<code>.flac</code>、<code>.ogg</code>、<code>.wma</code>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>分类管理</h3>
+        </p>
+        <p>
+          <strong>系统预设分类（不可修改）</strong>
+        </p>
+        <p>
+        <ul>
+          <li>环境音、拟音、特效音、界面音、转场音、动物声音、交通工具、人声音效</li>
+          <li>每个主分类下包含若干子分类，点击子分类可快速筛选音频</li>
+        </ul>
+        </p>
+        <p>
+          <strong>我的音频（用户自定义）</strong>
+        </p>
+        <p>
+        <ul>
+          <li>点击左侧“我的音频”下方的 <strong>+</strong> 按钮，添加分类，输入分类名称即可创建新分类。</li>
+          <li>导入音频时可将音频归类到自定义分类中。</li>
+          <li>
+            <strong>删除分类</strong>：分类下必须为空（无音频文件），点击分类旁的垃圾桶图标即可删除。
+          </li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>搜索与筛选</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>全局搜索</strong>：顶部输入框，实时搜索音频名称、分类、标签。
+          </li>
+          <li>
+            <strong>智能筛选</strong>：右侧边栏的“最近添加”“播放最多”“我的收藏”可快速筛选。
+          </li>
+          <li>
+            <strong>分类筛选</strong>：点击右侧任一分类，中央区域只显示该分类下的音频。
+          </li>
+          <li>
+            <strong>清除筛选</strong>：点击当前激活的筛选标签上的“×”按钮。
+          </li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频卡片操作</h3>
+        </p>
+        <p>每张音频卡片提供以下功能（点击三个点菜单）：</p>
+        <p>
+        <ul>
+          <li>
+            <strong>播放</strong>：立即播放该音频
+          </li>
+          <li>
+            <strong>编辑</strong>：选中音频并聚焦到音频编辑面板
+          </li>
+          <li>
+            <strong>移动到分类</strong>：将音频重新归类到其他分类
+          </li>
+          <li>
+            <strong>删除</strong>：从库中删除音频文件（同时删除物理文件，谨慎操作）
+          </li>
+          <li>
+            <strong>收藏</strong>：点击卡片右上角星标，快速标记收藏夹
+          </li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频播放与控制</h3>
+        </p>
+        <p>
+          <strong>基本播放</strong>
+        </p>
+        <p>
+        <ul>
+          <li>点击卡片上的 <strong>播放</strong> 按钮，或选中卡片后点击 <strong>播放/暂停</strong> 按钮。</li>
+          <li>使用进度条跳转，支持鼠标点击。</li>
+          <li>循环模式：点击面板的 <strong>循环</strong> 按钮，当前音频播放结束后自动重播。</li>
+        </ul>
+        </p>
+        <p>
+          <strong>速度与音量</strong>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>速度滑块</strong>：调整播放倍速，范围 0.5x ~ 2.0x。
+          </li>
+          <li>
+            <strong>音量滑块</strong>：以分贝（dB）为单位调节音量，0dB 为原始音量。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>波形预览</strong>
+        </p>
+        <p>
+        <ul>
+          <li>面板显示音频的静态波形图，播放时蓝色进度条跟随。</li>
+          <li>点击波形图任意位置可直接跳转播放点。</li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频编辑与处理</h3>
+        </p>
+        <p>选中一个音频后，在“音频处理”区域可以进行以下操作：</p>
+        <p>
+          <strong>裁剪</strong>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>开始时间</strong> / <strong>结束时间</strong>：输入秒数或拖动波形上的入出点裁剪手柄。
+          </li>
+          <li>裁剪后点击 <strong>应用编辑</strong>，将生成一个新的音频文件，并自动添加到库中，原文件保留。</li>
+          <li>支持快捷键对入点、出点进行0.1秒的微调</li>
+        </ul>
+        </p>
+        <p>
+          <strong>淡入淡出</strong>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>淡入时长</strong>：音频开头逐渐增强的时间（秒）。
+          </li>
+          <li>
+            <strong>淡出时长</strong>：音频结尾逐渐减弱的时间（秒）。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>应用处理</strong>
+        </p>
+        <p>
+        <ol>
+          <li>设置好裁剪、速度、音量、淡入淡出参数。</li>
+          <li>点击 <strong>“应用编辑”</strong> 按钮。</li>
+          <li>处理完成后，新生成的音频会以“原文件名_edited_时间戳”命名，并出现在当前分类中。</li>
+        </ol>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频导出</h3>
+        </p>
+        <p>
+        <ol>
+          <li>选中要导出的音频卡片。</li>
+          <li>点击面板下方的 <strong>“导出到本地”</strong> 按钮。</li>
+          <li>在弹出的对话框中：</li>
+        </ol>
+        </p>
+        <p>
+        <ul>
+          <li>输入导出文件名</li>
+          <li>选择导出路径（浏览文件夹）</li>
+          <li>选择导出格式（原始格式、MP3、WAV）</li>
+        </ul>
+        </p>
+        <p>
+        <ol>
+          <li>点击 <strong>“导出”</strong>，文件将保存至指定位置。</li>
+        </ol>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>Adobe及外部软件集成</h3>
+        </p>
+        <p>Audio Comber 支持将音频快速发送到 Adobe After Effects 和 Adobe Premiere Pro等外部软件，提升后期制作效率。</p>
+        <p>
+        <h4>
+          <strong>注入 After Effects（AE）</strong>
+        </h4>
+        </p>
+        <p>
+          <strong>方法一：按钮注入</strong>
+        </p>
+        <p>
+        <ol>
+          <li>确保 After Effects 已经<strong>启动</strong>（AE 必须处于运行状态）。</li>
+          <li>在 Audio Comber 中选中一个音频卡片。</li>
+          <li>点击 <strong>“注入到AE”</strong> 按钮。</li>
+          <li>系统会自动将音频文件导入到 AE 的项目面板，并弹窗提示成功。</li>
+        </ol>
+        </p>
+        <p>
+        <ul>
+          <li>如果当前 AE 中有激活的合成，音频层将自动添加到时间轴起始位置。</li>
+          <li>如果没有活动合成，音频会出现在项目面板中，供您手动拖拽。</li>
+        </ul>
+        </p>
+        <p>
+        <blockquote>💡 按钮状态指示灯：</blockquote>
+        </p>
+        <p>>
+        </p>
+        <p>
+        <blockquote>- <strong>灰色</strong>：AE 未运行或未检测到</blockquote>
+        </p>
+        <p>
+        <blockquote>- <strong>蓝色脉冲</strong>：正在处理</blockquote>
+        </p>
+        <p>
+        <blockquote>- <strong>绿色</strong>：注入成功</blockquote>
+        </p>
+        <p>
+          <strong>方法二：直接拖拽卡片</strong>
+        </p>
+        <p>
+        <ol>
+          <li>在 Audio Comber 中，<strong>直接按住任意音频卡片</strong>，将其拖拽至 AE 窗口。</li>
+          <li>在 AE 的项目面板或时间轴上释放鼠标，音频即被导入。</li>
+        </ol>
+        </p>
+        <p>
+        <h4>
+          <strong>注入 Premiere Pro（PR）</strong>
+        </h4>
+        </p>
+        <p>
+          <strong>方法一：直接拖拽卡片</strong>
+        </p>
+        <p>
+        <ol>
+          <li>确保 Premiere Pro 已打开（无需特别激活）。</li>
+          <li>在 Audio Comber 中，<strong>直接按住任意音频卡片</strong>，将其拖拽至 PR 窗口。</li>
+          <li>在 PR 的项目面板或时间轴上释放鼠标，音频即被导入。</li>
+        </ol>
+        </p>
+        <p>
+          <strong>方法二：通过按钮辅助</strong>
+        </p>
+        <p>
+        <ol>
+          <li>选中音频卡片。</li>
+          <li>点击 <strong>“注入到PR”</strong> 按钮。</li>
+          <li>按钮会短暂显示“处理中”，然后变为绿色“已连接”。</li>
+          <li>此时您可以像拖拽文件一样，<strong>再次拖拽该卡片</strong>到 PR 中（按钮状态不影响拖拽功能）。</li>
+        </ol>
+        </p>
+        <p>
+        <blockquote>[!IMPORTANT]</blockquote>
+        </p>
+        <p>>
+        </p>
+        <p>
+        <blockquote>其他外部软件如：达芬奇、剪映、必剪等拖拽卡片注入方式同样适用！</blockquote>
+        </p>
+        <p>------</p>
+        <p>
+        <h2>键盘快捷键一览表</h2>
+        </p>
+        <p>| 按键 | 功能 | 按键 | 功能 |</p>
+        <p>| :--------- | :--------------- | ------------ | ------------------- |</p>
+        <p>| <strong>空格键</strong> | 播放/暂停音效 | ESC键 | 停止播放/关闭模态框 |</p>
+        <p>| I 键 | 设置入点 | O 键 | 设置出点 |</p>
+        <p>| R 键 | 重置处理参数 | Delete键 | 删除选中的音频 |</p>
+        <p>| Ctrl + F | 快速聚焦到搜索框 | Ctrl + ← / → | 微调入点/出点 |</p>
+        <p>| Ctrl + M | 快速导出 | Ctrl + E | 应用编辑 |</p>
+        <p>------</p>
+        <p>
+        <h2>常见问题解答（FAQ）</h2>
+        </p>
+        <p>
+        <h4>
+          <strong>Q1：在Windows系统上运行时提示缺少DLL文件？</strong>‌
+        </h4>
+        </p>
+        <p>A：请安装对应版本的Visual C++ Redistributable运行库，或尝试以管理员身份运行软件。</p>
+        <p>
+        <h4>Q2: 应用支持导入哪些类型的音频文件？</h4>
+        </p>
+        <p>我们的软件全面支持主流音频格式，包括 MP3、WAV、FLAC、M4A、OGG、AAC 等，确保绝大多数音频都能顺利加载与编辑。</p>
+        <p>
+        <h4>
+          <strong>Q3：为什么导入某些MP3文件时提示格式错误？</strong>‌
+        </h4>
+        </p>
+        <p>A：可能是文件头损坏或使用了非标准编码格式。建议先用音频播放器确认文件可正常播放，或尝试使用其他工具（如FFmpeg）转换为标准格式后再导入。</p>
+        <p>
+        <h4>
+          <strong>Q4：处理大文件时软件卡顿甚至无响应？</strong>‌
+        </h4>
+        </p>
+        <p>大文件（如超过100MB）在编辑时会占用大量内存。建议先将文件分割为较小片段处理，或关闭其他占用内存的程序以释放资源。</p>
+        <p>
+        <h4>Q5. 导出的音频格式是否可以自定义？</h4>
+        </p>
+        <p>导出时，目前您可以选择两种音频格式转换， MP3、WAV。或者保持原格式。</p>
+        <p>
+        <h4>
+          <strong>Q6：处理某些文件时软件崩溃了怎么办？</strong>‌
+        </h4>
+        </p>
+        <p>常见原因包括文件损坏或编码格式特殊。可尝试用其他工具转换格式后重试，或联系技术支持提供样本文件。</p>
+        <p>
+        <h4>Q7: 免费版跟付费版的主要区别在哪？</h4>
+        </p>
+        <p>免费版本已涵盖日常所需的全部核心功能，目前提供限时免费使用，到期需要付费使用，付费后可享有后期免费持续更新。‌‌</p>
+        <p>
+        <h4>Q8：点击“注入到AE”没反应</h4>
+        </p>
+        <p>
+        <ul>
+          <li>检查 After Effects 是否已启动（必须运行中）。</li>
+          <li>如果 AE 刚刚启动，请稍等几秒，待完全加载后再试。</li>
+        </ul>
+        </p>
+        <p>
+        <h4>Q9：拖拽卡片到 PR 时显示“禁止”图标</h4>
+        </p>
+        <p>
+        <ul>
+          <li>请确保您<strong>直接拖拽卡片本身</strong>，而不是点击按钮。</li>
+          <li>检查文件是否存在于原路径，且未被移动或删除。</li>
+          <li>此问题极少发生，如果持续出现，请尝试以管理员身份运行 Audio Comber。</li>
+        </ul>
+        </p>
+        <p>
+        <h4>Q10：处理音频后，新文件没有出现在库中</h4>
+        </p>
+        <p>
+        <ul>
+          <li>检查右上角是否有错误通知。</li>
+          <li>手动刷新库：点击顶部“排序”切换一下即可重新加载。</li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h2>技术支持</h2>
+        </p>
+        <p>如您遇到任何使用问题或有功能建议，欢迎通过以下方式联系我们：</p>
+        <p>📧 邮箱：<a href="https://mailto:admin@szsoar.com/" target="_blank">admin@szsoar.com</a>
+        </p>
+        <p>🌐 官网：<a href="https://www.szsoar.com/" target="_blank">https://www.szsoar.com</a>
+        </p>
+        <p>💬 用户交流QQ群：399317510</p>
+        <p>👥 微信公众号：AE极客工坊</p>
+        <p>
+        <h2>版本与更新信息</h2>
+        </p>
+        <p>| 项目 | 内容 |</p>
+        <p>| :--------------- | :------------------------- |</p>
+        <p>| <strong>历史版本</strong> | 2026年1月<code>v1.0.0</code> |</p>
+        <p>| <strong>当前版本</strong> | <code>v2.0.0</code> |</p>
+        <p>| <strong>文档更新日期</strong> | 2026年2月 |</p>
+        <p>| <strong>更新说明</strong> | 更新文档请查阅上方描述文档 |</p>
+        <p>
+        <h2>版权声明 </h2>
+        </p>
+        <p>
+          <strong>© 2026 szsoar. All rights reserved.</strong>
+        </p>
+        <p>本软件及其所有相关内容（包括但不限于界面设计、功能逻辑、术语库等）的版权归szsoar所有。未经书面许可，任何个人或组织不得复制、修改、分发或用于商业用途。</p>
+        <p>
+        <h2>免责声明</h2>
+        </p>
+        <p>本软件按"原样"提供，因用户不当操作、设备不兼容或私自破解导致的软件问题，本公司不承担责任。最终解释权归 SZSOAR 所有。</p>
+        <p>------</p>
+        <p>
+          <em>感谢您选择Audio Comber-音梳 <code>v2.0.0</code>！祝您创作愉快！</em>
+
+
+          <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+      </div>
+    </div>
+  </main>
+
+  <div data-include-footer="../../templates/footer.html"></div>
+  <script src="../../js/include-footer.js"></script>
+  <script src="../../js/video-player-handler.js"></script>
+</body>
+
+</html>

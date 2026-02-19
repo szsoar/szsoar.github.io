@@ -63,5 +63,23 @@ const softwareArticles = [
     url: "tts-use.html",
     date: "2026-01-19"
   },
+  {
+    id: 8,
+    title: "音梳 Audio Comber v1.0.0使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/software-articles/20260126-121001.jpg",
+    url: "audiocomber01.html",
+    date: "2026-01-26"
+  },
+  {
+    id: 9,
+    title: "音梳 Audio Comber v2.0.0使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/software-articles/20260219-121001.jpg",
+    url: "audiocomber02.html",
+    date: "2026-02-12"
+  },
 
 ];
