@@ -232,6 +232,36 @@ const downloadsData = [
   // ==================== 插件分类  ====================
   {
     id: 201,
+    title: "Premiere Pro UXP 插件开发系统教程",
+    category: "plugin",
+    description: "让Premiere听懂你的指令。通过UXP开发增效面板，把复杂流程一键封装，从剪辑师进阶为工具创造者。",
+    icon: "📹",
+    fileSize: "6.15 GB",
+    version: "视频教程",
+    downloadCount: 1039,
+    url: "../../assets/downloads/templates/text-animations.zip",
+    date: "2026-05-20",
+    priceType: "收费",
+    price: "¥398.00",
+    qrCode: "../../assets/images/qq_image.png"
+  },
+  {
+    id: 202,
+    title: "Adobe After Effects UXP 插件开发入门指南",
+    category: "plugin",
+    description: "为AE注入灵魂！告别重复操作，开启UXP插件开发之旅，从使用者变身创造者，打造专属神器",
+    icon: "📹",
+    fileSize: "6.9 GB",
+    version: "视频教程",
+    downloadCount: 678,
+    url: "../../assets/downloads/templates/text-animations.zip",
+    date: "2024-08-20",
+    priceType: "收费",
+    price: "¥598.00",
+    qrCode: "../../assets/images/qq_image.png"
+  },
+  {
+    id: 203,
     title: "UXP JavaScript API 与开发指南",
     category: "plugin",
     description: "这份文档详细介绍了 UXP 插件的核心 JavaScript API 及基本开发流程与方法。",
@@ -246,7 +276,7 @@ const downloadsData = [
     qrCode: ""
   },
   {
-    id: 202,
+    id: 204,
     title: "UXP 样式与 CSS 指南",
     category: "plugin",
     description: "该指南说明了如何使用 CSS 来定义和美化 UXP 插件用户界面的外观与样式。",
@@ -261,7 +291,7 @@ const downloadsData = [
     qrCode: ""
   },
   {
-    id: 203,
+    id: 205,
     title: "UXP 界面结构与 HTML 指南",
     category: "plugin",
     description: "本指南阐述了如何使用 HTML 来构建和定义 UXP 插件的用户界面基础结构。",
@@ -276,7 +306,7 @@ const downloadsData = [
     qrCode: ""
   },
   {
-    id: 204,
+    id: 206,
     title: "Adobe Spectrum组件库指南",
     category: "plugin",
     description: "此指南介绍了如何调用官方的 Spectrum UI 组件库，以确保插件界面与 Adobe 家族风格一致。",
@@ -290,21 +320,7 @@ const downloadsData = [
     price: "免费",
     qrCode: ""
   },
-  {
-    id: 205,
-    title: "Adobe After Effects UXP 插件开发入门指南",
-    category: "plugin",
-    description: "为AE注入灵魂！告别重复操作，开启UXP插件开发之旅，从使用者变身创造者，打造专属神器",
-    icon: "📹",
-    fileSize: "8.9 GB",
-    version: "视频教程",
-    downloadCount: 678,
-    url: "../../assets/downloads/templates/text-animations.zip",
-    date: "2024-08-20",
-    priceType: "收费",
-    price: "¥598.00",
-    qrCode: "../../assets/images/qq_image.png"
-  },
+
 
   // ==================== 项目模板分类  ====================
 
