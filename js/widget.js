@@ -1,7 +1,7 @@
 // ========== 配置二维码列表 ==========
 const qrList = [
-    { src: './assets/contact/qrcode_bilibili.png', name: 'Bilibili课堂' },
-    { src: './assets/contact/qrcode_kefu.png', name: 'QQ购买咨询' }
+    { src: '/assets/contact/qrcode_bilibili.png', name: 'Bilibili课堂' },
+    { src: '/assets/contact/qrcode_kefu.png', name: 'QQ购买咨询' }
 ];
 // ========================================
 
