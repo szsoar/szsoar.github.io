@@ -1,8 +1,22 @@
+// ========== 自动获取图片路径（基于 widget.js 自身位置） ==========
+var scriptPath = document.currentScript.src;
+var scriptDir = scriptPath.substring(0, scriptPath.lastIndexOf('/') + 1);
+// 将 /js/ 替换为 /assets/contact/，得到图片文件夹路径
+var imgBase = scriptDir.replace('/js/', '/assets/contact/');
+
 // ========== 配置二维码列表 ==========
 const qrList = [
-    { src: '/assets/contact/qrcode_bilibili.png', name: 'Bilibili课堂' },
-    { src: '/assets/contact/qrcode_kefu.png', name: 'QQ购买咨询' }
+    { src: imgBase + 'qrcode_bilibili.png', name: 'Bilibili课堂' },
+    { src: imgBase + 'qrcode_kefu.png', name: 'QQ购买咨询' }
 ];
+// ========================================
+
+
+// ========== 配置二维码列表 ==========
+// const qrList = [
+//     { src: './assets/contact/qrcode_bilibili.png', name: 'Bilibili课堂' },
+//     { src: './assets/contact/qrcode_kefu.png', name: 'QQ购买咨询' }
+// ];
 // ========================================
 
 (function () {
