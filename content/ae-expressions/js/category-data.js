@@ -45,4 +45,67 @@ const aeExpressionsArticles = [
     url: "exp_detail_003.html",
     date: "2025-01-27"
   },
+  {
+    id: 6,
+    title: "表达式歌词逐字变色效果",
+    category: "表达式实例",
+    description: "使用表达式制作歌词逐字变色卡拉OK效果...",
+    image: "../../assets/images/exp/detail_004.jpg",
+    url: "exp_detail_004.html",
+    date: "2026-06-01"
+  },
+  {
+    id: 7,
+    title: "旋转木马立体三维空间旋转",
+    category: "表达式实例",
+    description: "使用表达式制作图片等始终朝向目标三维旋转...",
+    image: "../../assets/images/exp/detail_005.jpg",
+    url: "exp_detail_005.html",
+    date: "2026-06-15"
+  },
+  {
+    id: 8,
+    title: "法线感知双面显隐控制朝向透明度",
+    category: "表达式实例",
+    description: "使用表达式制作物品双面显隐...",
+    image: "../../assets/images/exp/detail_006.jpg",
+    url: "exp_detail_006.html",
+    date: "2026-06-22"
+  },
+  {
+    id: 9,
+    title: "活体遮罩焊死旋转边界",
+    category: "表达式实例",
+    description: "使用表达式制作焊死图片边界的遮罩...",
+    image: "../../assets/images/exp/detail_007.jpg",
+    url: "exp_detail_007.html",
+    date: "2026-06-29"
+  },
+  {
+    id: 10,
+    title: "顶点感知拓扑法则连线",
+    category: "表达式实例",
+    description: "使用表达式制作顶点感知自动生成拓扑连线...",
+    image: "../../assets/images/exp/detail_008.jpg",
+    url: "exp_detail_008.html",
+    date: "2026-07-06"
+  },
+  {
+    id: 11,
+    title: "字符流光标脉冲打字机效果",
+    category: "表达式实例",
+    description: "使用表达式制作带有光标脉冲的打字机效果...",
+    image: "../../assets/images/exp/detail_009.jpg",
+    url: "exp_detail_009.html",
+    date: "2026-07-13"
+  },
+  {
+    id: 12,
+    title: "标记点时间差驱动歌词变色",
+    category: "表达式实例",
+    description: "使用表达式标记点时间差驱动歌词逐个变色效果...",
+    image: "../../assets/images/exp/detail_010.jpg",
+    url: "exp_detail_010.html",
+    date: "2026-07-16"
+  },
 ];
