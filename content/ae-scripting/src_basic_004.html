@@ -268,7 +268,7 @@
 
             <div class="nav-links-row">
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="../../index.html">首页</a></li>
                     <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
                     <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
                     <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
@@ -284,16 +284,17 @@
     <!-- 文章内容 -->
     <main class="article-detail-container">
         <div class="article-header">
-            <h1 class="article-title">正余弦三角形绕圆周路径运动</h1>
+            <h1 class="article-title">第一章：AE脚本开发概述</h1>
+            <h2>第三节：配置AE脚本开发环境</h2>
             <div class="article-meta">
                 <div class="article-author">
                     <span>作者: 老胡</span>
                 </div>
                 <div class="article-date">
-                    <span>发布日期: 2025-01-21</span>
+                    <span>发布日期: 2025-02-17</span>
                 </div>
                 <div class="article-category">
-                    <span>分类: 表达式实例</span>
+                    <span>分类: AE脚本</span>
                 </div>
             </div>
         </div>
@@ -306,7 +307,7 @@
                 <div class="video-wrapper">
                     <!-- 使用B站的标准嵌入代码 -->
                     <iframe class="bilibili-iframe"
-                        src="https://player.bilibili.com/player.html?isOutside=true&aid=113865606037795&bvid=BV139w8eKEfQ&cid=27994033371&p=1"
+                        src="https://player.bilibili.com/player.html?isOutside=true&aid=114018681359592&bvid=BV1yYwoeeEX7&cid=28438761387&p=1"
                         scrolling="no" allowfullscreen="true">
                     </iframe>
                 </div>
@@ -337,15 +338,302 @@
             <div class="markdown-content">
                 <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
 
-                <p>表达式代码如下：</p>
+
+                <p>
+                    <strong>这是本套教程第一章的第三节，介绍AE脚本开发环境的配置</strong>
+                </p>
+                <p>
+                    <strong>方案一：Adobe ExtendScript Toolkit (ESTK)</strong>
+                </p>
+                <p>
+                    <em>Adobe官方开发工具，适合快速验证代码</em>
+                </p>
+                <p>
+                    <strong>操作步骤：</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>安装位置</strong>
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>Windows：随AE安装包默认安装，路径通常为</li>
+                </ul>
+                </p>
+                <p> <code>..\Program Files (x86)\Adobe\Adobe Utilities - CS6\ExtendScript Toolkit [版本]</code>
+                </p>
+                <p>
+                <ul>
+                    <li>macOS：位于AE应用程序包内</li>
+                </ul>
+                </p>
+                <p> <code>/Applications/Adobe After Effects [版本]/Scripts/Utilities/ExtendScript Toolkit.app</code>
+                </p>
+                <p>
+                <ul>
+                    <li>新版AE已经脱离，可运行独立Adobe ExtendScript Toolkit (ESTK)</li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>基础配置</strong>
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>启动后选择 <strong>Target Application</strong>：</li>
+                </ul>
+                </p>
+                <p> <code>菜单栏 > 下拉菜单 > Adobe After Effects [版本]</code>
+                </p>
+                <p>
+                <ul>
+                    <li>开启调试控制台：</li>
+                </ul>
+                </p>
+                <p> <code>菜单栏 > Window > JavaScript Console</code>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>运行脚本</strong>
+                    </li>
+                </ol>
+                </p>
                 <p>
                 <pre>
 <code>
-radius =thisComp.layer("circle").content("Ellipse 1").transform;
-createPath(points = [radius.position,[radius.position[0]+Math.cos(time)*400,radius.position[1]+-(Math.sin(time)*400)]], inTangents = [], outTangents = [], is_closed = false)
-
-</code>
+   // 测试代码
+   alert("AE Version: " + app.version);
+   </code>
 </pre>
+                </p>
+                <p>
+                <ul>
+                    <li>按 <code>F5</code> (Windows) 运行脚本</li>
+                </ul>
+                </p>
+                <p>
+                    <strong>优缺点：</strong>
+                </p>
+                <p>✅ Adobe官方原生支持，无需额外配置</p>
+                <p>❌ 界面老旧，无代码提示，仅支持基础调试</p>
+                <p>
+                    <strong>方案二：VSCode + 扩展插件</strong>
+                </p>
+                <p>
+                    <em>推荐方案，现代开发环境</em>
+                </p>
+                <p>
+                    <strong>手动配置步骤：</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>安装基础组件</strong>
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>下载 Visual Studio Code </li>
+                </ul>
+                </p>
+                <p> 下载地址：https://code.visualstudio.com</p>
+                <p>
+                <ul>
+                    <li>安装关键扩展：</li>
+                    <li>
+                        <code>ExtendScript Debugger</code>（调试核心扩展插件，重要！！！）
+                    </li>
+                    <li>
+                        <code>Error lens</code>（语法检查，可选）
+                    </li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>配置调试环境</strong>
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>创建 <code>.vscode/launch.json</code> 文件：</li>
+                </ul>
+                </p>
+                <p>
+                <pre>
+<code>
+     {
+       "version": "0.2.0",
+       "configurations": [
+         {
+           "type": "extendscript-debug",
+           "request": "launch",
+           "name": "Launch Script in ExtendScript Engine",
+           "hostAppSpecifier": "aftereffects-22.0",// 替换你的AE版本
+         }
+       ]
+     }
+     </code>
+</pre>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>设置AE路径（重要）</strong>
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>Windows示例：</li>
+                </ul>
+                </p>
+                <p>
+                <pre>
+<code>
+     "runtimeExecutable": "../Program Files/Adobe/Adobe After Effects (AE版本)/Support Files/AfterFX.exe"
+     </code>
+</pre>
+                </p>
+                <p>
+                <ul>
+                    <li>macOS示例：</li>
+                </ul>
+                </p>
+                <p>
+                <pre>
+<code>
+      "runtimeExecutable": "/Applications/Adobe After Effects (AE版本)/Adobe After Effects (AE版本).app"
+     </code>
+</pre>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>调试功能验证</strong>
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>在脚本中设置断点</li>
+                    <li>按 <code>F5</code> 启动调试会话</li>
+                    <li>使用调试控制台观察变量值</li>
+                </ul>
+                </p>
+                <p>
+                    <strong>免配置步骤：</strong>
+                </p>
+                <p>安装 <code>AE Script linker</code>
+                </p>
+                <p>
+                    <strong>插件智能化</strong>：
+                </p>
+                <p>
+                <ol>
+                    <li>- <code>AE Script Linker</code> 这类插件会自动：</li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>检测已安装的AE版本路径</li>
+                    <li>生成隐藏的调试配置文件（后台自动创建类似launch.json的配置）</li>
+                    <li>建立与AE的IPC通信通道</li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>默认配置覆盖</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>当不手动创建<code>.vscode/launch.json</code>时，插件会使用内置的默认配置：</li>
+                </ul>
+                </p>
+                <p>
+                <pre>
+<code>
+     {
+       "type": "extendscript-debug",
+       "request": "launch",
+       "program": "${file}",
+       "runtimeExecutable": "auto-detect" // 自动识别最新AE版本
+     }
+     </code>
+</pre>
+                </p>
+                <p>
+                    <strong>当前工作流程解析</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>点击 ▶️ 运行时</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>插件自动执行以下操作：</li>
+                    <li>将当前打开的<code>.jsx</code>文件复制到AE脚本目录</li>
+                    <li>向AE发送<code>DoScript</code>指令</li>
+                    <li>建立调试通道（如果开启调试模式）</li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>与手动配置的区别</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p> | 功能 | 自动配置 | 手动配置 |</p>
+                <p> | :----------- | :--------------- | :-------------------- |</p>
+                <p> | 多版本AE支持 | 默认使用最新版本 | 可指定任意版本 |</p>
+                <p> | 特殊路径脚本 | 只能运行当前文件 | 可设置复杂项目结构 |</p>
+                <p> | 高级调试功能 | 基础调试 | 支持变量监控/条件断点 |</p>
+                <p>
+                    <strong>最佳实践建议</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>保持现状</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>简单脚本开发继续使用现有工作流</li>
+                    <li>利用 <code>Ctrl+Shift+P</code> > <code>AE Script Linker: Setup Project</code> 快速初始化</li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>渐进式配置</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>当需要以下功能时再添加配置：</li>
+                    <li>同时调试多个脚本文件</li>
+                    <li>需要预执行脚本</li>
+                    <li>使用自定义工作区布局</li>
+                </ul>
                 </p>
 
 
@@ -360,6 +648,7 @@ createPath(points = [radius.position,[radius.position[0]+Math.cos(time)*400,radi
 
     <!-- 页脚JS -->
     <script src="../../js/include-footer.js"></script>
+    <script src="../../js/widget.js"></script>
 
     <!-- 使用JavaScript确保B站iframe正确显示 -->
     <script>

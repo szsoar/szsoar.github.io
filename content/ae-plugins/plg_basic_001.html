@@ -268,7 +268,7 @@
 
             <div class="nav-links-row">
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="../../index.html">首页</a></li>
                     <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
                     <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
                     <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
@@ -284,30 +284,31 @@
     <!-- 文章内容 -->
     <main class="article-detail-container">
         <div class="article-header">
-            <h1 class="article-title">表达式保姆级教程之介绍篇</h1>
+            <h1 class="article-title">UXP插件开发入门指南(待更新)</h1>
             <div class="article-meta">
                 <div class="article-author">
                     <span>作者: 老胡</span>
                 </div>
                 <div class="article-date">
-                    <span>发布日期: 2025-08-07</span>
+                    <span>发布日期: 2025-09-29</span>
                 </div>
                 <div class="article-category">
-                    <span>分类: AE表达式</span>
+                    <span>分类: AE插件</span>
                 </div>
             </div>
         </div>
 
         <!-- 视频播放器区域 -->
         <div class="video-container">
+
             <!-- B站视频播放器 -->
+
             <div class="video-player">
                 <div class="video-header">视频教程</div>
                 <div class="video-wrapper">
-                    <!-- 使用B站的标准嵌入代码 -->
-                    <iframe class="bilibili-iframe"
-                        src="https://player.bilibili.com/player.html?isOutside=true&aid=114987263657622&bvid=BV1eotzzREco&cid=31547263965&p=1"
-                        scrolling="no" allowfullscreen="true">
+
+                    <iframe class="bilibili-iframe" src="../../assets/videos/lead.mp4" scrolling="no"
+                        allowfullscreen="true">
                     </iframe>
                 </div>
                 <div class="video-note">
@@ -326,7 +327,7 @@
                     </video>
                 </div>
                 <div class="video-note">
-                    提示: 此视频为本地存储版本，加载更快且不受网络限制
+                    提示: 若视频无法播放请检查网络并联系我们解决！
                 </div>
             </div>
             -->
@@ -337,143 +338,9 @@
             <div class="markdown-content">
                 <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
 
-                <p>
-                    <strong>一、欢迎与课程目标</strong>
-                </p>
-                <p>
-                <blockquote>欢迎来到《AE表达式魔法手册》——这是一套专为<strong>讨厌编程却想解放双手</strong>的动画师设计的课程。学完本课程，你将：</blockquote>
-                </p>
-                <p>
-                <blockquote>✅ <strong>用1行代码解决80%重复动画</strong>（比如批量控制文字/图形运动）</blockquote>
-                </p>
-                <p>
-                <blockquote>✅ <strong>独立开发高级特效</strong>（粒子控制/3D交互/动态路径）</blockquote>
-                </p>
-                <p>
-                <blockquote>✅ <strong>把制作效率提升300%</strong>
-                </blockquote>
-                </p>
-                <p>
-                    <strong>二、为什么必须学表达式？</strong>
-                </p>
-                <p>
-                    <strong>核心论点</strong>：
-                </p>
-                <p>▸ <strong>痛点打击</strong>：</p>
-                <p>「关键帧堆到崩溃？甲方临时改需求？表达式是终极后悔药！」</p>
-                <p>▸ <strong>不可替代性</strong>：</p>
-                <p>「表达式能实现手K帧<strong>永远做不到</strong>的事（如自动追踪图层距离/音频实时联动）」</p>
-                <p>▸ <strong>行业趋势</strong>：</p>
-                <p>「MG动画/动态设计岗位招聘中，<strong>表达式已成硬性要求</strong>」</p>
-                <p>
-                    <strong>数据可视化</strong>：
-                </p>
-                <p>
-                <ul>
-                    <li>柱状图：使用表达式后项目耗时对比（-70%时间成本）</li>
-                    <li>词云图：招聘网站AE岗位高频技能要求（“表达式”占比82%）</li>
-                </ul>
-                </p>
-                <p>
-                    <strong>三、学前准备清单</strong>
-                </p>
-                <p>
-                    <strong>学员自检表</strong>：
-                </p>
-                <p>
-                <pre>
-<code>
-必备基础：  
-✓ 创建图层 & 基础属性调整（位置/缩放/旋转）  
-✓ 理解关键帧动画原理  
-✓ 认识合成（Composition）和时间轴  
 
-可选加分：  
-✓ 用过形状图层/文本动画器  
-✓ 接触过Particular粒子插件（高阶项目用）  
-</code>
-</pre>
-                </p>
-                <p>
-                    <strong>避坑指南</strong>：
-                </p>
-                <p>⚠️ <strong>常见误区</strong>：</p>
-                <p>“学表达式=写代码？” → 真相：80%场景只需<strong>复制修改模板</strong>！</p>
-                <p>“英语差学不会？” → 课程提供<strong>中文函数速查表</strong>，随用随查</p>
-                <p>
-                    <strong>四、课程地图与学习策略</strong>
-                </p>
-                <p>
-                    <strong>全景学习路径</strong>：
-                </p>
-                <p>
-                <ol>
-                    <li>基础操作阶段 (模块1-3)</li>
-                </ol>
-                </p>
-                <p>
-                <ul>
-                    <li>表达式添加与基础语法</li>
-                    <li>JavaScript核心概念</li>
-                    <li>属性访问与控制</li>
-                </ul>
-                </p>
-                <p>
-                <ol>
-                    <li>自动化核心阶段 (模块4-8)</li>
-                </ol>
-                </p>
-                <p>
-                <ul>
-                    <li>时间动态控制</li>
-                    <li>循环与振荡效果</li>
-                    <li>空间关系与图层交互</li>
-                </ul>
-                </p>
-                <p>
-                <ol>
-                    <li>高阶应用阶段 (模块9-12)</li>
-                </ol>
-                </p>
-                <p>
-                <ul>
-                    <li>文本图层控制</li>
-                    <li>效果参数化</li>
-                    <li>三维空间表达式</li>
-                    <li>音频联动</li>
-                </ul>
-                </p>
-                <p>
-                <ol>
-                    <li>精通阶段 (模块13-15)</li>
-                </ol>
-                </p>
-                <p>
-                <ul>
-                    <li>调试与优化</li>
-                    <li>综合项目实战</li>
-                    <li>粒子/路径黑科技</li>
-                </ul>
-                </p>
-                <p>
-                    <strong>高效学习法</strong>：
-                </p>
-                <p> 1️⃣ <strong>三遍学习法</strong>：</p>
-                <p>
-                <ul>
-                    <li>首遍：跟着做案例（不纠结原理）</li>
-                    <li>二遍：看函数解析（懂底层逻辑）</li>
-                    <li>三遍：改参数创新（举一反三）</li>
-                </ul>
-                </p>
-                <p> 2️⃣ <strong>急救包</strong>：</p>
-                <p>
-                <ul>
-                    <li>遇到报错？→ 跳转<strong>模块13调试指南</strong>
-                    </li>
-                    <li>忘记函数？→ 使用<strong>动态速查表</strong>（课程资料包）</li>
-                </ul>
-                </p>
+
+                <p>本视频仅代表是否开展Adobe After Effects UXP课程的开课意愿，后续会根据用户喜爱程度进行更新！</p>
 
 
                 <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
@@ -487,6 +354,7 @@
 
     <!-- 页脚JS -->
     <script src="../../js/include-footer.js"></script>
+    <script src="../../js/widget.js"></script>
 
     <!-- 使用JavaScript确保B站iframe正确显示 -->
     <script>

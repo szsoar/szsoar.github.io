@@ -268,7 +268,7 @@
 
             <div class="nav-links-row">
                 <ul class="nav-links">
-                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="index.html">首页</a></li>
                     <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
                     <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
                     <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
@@ -284,16 +284,16 @@
     <!-- 文章内容 -->
     <main class="article-detail-container">
         <div class="article-header">
-            <h1 class="article-title">表达式保姆级教程之介绍篇</h1>
+            <h1 class="article-title">正余弦三角形绕圆周路径运动</h1>
             <div class="article-meta">
                 <div class="article-author">
                     <span>作者: 老胡</span>
                 </div>
                 <div class="article-date">
-                    <span>发布日期: 2025-08-04</span>
+                    <span>发布日期: 2025-01-21</span>
                 </div>
                 <div class="article-category">
-                    <span>分类: AE表达式</span>
+                    <span>分类: 表达式实例</span>
                 </div>
             </div>
         </div>
@@ -306,7 +306,7 @@
                 <div class="video-wrapper">
                     <!-- 使用B站的标准嵌入代码 -->
                     <iframe class="bilibili-iframe"
-                        src="https://player.bilibili.com/player.html?isOutside=true&aid=114970117278219&bvid=BV1gVtGzgE8d&cid=31482118197&p=1"
+                        src="https://player.bilibili.com/player.html?isOutside=true&aid=113865606037795&bvid=BV139w8eKEfQ&cid=27994033371&p=1"
                         scrolling="no" allowfullscreen="true">
                     </iframe>
                 </div>
@@ -337,26 +337,16 @@
             <div class="markdown-content">
                 <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
 
+                <p>表达式代码如下：</p>
+                <p>
+                <pre>
+<code>
+radius =thisComp.layer("circle").content("Ellipse 1").transform;
+createPath(points = [radius.position,[radius.position[0]+Math.cos(time)*400,radius.position[1]+-(Math.sin(time)*400)]], inTangents = [], outTangents = [], is_closed = false)
 
-                <p>在After Effects的世界里，表达式是解锁高效动画的魔法咒语。它能将繁琐的手动关键帧变成自动化的智能动画，让创意不再受技术束缚。</p>
-                <p>你是否曾为重复的动画感到疲惫？是否想用一行代码让元素智能交互？本课程将带你从<strong>真正的零基础</strong>出发，系统掌握AE表达式的核心能力——</p>
-                <p>我们将从<strong>添加表达式的基础操作</strong>开始，逐步深入：</p>
-                <p>理解JavaScript核心语法、</p>
-                <p>操控图层属性与时间变量、</p>
-                <p>创建循环动画、有机随机效果、</p>
-                <p>实现图层间的智能交互与3D空间控制...</p>
-                <p>更将解锁高阶技能：
-                    用 <strong>sampleImage()</strong> <strong>驱动粒子特效</strong>，
-                    用 <strong>createPath()</strong> <strong>动态生成复杂图形</strong>，
-                    让音频与动画实时联动！</p>
-                <p>本套教程耗时两个月，共包含15个渐进式模块：</p>
-                <p>每节都有「基础理论+视觉化演示」</p>
-                <p>每章配备「实战案例」巩固技能</p>
-                <p>最终通过综合项目打造作品集：</p>
-                <p>无论你是动画师、设计师还是视频创作者，</p>
-                <p>表达式都将成为你的超级生产力工具。</p>
-                <p>现在，让我们开启这段蜕变之旅——</p>
-                <p>用代码思维解放双手，让创意全速前进！</p>
+</code>
+</pre>
+                </p>
 
 
                 <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
@@ -370,6 +360,7 @@
 
     <!-- 页脚JS -->
     <script src="../../js/include-footer.js"></script>
+    <script src="../../js/widget.js"></script>
 
     <!-- 使用JavaScript确保B站iframe正确显示 -->
     <script>

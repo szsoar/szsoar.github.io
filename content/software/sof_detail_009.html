@@ -286,13 +286,13 @@
 
   <main class="article-detail-container">
     <div class="article-header">
-      <h1 class="article-title">音梳 Audio Comber v1.0.0</h1>
+      <h1 class="article-title">音梳 Audio Comber v2.0.0</h1>
       <div class="article-meta">
         <div class="article-author">
           <span>作者: 老胡</span>
         </div>
         <div class="article-date">
-          <span>发布日期: 2026-01-26</span>
+          <span>发布日期: 2026-02-12</span>
         </div>
         <div class="article-category">
           <span>分类: 软件指南</span>
@@ -323,7 +323,7 @@
         <div class="video-wrapper">
           <video class="local-video" id="local-video" controls controlslist="nodownload" preload="metadata"
             style="background-color: #000;">
-            <source src="../../assets/videos/audiocomber01.mp4" type="video/mp4">
+            <source src="../../assets/videos/audiocomber02.mp4" type="video/mp4">
             您的浏览器不支持HTML5视频播放。
           </video>
         </div>
@@ -342,7 +342,7 @@
         <h1>Audio Comber - 音梳 使用说明文档</h1>
         </p>
         <p>
-        <h2>一、 软件简介</h2>
+        <h2>软件简介</h2>
         </p>
         <p>
           <strong>Audio Comber (音梳)</strong> 是一款为视频剪辑师、音频工作者和内容创作者设计的专业音效管理工具。它能够帮助您高效地管理、预览、处理和导出音频素材。
@@ -362,13 +362,16 @@
             <strong>无损输出</strong>：所有处理都在后台完成，支持导出为多种格式，确保音质。
           </li>
           <li>
+            <strong>高效注入</strong>：一键将音频注入 After Effects 或拖拽至 Premiere Pro等外部软件
+          </li>
+          <li>
             <strong>完全离线</strong>：所有操作均在本地完成，不会上传到任何服务器，保护您的素材隐私。
           </li>
         </ul>
         </p>
         <p>------</p>
         <p>
-        <h2>二、 安装与启动</h2>
+        <h2>安装与启动</h2>
         </p>
         <p>
         <h3>环境要求</h3>
@@ -398,7 +401,7 @@
             <strong>处理器：</strong> Intel i3 或同等性能以上
           </li>
           <li>
-            <strong>硬盘空间：</strong> 至少保留 1GB 以上可用空间
+            <strong>硬盘空间：</strong> 至少保留 1GB 以上可用空间（音频库额外存储）
           </li>
           <li>
             <strong>音频支持：</strong> 声卡设备及驱动程序正常工作
@@ -414,7 +417,7 @@
         <p>
         <ul>
           <li>找到压缩包，解压后双击运行 <strong>
-              <code>Audio Comber Setup 1.0.0.exe</code>
+              <code>Audio Comber Setup 2.0.0.exe</code>
             </strong>。</li>
           <li>如出现 <strong>“Windows 已保护您的电脑”</strong> 或杀毒软件警告，请点击 <strong>“更多信息”</strong> → <strong>“仍要运行”</strong>。</li>
           <li>进入安装向导后，依次点击 <strong>“下一步”</strong>，可选择默认安装路径，也可选择其他路径。</li>
@@ -423,140 +426,330 @@
         </p>
         <p>------</p>
         <p>
-        <h2>三、 界面导览</h2>
+        <h2>激活说明</h2>
         </p>
-        <p>启动后，您将看到以下主界面：</p>
+        <p>
+        <h3>永久激活</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>使用期限</strong>: 一次激活，永久使用
+          </li>
+          <li>
+            <strong>激活次数</strong>: 激活码与硬件绑定，每个激活码支持一台电脑激活使用
+          </li>
+        </ul>
+        </p>
+        <p>
+        <h3>激活流程</h3>
+        </p>
         <p>
         <ol>
-          <li>
-            <strong>顶部导航栏</strong>：切换主分类、查看子分类、搜索音效、执行导入。
-          </li>
-          <li>
-            <strong>左侧主区域 (音效库)</strong>：以网格卡片形式展示所有音效。<strong>单击卡片</strong>选中音效，<strong>鼠标悬停</strong>可快速短暂预览播放。
-          </li>
-          <li>
-            <strong>右侧面板 (音效处理器)</strong>：当选中一个音效后，此处将显示该音效的详细处理模块，包括播放控制、裁剪工具和各种效果参数滑块。
-          </li>
+          <li>首次启动程序，出现激活窗口</li>
+          <li>复制界面中的机器码，发给开发者</li>
+          <li>完整的粘贴开发者提供的激活码</li>
+          <li>确保网络畅通的情况下，点击"立即激活"按钮</li>
+          <li>激活成功后自动进入主界面</li>
+          <li>下次启动无需连网，完全离线使用</li>
         </ol>
         </p>
         <p>------</p>
         <p>
-        <h2>四、 核心工作流程</h2>
+        <h2>界面导览</h2>
+        </p>
+        <p>| 顶部工具栏 | 全局搜索、视图切换（网格/列表）、排序 |</p>
+        <p>| -------------- | ------------------------------------------------------------ |</p>
+        <p>| 顶部栏 | 应用名称、搜索框 |</p>
+        <p>| 右侧边栏 | 导入、系统预设分类、我的音频（自定义分类）、智能筛选、统计信息、存储显示 |</p>
+        <p>| 中央区域上部分 | 视图排序选项、音频卡片/列表，显示音频名称、时长、格式、分类等信息、音频波形 |</p>
+        <p>| 中央区域下部分 | 裁剪设置、速度/音量滑块、淡入淡出设置、播放控制器、导出/注入按钮 |</p>
+        <p>| 底部栏 | 应用版本信息、总音频数量、版权及关于、帮助、支持链接 |</p>
+        <p>------</p>
+        <p>
+        <h2>核心工作流程</h2>
         </p>
         <p>
-        <h4>步骤 1：导入您的音效库</h4>
+        <h3>导入音频</h3>
+        </p>
+        <p>
+        <ol>
+          <li>点击"导入音频资产库"按钮、直接拖拽音频打开导入模态框</li>
+          <li>选择导入模式（单文件/文件夹）</li>
+          <li>浏览或拖拽选择音频文件/文件夹</li>
+          <li>选择目标分类（系统预设库/我的音频 + 子分类）</li>
+          <li>点击“确认导入”，进度条完成后文件即加入库中</li>
+        </ol>
+        </p>
+        <p>
+          支持格式：<code>.mp3</code>、<code>.wav</code>、<code>.m4a</code>、<code>.aac</code>、<code>.flac</code>、<code>.ogg</code>、<code>.wma</code>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>分类管理</h3>
+        </p>
+        <p>
+          <strong>系统预设分类（不可修改）</strong>
         </p>
         <p>
         <ul>
-          <li>
-            <strong>点击“导入音效”按钮</strong>。
-          </li>
-          <li>在弹出窗口中，选择目标分类（或新建分类）。</li>
-          <li>通过<strong>拖拽文件</strong>到窗口，或<strong>点击选择文件</strong>，导入您的音频文件。</li>
-          <li>支持格式：<code>.mp3</code>, <code>.wav</code>, <code>.flac</code>, <code>.aiff</code>, <code>.ogg</code>,
-            <code>.m4a</code> 等主流音频格式。</li>
+          <li>环境音、拟音、特效音、界面音、转场音、动物声音、交通工具、人声音效</li>
+          <li>每个主分类下包含若干子分类，点击子分类可快速筛选音频</li>
         </ul>
         </p>
         <p>
-        <h4>步骤 2：管理与查找音效</h4>
+          <strong>我的音频（用户自定义）</strong>
         </p>
         <p>
         <ul>
+          <li>点击左侧“我的音频”下方的 <strong>+</strong> 按钮，添加分类，输入分类名称即可创建新分类。</li>
+          <li>导入音频时可将音频归类到自定义分类中。</li>
           <li>
-            <strong>分类浏览</strong>：在顶部选择“预设库”、“我的分类”或“智能分类”，然后在下方的标签栏中选择子分类。
+            <strong>删除分类</strong>：分类下必须为空（无音频文件），点击分类旁的垃圾桶图标即可删除。
           </li>
-          <li>
-            <strong>搜索</strong>：使用顶部的搜索框，按音效名称快速查找。
-          </li>
-          <li>
-            <strong>智能分类</strong>：“最近使用”和“最常播放”会自动帮助您定位常用音效。
-          </li>
-          <li>
-            <strong>切换分类</strong>：点击音频卡片上的 "左右重叠箭头"，可以快速将音频移动到其他分类。
-          </li>
-        </ul>
-        </p>
-        <p>
-        <h4>步骤 3：试听与基础播放</h4>
-        </p>
-        <p>
-        <ul>
-          <li>
-            <strong>悬停预览</strong>：将鼠标悬停在任意音效卡片上约0.5秒，将自动播放该音效的短预览。
-          </li>
-          <li>
-            <strong>播放/停止</strong>：选中一个音效后，在右侧面板点击 <strong>播放按钮</strong> 或按 <strong>空格键</strong>
-            开始播放。再次点击或按空格键可<strong>停止</strong>。
-          </li>
-          <li>
-            <strong>停止</strong>：点击播放按钮旁的 <strong>停止按钮</strong> 或按 <strong>ESC 键</strong>，将完全停止播放并复位。
-          </li>
-          <li>
-            <strong>键盘导航</strong>：在音效库中，可使用 <code>↑</code> <code>↓</code> 键选择音效，<code>Enter</code>
-            键播放，<code>Delete</code> 键删除。
-          </li>
-        </ul>
-        </p>
-        <p>
-        <h4>步骤 4：精细处理与裁剪</h4>
-        </p>
-        <p>在右侧的“音效处理器”面板中，您可以：</p>
-        <p>
-        <ul>
-          <li>
-            <strong>调节参数</strong>：使用滑块实时调整<strong>播放速度</strong>、<strong>音量</strong>。
-          </li>
-          <li>
-            <strong>设置淡入淡出</strong>：调整“淡入时间”和“淡出时间”，让音频开始和结束更平滑。
-          </li>
-          <li>
-            <strong>启用循环</strong>：点击“循环播放”按钮，可让音效循环播放。
-          </li>
-          <li>
-            <strong>音频裁剪</strong>：
-          </li>
-        </ul>
-        </p>
-        <p> 1. 勾选“<strong>启用裁剪</strong>”。</p>
-        <p> 2. 在波形图上，拖拽<strong>蓝色区域的左右两端手柄</strong>，或直接在下方输入<strong>开始时间</strong>和<strong>结束时间</strong>。</p>
-        <p> 3. 播放时，可以<strong>点击波形图</strong>快速跳转，或使用 <strong>“设为开始”/“设为结束”</strong> 按钮，将当前播放位置标记为裁剪点。</p>
-        <p> 4. <strong>播放指针（红色竖线）</strong> 会在波形上移动，其经过的波形会高亮。</p>
-        <p>
-        <blockquote>
-          <strong>提示</strong>：“重置参数”按钮可将所有滑块恢复默认。
-        </blockquote>
-        </p>
-        <p>
-        <h4>步骤 5：导出最终音效</h4>
-        </p>
-        <p>当处理满意后：</p>
-        <p>
-        <ul>
-          <li>在右侧面板底部，点击 <strong>“导出音效”</strong> 按钮。</li>
-          <li>在弹出的设置窗口中：</li>
-          <li>选择<strong>导出位置</strong>和<strong>文件名</strong>。</li>
-          <li>选择导出格式（保持原格式或转换为 WAV/MP3）。</li>
-          <li>确认是否<strong>应用当前的处理参数</strong>和<strong>裁剪设置</strong>。</li>
-          <li>点击“开始导出”。处理进度会在底部状态栏显示，完成后文件将保存至您指定的位置。</li>
         </ul>
         </p>
         <p>------</p>
         <p>
-        <h2>五、 键盘快捷键一览表</h2>
+        <h3>搜索与筛选</h3>
         </p>
-        <p>| 按键 | 功能 |</p>
-        <p>| :----------- | :------------------------ |</p>
-        <p>| <strong>空格键</strong> | 播放/停止当前选中的音效 |</p>
-        <p>| <strong>ESC</strong> | 停止播放 |</p>
-        <p>| <strong>↑ / ↓</strong> | 在音效列表中向上/向下选择 |</p>
-        <p>| <strong>← / →</strong> | 跳转到上一个/下一个音效 |</p>
-        <p>| <strong>Enter</strong> | 播放选中的音效 |</p>
-        <p>| <strong>Delete</strong> | 删除选中的音效 |</p>
-        <p>| <strong>Ctrl + F</strong> | 快速聚焦到搜索框 |</p>
-        <p>| <strong>R键</strong> | 重置处理参数 |</p>
+        <p>
+        <ul>
+          <li>
+            <strong>全局搜索</strong>：顶部输入框，实时搜索音频名称、分类、标签。
+          </li>
+          <li>
+            <strong>智能筛选</strong>：右侧边栏的“最近添加”“播放最多”“我的收藏”可快速筛选。
+          </li>
+          <li>
+            <strong>分类筛选</strong>：点击右侧任一分类，中央区域只显示该分类下的音频。
+          </li>
+          <li>
+            <strong>清除筛选</strong>：点击当前激活的筛选标签上的“×”按钮。
+          </li>
+        </ul>
+        </p>
         <p>------</p>
         <p>
-        <h2>六、 常见问题解答（FAQ）</h2>
+        <h3>音频卡片操作</h3>
+        </p>
+        <p>每张音频卡片提供以下功能（点击三个点菜单）：</p>
+        <p>
+        <ul>
+          <li>
+            <strong>播放</strong>：立即播放该音频
+          </li>
+          <li>
+            <strong>编辑</strong>：选中音频并聚焦到音频编辑面板
+          </li>
+          <li>
+            <strong>移动到分类</strong>：将音频重新归类到其他分类
+          </li>
+          <li>
+            <strong>删除</strong>：从库中删除音频文件（同时删除物理文件，谨慎操作）
+          </li>
+          <li>
+            <strong>收藏</strong>：点击卡片右上角星标，快速标记收藏夹
+          </li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频播放与控制</h3>
+        </p>
+        <p>
+          <strong>基本播放</strong>
+        </p>
+        <p>
+        <ul>
+          <li>点击卡片上的 <strong>播放</strong> 按钮，或选中卡片后点击 <strong>播放/暂停</strong> 按钮。</li>
+          <li>使用进度条跳转，支持鼠标点击。</li>
+          <li>循环模式：点击面板的 <strong>循环</strong> 按钮，当前音频播放结束后自动重播。</li>
+        </ul>
+        </p>
+        <p>
+          <strong>速度与音量</strong>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>速度滑块</strong>：调整播放倍速，范围 0.5x ~ 2.0x。
+          </li>
+          <li>
+            <strong>音量滑块</strong>：以分贝（dB）为单位调节音量，0dB 为原始音量。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>波形预览</strong>
+        </p>
+        <p>
+        <ul>
+          <li>面板显示音频的静态波形图，播放时蓝色进度条跟随。</li>
+          <li>点击波形图任意位置可直接跳转播放点。</li>
+        </ul>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频编辑与处理</h3>
+        </p>
+        <p>选中一个音频后，在“音频处理”区域可以进行以下操作：</p>
+        <p>
+          <strong>裁剪</strong>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>开始时间</strong> / <strong>结束时间</strong>：输入秒数或拖动波形上的入出点裁剪手柄。
+          </li>
+          <li>裁剪后点击 <strong>应用编辑</strong>，将生成一个新的音频文件，并自动添加到库中，原文件保留。</li>
+          <li>支持快捷键对入点、出点进行0.1秒的微调</li>
+        </ul>
+        </p>
+        <p>
+          <strong>淡入淡出</strong>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>淡入时长</strong>：音频开头逐渐增强的时间（秒）。
+          </li>
+          <li>
+            <strong>淡出时长</strong>：音频结尾逐渐减弱的时间（秒）。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>应用处理</strong>
+        </p>
+        <p>
+        <ol>
+          <li>设置好裁剪、速度、音量、淡入淡出参数。</li>
+          <li>点击 <strong>“应用编辑”</strong> 按钮。</li>
+          <li>处理完成后，新生成的音频会以“原文件名_edited_时间戳”命名，并出现在当前分类中。</li>
+        </ol>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>音频导出</h3>
+        </p>
+        <p>
+        <ol>
+          <li>选中要导出的音频卡片。</li>
+          <li>点击面板下方的 <strong>“导出到本地”</strong> 按钮。</li>
+          <li>在弹出的对话框中：</li>
+        </ol>
+        </p>
+        <p>
+        <ul>
+          <li>输入导出文件名</li>
+          <li>选择导出路径（浏览文件夹）</li>
+          <li>选择导出格式（原始格式、MP3、WAV）</li>
+        </ul>
+        </p>
+        <p>
+        <ol>
+          <li>点击 <strong>“导出”</strong>，文件将保存至指定位置。</li>
+        </ol>
+        </p>
+        <p>------</p>
+        <p>
+        <h3>Adobe及外部软件集成</h3>
+        </p>
+        <p>Audio Comber 支持将音频快速发送到 Adobe After Effects 和 Adobe Premiere Pro等外部软件，提升后期制作效率。</p>
+        <p>
+        <h4>
+          <strong>注入 After Effects（AE）</strong>
+        </h4>
+        </p>
+        <p>
+          <strong>方法一：按钮注入</strong>
+        </p>
+        <p>
+        <ol>
+          <li>确保 After Effects 已经<strong>启动</strong>（AE 必须处于运行状态）。</li>
+          <li>在 Audio Comber 中选中一个音频卡片。</li>
+          <li>点击 <strong>“注入到AE”</strong> 按钮。</li>
+          <li>系统会自动将音频文件导入到 AE 的项目面板，并弹窗提示成功。</li>
+        </ol>
+        </p>
+        <p>
+        <ul>
+          <li>如果当前 AE 中有激活的合成，音频层将自动添加到时间轴起始位置。</li>
+          <li>如果没有活动合成，音频会出现在项目面板中，供您手动拖拽。</li>
+        </ul>
+        </p>
+        <p>
+        <blockquote>💡 按钮状态指示灯：</blockquote>
+        </p>
+        <p>>
+        </p>
+        <p>
+        <blockquote>- <strong>灰色</strong>：AE 未运行或未检测到</blockquote>
+        </p>
+        <p>
+        <blockquote>- <strong>蓝色脉冲</strong>：正在处理</blockquote>
+        </p>
+        <p>
+        <blockquote>- <strong>绿色</strong>：注入成功</blockquote>
+        </p>
+        <p>
+          <strong>方法二：直接拖拽卡片</strong>
+        </p>
+        <p>
+        <ol>
+          <li>在 Audio Comber 中，<strong>直接按住任意音频卡片</strong>，将其拖拽至 AE 窗口。</li>
+          <li>在 AE 的项目面板或时间轴上释放鼠标，音频即被导入。</li>
+        </ol>
+        </p>
+        <p>
+        <h4>
+          <strong>注入 Premiere Pro（PR）</strong>
+        </h4>
+        </p>
+        <p>
+          <strong>方法一：直接拖拽卡片</strong>
+        </p>
+        <p>
+        <ol>
+          <li>确保 Premiere Pro 已打开（无需特别激活）。</li>
+          <li>在 Audio Comber 中，<strong>直接按住任意音频卡片</strong>，将其拖拽至 PR 窗口。</li>
+          <li>在 PR 的项目面板或时间轴上释放鼠标，音频即被导入。</li>
+        </ol>
+        </p>
+        <p>
+          <strong>方法二：通过按钮辅助</strong>
+        </p>
+        <p>
+        <ol>
+          <li>选中音频卡片。</li>
+          <li>点击 <strong>“注入到PR”</strong> 按钮。</li>
+          <li>按钮会短暂显示“处理中”，然后变为绿色“已连接”。</li>
+          <li>此时您可以像拖拽文件一样，<strong>再次拖拽该卡片</strong>到 PR 中（按钮状态不影响拖拽功能）。</li>
+        </ol>
+        </p>
+        <p>
+        <blockquote>[!IMPORTANT]</blockquote>
+        </p>
+        <p>>
+        </p>
+        <p>
+        <blockquote>其他外部软件如：达芬奇、剪映、必剪等拖拽卡片注入方式同样适用！</blockquote>
+        </p>
+        <p>------</p>
+        <p>
+        <h2>键盘快捷键一览表</h2>
+        </p>
+        <p>| 按键 | 功能 | 按键 | 功能 |</p>
+        <p>| :--------- | :--------------- | ------------ | ------------------- |</p>
+        <p>| <strong>空格键</strong> | 播放/暂停音效 | ESC键 | 停止播放/关闭模态框 |</p>
+        <p>| I 键 | 设置入点 | O 键 | 设置出点 |</p>
+        <p>| R 键 | 重置处理参数 | Delete键 | 删除选中的音频 |</p>
+        <p>| Ctrl + F | 快速聚焦到搜索框 | Ctrl + ← / → | 微调入点/出点 |</p>
+        <p>| Ctrl + M | 快速导出 | Ctrl + E | 应用编辑 |</p>
+        <p>------</p>
+        <p>
+        <h2>常见问题解答（FAQ）</h2>
         </p>
         <p>
         <h4>
@@ -594,6 +787,34 @@
         <h4>Q7: 免费版跟付费版的主要区别在哪？</h4>
         </p>
         <p>免费版本已涵盖日常所需的全部核心功能，目前提供限时免费使用，到期需要付费使用，付费后可享有后期免费持续更新。‌‌</p>
+        <p>
+        <h4>Q8：点击“注入到AE”没反应</h4>
+        </p>
+        <p>
+        <ul>
+          <li>检查 After Effects 是否已启动（必须运行中）。</li>
+          <li>如果 AE 刚刚启动，请稍等几秒，待完全加载后再试。</li>
+        </ul>
+        </p>
+        <p>
+        <h4>Q9：拖拽卡片到 PR 时显示“禁止”图标</h4>
+        </p>
+        <p>
+        <ul>
+          <li>请确保您<strong>直接拖拽卡片本身</strong>，而不是点击按钮。</li>
+          <li>检查文件是否存在于原路径，且未被移动或删除。</li>
+          <li>此问题极少发生，如果持续出现，请尝试以管理员身份运行 Audio Comber。</li>
+        </ul>
+        </p>
+        <p>
+        <h4>Q10：处理音频后，新文件没有出现在库中</h4>
+        </p>
+        <p>
+        <ul>
+          <li>检查右上角是否有错误通知。</li>
+          <li>手动刷新库：点击顶部“排序”切换一下即可重新加载。</li>
+        </ul>
+        </p>
         <p>------</p>
         <p>
         <h2>技术支持</h2>
@@ -609,10 +830,11 @@
         <h2>版本与更新信息</h2>
         </p>
         <p>| 项目 | 内容 |</p>
-        <p>| :--------------- | :-------------- |</p>
-        <p>| <strong>当前版本</strong> | 初始版本 v1.0.0 |</p>
-        <p>| <strong>文档更新日期</strong> | 2026年1月 |</p>
-        <p>| <strong>更新说明</strong> | |</p>
+        <p>| :--------------- | :------------------------- |</p>
+        <p>| <strong>历史版本</strong> | 2026年1月<code>v1.0.0</code> |</p>
+        <p>| <strong>当前版本</strong> | <code>v2.0.0</code> |</p>
+        <p>| <strong>文档更新日期</strong> | 2026年2月 |</p>
+        <p>| <strong>更新说明</strong> | 更新文档请查阅上方描述文档 |</p>
         <p>
         <h2>版权声明 </h2>
         </p>
@@ -626,7 +848,7 @@
         <p>本软件按"原样"提供，因用户不当操作、设备不兼容或私自破解导致的软件问题，本公司不承担责任。最终解释权归 SZSOAR 所有。</p>
         <p>------</p>
         <p>
-          <em>感谢您选择Audio Comber-音梳！祝您使用愉快！</em>
+          <em>感谢您选择Audio Comber-音梳 <code>v2.0.0</code>！祝您创作愉快！</em>
 
 
           <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
@@ -637,6 +859,8 @@
   <div data-include-footer="../../templates/footer.html"></div>
   <script src="../../js/include-footer.js"></script>
   <script src="../../js/video-player-handler.js"></script>
+  <script src="../../js/widget.js"></script>
+
 </body>
 
 </html>

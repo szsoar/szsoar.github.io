@@ -5,8 +5,8 @@ const softwareArticles = [
     title: "AE脚本UI设计器安装激活向导",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20251030-170001.jpg",
-    url: "scriptui-designer-install.html",
+    image: "../../assets/images/sof/detail_001.jpg",
+    url: "sof_detail_001.html",
     date: "2025-10-29"
   },
   {
@@ -14,8 +14,8 @@ const softwareArticles = [
     title: "AE脚本UI设计器使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20251030-170002.jpg",
-    url: "scriptui-designer-use.html",
+    image: "../../assets/images/sof/detail_002.jpg",
+    url: "sof_detail_002.html",
     date: "2025-10-29"
   },
   {
@@ -23,8 +23,8 @@ const softwareArticles = [
     title: "MarkdownToHtml转换器使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20251101-190001.jpg",
-    url: "mdtohtml-use.html",
+    image: "../../assets/images/sof/detail_003.jpg",
+    url: "sof_detail_003.html",
     date: "2025-11-11"
   },
   {
@@ -32,8 +32,8 @@ const softwareArticles = [
     title: "PDF水印添加工具使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20251101-190002.jpg",
-    url: "pdfwatermarktool-use.html",
+    image: "../../assets/images/sof/detail_004.jpg",
+    url: "sof_detail_004.html",
     date: "2025-11-24"
   },
   {
@@ -41,8 +41,8 @@ const softwareArticles = [
     title: "AE英文界面学习助手v1.0.0使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20260114-140001.jpg",
-    url: "AE-Terminology-learning-use.html",
+    image: "../../assets/images/sof/detail_005.jpg",
+    url: "sof_detail_005.html",
     date: "2025-12-08"
   },
   {
@@ -50,8 +50,8 @@ const softwareArticles = [
     title: "AE英文界面学习助手v2.0.0更新指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20260114-140001.jpg",
-    url: "wordmaster-use.html",
+    image: "../../assets/images/sof/detail_006.jpg",
+    url: "sof_detail_006.html",
     date: "2026-01-14"
   },
   {
@@ -59,8 +59,8 @@ const softwareArticles = [
     title: "文本转语音工具TTS v1.0.0使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20260119-150001.jpg",
-    url: "tts-use.html",
+    image: "../../assets/images/sof/detail_007.jpg",
+    url: "sof_detail_007.html",
     date: "2026-01-19"
   },
   {
@@ -68,8 +68,8 @@ const softwareArticles = [
     title: "音梳 Audio Comber v1.0.0使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20260126-121001.jpg",
-    url: "audiocomber01.html",
+    image: "../../assets/images/sof/detail_008.jpg",
+    url: "sof_detail_008.html",
     date: "2026-01-26"
   },
   {
@@ -77,8 +77,8 @@ const softwareArticles = [
     title: "音梳 Audio Comber v2.0.0使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/software-articles/20260219-121001.jpg",
-    url: "audiocomber02.html",
+    image: "../../assets/images/sof/detail_008.jpg",
+    url: "sof_detail_009.html",
     date: "2026-02-12"
   },
 

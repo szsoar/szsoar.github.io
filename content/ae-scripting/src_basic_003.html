@@ -284,14 +284,14 @@
     <!-- 文章内容 -->
     <main class="article-detail-container">
         <div class="article-header">
-            <h1 class="article-title">AE脚本开发零基础入门教程</h1>
-            <h2>教程片头介绍</h2>
+            <h1 class="article-title">第一章：AE脚本开发概述</h1>
+            <h2>第二节：脚本、表达式和插件区别</h2>
             <div class="article-meta">
                 <div class="article-author">
                     <span>作者: 老胡</span>
                 </div>
                 <div class="article-date">
-                    <span>发布日期: 2025-02-03</span>
+                    <span>发布日期: 2025-02-10</span>
                 </div>
                 <div class="article-category">
                     <span>分类: AE脚本</span>
@@ -307,7 +307,7 @@
                 <div class="video-wrapper">
                     <!-- 使用B站的标准嵌入代码 -->
                     <iframe class="bilibili-iframe"
-                        src="https://player.bilibili.com/player.html?isOutside=true&aid=113939258016232&bvid=BV1HRPRebE6x&cid=28198766897&p=1"
+                        src="https://player.bilibili.com/player.html?isOutside=true&aid=113978885865928&bvid=BV147NZeLE27&cid=28313782856&p=1"
                         scrolling="no" allowfullscreen="true">
                     </iframe>
                 </div>
@@ -339,25 +339,170 @@
                 <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
 
 
-                <p>如果把After Effects比作一座动画王国，脚本开发就是打开王座密室的黄金钥匙。本教程耗时一个月，如同一位三维世界的造桥师，将在您熟悉的AE操作界面与神秘的编程世界之间，架起一座坚实的跨海大桥。
-                </p>
-                <p>​ 这不是一场枯燥的技术说教，而是一次充满创造力的探险之旅。您将发现，那些曾经需要重复点击数小时的操作，只用一行代码就能优雅解决！</p>
-                <p>我们从零开始，像组装乐高积木一样搭建知识体系：</p>
                 <p>
-                    <strong>第一章</strong> 带您配置专业的脚本开发环境；
+                    <strong>这是本套教程第一章的第二节，介绍AE脚本与表达式、插件的区别</strong>
                 </p>
                 <p>
-                    <strong>第二章</strong> 化身语言翻译官，把您熟悉的图层逻辑‘转译’成JavaScript的特殊语法，甚至包含AE独有的魔法符号解析；
+                    <strong>与表达式/插件的区别：</strong>
+                </p>
+                <p>| | 脚本(Script) | 表达式(Expression) | 插件(Plugin) |</p>
+                <p>| :----------- | :--------------- | :----------------- | :--------------- |</p>
+                <p>| <strong>学习难度</strong> | 需要编程基础 | 数学/逻辑表达式 | C++开发 |</p>
+                <p>| <strong>存放位置</strong> | 独立外部文件 | 属性栏代码 | 安装在AE插件目录 |</p>
+                <p>| <strong>能力范围</strong> | 全流程自动化控制 | 单一属性动态控制 | 扩展软件功能 |</p>
+                <p>| <strong>交互作用</strong> | 可创建操作界面 | 仅响应属性变化 | 深度集成到AE系统 |</p>
+                <p>
+                    <strong>1. 表达式（Expressions）</strong>
                 </p>
                 <p>
-                    <strong>第三章</strong> 犹如开启军火库，深入解剖AE的API架构体系，带您掌握操控合成、图层、关键帧的‘上帝模式；
+                <ul>
+                    <li>
+                        <strong>定义</strong>：
+                    </li>
+                </ul>
+                </p>
+                <p> 表达式是一种基于 JavaScript 的轻量级代码片段，直接绑定到图层属性（如位置、旋转、透明度等），用于动态控制属性的数值变化。</p>
+                <p>
+                <ul>
+                    <li>
+                        <strong>作用</strong>：
+                    </li>
+                    <li>通过逻辑和数学公式驱动属性动画（无需手动关键帧）。</li>
+                    <li>在不同属性之间建立动态关联（例如将图层 A 的旋转绑定到图层 B 的位置）。</li>
+                    <li>实现循环、随机、物理模拟等复杂动画效果。</li>
+                    <li>
+                        <strong>特点</strong>：
+                    </li>
+                    <li>
+                        <strong>无需安装</strong>：直接写在属性面板的表达式输入框中。
+                    </li>
+                    <li>
+                        <strong>实时交互</strong>：修改表达式后效果立即生效。
+                    </li>
+                    <li>
+                        <strong>局限性</strong>：只能控制现有属性，无法操作 AE 的全局功能（如创建图层、修改合成设置等）。
+                    </li>
+                    <li>
+                        <strong>示例</strong>：
+                    </li>
+                </ul>
+                </p>
+                <p>// 让图层持续旋转</p>
+                <p>time * 360; // 每秒旋转 360 度</p>
+                <p>// 随机抖动效果</p>
+                <p>wiggle(5, 10); // 每秒抖动5次，幅度10像素</p>
+                <p>
+                <ul>
+                    <li>
+                        <strong>开发语言</strong>：
+                    </li>
+                </ul>
+                </p>
+                <p> After Effects 表达式语法（基于 JavaScript，但有特定内置函数如 linear(), loopOut() 等）。</p>
+                <p>
+                    <strong>2. 脚本（Scripts）</strong>
                 </p>
                 <p>
-                    <strong>第四章</strong> 将变身为UI界面设计师，用代码构建比插件更灵活的专属控制面板。
+                <ul>
+                    <li>
+                        <strong>定义</strong>：
+                    </li>
+                </ul>
                 </p>
-                <p>​ 现在，请暂时清空您对编程的固有认知。这不是计算机系的算法课，而是一场为视觉创作者量身定制的效率革命。</p>
-                <p>当您完成最后一章的高级开发，您收获的不仅是技术，更是将天马行空的创意转化为生产力的终极能力。</p>
-                <p>让我们从Hello World开始，用代码的韵律，重构您熟悉的AE世界——当最后一个分号落下时，您已站在了自动化创作的新起点。</p>
+                <p> 脚本是使用 ExtendScript（Adobe 的 JavaScript 扩展）编写的程序，用于自动化执行复杂的任务或批量操作。</p>
+                <p>
+                <ul>
+                    <li>
+                        <strong>作用</strong>：
+                    </li>
+                    <li>自动化重复性工作（如批量重命名图层、创建多个合成）。</li>
+                    <li>修改项目结构（如调整合成设置、导出特定图层）。</li>
+                    <li>与外部数据交互（如读取 CSV 文件生成动画）。</li>
+                    <li>甚至可以生成表达式或控制插件参数。</li>
+                    <li>
+                        <strong>特点</strong>：
+                    </li>
+                    <li>
+                        <strong>需要手动执行</strong>：通过 "File > Script > Run Script" 运行 .jsx 或 .jsxbin 文件。
+                    </li>
+                    <li>
+                        <strong>权限更高</strong>：可以访问 AE 的项目、合成、图层层级结构。
+                    </li>
+                    <li>
+                        <strong>灵活性</strong>：能实现复杂的逻辑（条件判断、循环、函数等）。
+                    </li>
+                    <li>
+                        <strong>无法直接渲染效果</strong>：只能操作现有数据，不能创建新的渲染功能。
+                    </li>
+                    <li>
+                        <strong>示例</strong>：
+                    </li>
+                    <li>批量将图层名称改为 "Layer_01", "Layer_02"...</li>
+                    <li>根据 Excel 表格生成动态图表动画。</li>
+                    <li>知名脚本：Duik Bassel（角色绑定）、Motion 2（快速动画工具）。</li>
+                    <li>
+                        <strong>开发语言</strong>：
+                    </li>
+                </ul>
+                </p>
+                <p> ExtendScript（JavaScript 的超集，支持访问 AE 的 API）。</p>
+                <p>
+                    <strong>3.插件（Plugins）</strong>
+                </p>
+                <p>
+                <ul>
+                    <li>
+                        <strong>定义</strong>：
+                    </li>
+                </ul>
+                </p>
+                <p> 插件是通过 C/C++ 等编译语言编写的独立模块，用于扩展 After Effects 的核心功能（如新增效果、渲染器、导入导出格式等）。</p>
+                <p>
+                <ul>
+                    <li>
+                        <strong>作用</strong>：
+                    </li>
+                    <li>添加原生 AE 不具备的功能（如粒子系统、高级光效）。</li>
+                    <li>提升渲染性能（如 GPU 加速运算）。</li>
+                    <li>支持特殊文件格式（如 ProRes 编码、3D 模型导入）。</li>
+                    <li>
+                        <strong>特点</strong>：
+                    </li>
+                    <li>
+                        <strong>需要安装</strong>：通常以 .aex 或 .plugin 文件形式存在。
+                    </li>
+                    <li>
+                        <strong>底层访问</strong>：可直接操作内存和 GPU，效率极高。
+                    </li>
+                    <li>
+                        <strong>独立界面</strong>：许多插件有自定义的 UI 面板和参数。
+                    </li>
+                    <li>
+                        <strong>开发门槛高</strong>：需使用 C/C++ 和 AE SDK。
+                    </li>
+                    <li>
+                        <strong>示例</strong>：
+                    </li>
+                    <li>Trapcode Suite（Particular、Form 等粒子特效）。</li>
+                    <li>Optical Flares（镜头光晕生成器）。</li>
+                    <li>Element 3D（三维模型渲染）。</li>
+                    <li>
+                        <strong>开发语言</strong>：
+                    </li>
+                </ul>
+                </p>
+                <p> C/C++（通过 Adobe 的 SDK 开发）。</p>
+                <p>
+                    <strong>协同工作场景</strong>
+                </p>
+                <p>
+                <ul>
+                    <li>脚本可以批量为图层添加表达式。</li>
+                    <li>插件生成的参数（如粒子数量）可通过表达式动态控制。</li>
+                    <li>脚本可调用插件接口调整其设置。</li>
+                </ul>
+                </p>
+                <p>根据需求选择工具：<strong>表达式用于动画逻辑，脚本用于自动化，插件用于功能扩展</strong>。</p>
 
 
                 <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
@@ -371,6 +516,7 @@
 
     <!-- 页脚JS -->
     <script src="../../js/include-footer.js"></script>
+    <script src="../../js/widget.js"></script>
 
     <!-- 使用JavaScript确保B站iframe正确显示 -->
     <script>

@@ -268,7 +268,7 @@
 
             <div class="nav-links-row">
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="../../index.html">首页</a></li>
                     <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
                     <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
                     <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
@@ -284,16 +284,17 @@
     <!-- 文章内容 -->
     <main class="article-detail-container">
         <div class="article-header">
-            <h1 class="article-title">表达式三维物体圆周运动</h1>
+            <h1 class="article-title">第一章：AE脚本开发概述</h1>
+            <h2>第四节：第一个Hello World脚本</h2>
             <div class="article-meta">
                 <div class="article-author">
                     <span>作者: 老胡</span>
                 </div>
                 <div class="article-date">
-                    <span>发布日期: 2025-01-27</span>
+                    <span>发布日期: 2025-02-24</span>
                 </div>
                 <div class="article-category">
-                    <span>分类: 表达式实例</span>
+                    <span>分类: AE脚本</span>
                 </div>
             </div>
         </div>
@@ -306,7 +307,7 @@
                 <div class="video-wrapper">
                     <!-- 使用B站的标准嵌入代码 -->
                     <iframe class="bilibili-iframe"
-                        src="https://player.bilibili.com/player.html?isOutside=true&aid=113899630232389&bvid=BV1wHfUYFEJs&cid=28108390683&p=1"
+                        src="https://player.bilibili.com/player.html?isOutside=true&aid=114058275587505&bvid=BV1QAP4e8EGQ&cid=28554232225&p=1"
                         scrolling="no" allowfullscreen="true">
                     </iframe>
                 </div>
@@ -337,21 +338,190 @@
             <div class="markdown-content">
                 <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
 
-                <p>表达式代码如下：</p>
+
+                <p>
+                    <strong>这是本套教程第一章的最后一节，带你编写第一个脚本hello world!</strong>
+                </p>
+                <p>
+                    <strong>目标：创建并运行一个能在AE中显示对话框的基础脚本</strong>
+                </p>
+                <p>$.writeLn("message"); //输出到控制台</p>
+                <p>alert("message"); //临时弹窗</p>
+                <p>console.log("message"); //浏览器或Node.js中的方法</p>
+                <p>步骤1：选择开发工具,使用VSCode（推荐）</p>
+                <p>​ 新建文件保存为 <code>hello_world.jsx</code>
+                </p>
+                <p>步骤2：编写基础代码</p>
+                <p>基础弹窗版本：</p>
                 <p>
                 <pre>
 <code>
-point = [thisComp.width/2,thisComp.height/2];
-radi = effect("radius")("Slider");
-spe = effect("speed")("Slider");
-ang = time * spe + effect("angle")("Angle");
-x = radi * Math.cos(degreesToRadians(ang));
-y = radi * Math.sin(degreesToRadians(ang));
-add(point,[x,y,o]);
+// 显示简单对话框
+alert("Hello World!");
 </code>
 </pre>
                 </p>
-
+                <p>步骤3：保存脚本</p>
+                <p>
+                <ol>
+                    <li>文件名格式：<code>hello_world.jsx</code>
+                    </li>
+                    <li>保存路径（任选其一）：</li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>AE脚本目录：<code>/Applications/Adobe After Effects [版本]/Scripts/</code> (Mac)</li>
+                    <li>任意位置通过 <code>文件 > 脚本 > 运行脚本文件</code> 调用</li>
+                </ul>
+                </p>
+                <p>步骤4：运行脚本</p>
+                <p>方法1：直接运行</p>
+                <p>
+                <ol>
+                    <li>菜单栏选择 <code>文件 > 脚本 > 运行脚本文件</code>
+                    </li>
+                    <li>选择保存的 <code>.jsx</code> 文件</li>
+                </ol>
+                </p>
+                <p>方法2：快捷键调用</p>
+                <p>
+                <ol>
+                    <li>将脚本放入AE脚本目录</li>
+                    <li>重启AE后在 <code>文件 > 脚本</code> 菜单底部可见脚本</li>
+                    <li>Windows可使用 <code>Ctrl + F12</code> 快速执行</li>
+                </ol>
+                </p>
+                <p>步骤5：验证结果</p>
+                <p>
+                <ul>
+                    <li>成功时显示弹窗：</li>
+                    <li>若出现错误：</li>
+                    <li>检查文件后缀是否为 <code>.jsx</code>
+                    </li>
+                    <li>确认代码无中文标点符号</li>
+                    <li>查看控制台报错信息（ExtendScript Toolkit的Console面板）</li>
+                </ul>
+                </p>
+                <p>
+                    <strong>代码解析</strong>
+                </p>
+                <p>| 代码片段 | 作用说明 |</p>
+                <p>| :--------- | :----------------------------- |</p>
+                <p>| <code>alert();</code> | AE扩展的弹窗方法，支持多行文本 |</p>
+                <p>
+                    <strong>调试技巧</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>控制台输出</strong>（仅限ExtendScript Toolkit）：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <pre>
+<code>
+   $.writeLn("调试信息"); // 输出到控制台
+   </code>
+</pre>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>错误捕获</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <pre>
+<code>
+   try {
+     // 可能出错的代码
+   } catch(err) {
+     alert("错误信息：" + err.message);
+   }
+   </code>
+</pre>
+                </p>
+                <p>
+                    <strong>扩展练习</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>修改弹窗内容为当前时间：</li>
+                </ol>
+                </p>
+                <p>
+                <pre>
+<code>
+   alert("当前时间：" + (new Date()).toLocaleTimeString());
+   </code>
+</pre>
+                </p>
+                <p>
+                <ol>
+                    <li>创建带OK/Cancel按钮的对话框：</li>
+                </ol>
+                </p>
+                <p>
+                <pre>
+<code>
+   var confirmResult = confirm("是否创建新合成？");
+   if (confirmResult) {
+     app.project.items.addComp("NewComp", 1920, 1080, 1, 10, 30);
+   }
+   </code>
+</pre>
+                </p>
+                <p>
+                    <strong>常见问题</strong>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>脚本不运行</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>检查AE首选项 <code>常规 > 允许脚本写入文件和访问网络</code> 是否勾选</li>
+                    <li>Mac系统需在 <code>系统偏好设置 > 安全性与隐私</code> 中授权Adobe程序</li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>中文乱码</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <ul>
+                    <li>保存文件时编码选择 <code>UTF-8 with BOM</code>
+                    </li>
+                    <li>避免直接在alert中使用中文（可用Unicode转码）</li>
+                </ul>
+                </p>
+                <p>
+                <ol>
+                    <li>
+                        <strong>对象不存在</strong>：
+                    </li>
+                </ol>
+                </p>
+                <p>
+                <pre>
+<code>
+   if (app.project) {
+     // 安全操作已存在项目的代码
+   } else {
+     alert("请先创建项目！");
+   }
+   </code>
+</pre>
+                </p>
 
 
                 <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
@@ -365,6 +535,7 @@ add(point,[x,y,o]);
 
     <!-- 页脚JS -->
     <script src="../../js/include-footer.js"></script>
+    <script src="../../js/widget.js"></script>
 
     <!-- 使用JavaScript确保B站iframe正确显示 -->
     <script>
