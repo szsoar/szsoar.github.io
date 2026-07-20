@@ -108,4 +108,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_010.html",
     date: "2026-07-16"
   },
+  {
+    id: 13,
+    title: "表达式曲线绘制浪漫爱心",
+    category: "表达式实例",
+    description: "根据参数方程使用表达式绘制浪漫爱心形状...",
+    image: "../../assets/images/exp/detail_011.jpg",
+    url: "exp_detail_011.html",
+    date: "2026-07-20"
+  },
 ];
