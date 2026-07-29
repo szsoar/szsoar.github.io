@@ -45,4 +45,13 @@ const aeScriptingArticles = [
     url: "src_basic_005.html",
     date: "2025-02-24"
   },
+  {
+    id: 6,
+    title: "AE表达式自学神器",
+    category: "原创脚本",
+    description: "一款AE脚本，能让你轻松学习表达式",
+    image: "../../assets/images/src/detail_001.jpg",
+    url: "src_detail_001.html",
+    date: "2025-08-24"
+  },
 ];

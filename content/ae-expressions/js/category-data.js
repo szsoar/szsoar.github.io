@@ -117,4 +117,22 @@ const aeExpressionsArticles = [
     url: "exp_detail_011.html",
     date: "2026-07-20"
   },
+  {
+    id: 14,
+    title: "表达式条件判断逗号的迷惑行为",
+    category: "表达式实例",
+    description: "解释表达式条件判断里逗号的迷惑行为...",
+    image: "../../assets/images/exp/detail_012.jpg",
+    url: "exp_detail_012.html",
+    date: "2026-07-23"
+  },
+  {
+    id: 15,
+    title: "表达式梯度递进韵律文字",
+    category: "表达式实例",
+    description: "表达式文字逐个变大，自己长出节奏感...",
+    image: "../../assets/images/exp/detail_013.jpg",
+    url: "exp_detail_013.html",
+    date: "2026-07-27"
+  },
 ];
