@@ -135,4 +135,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_013.html",
     date: "2026-07-27"
   },
+  {
+    id: 16,
+    title: "表达式制作文本快切",
+    category: "表达式实例",
+    description: "无需K帧，表达式轻松制作文本快切...",
+    image: "../../assets/images/exp/detail_014.jpg",
+    url: "exp_detail_014.html",
+    date: "2026-08-02"
+  },
 ];
