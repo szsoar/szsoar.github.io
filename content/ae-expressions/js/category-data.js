@@ -144,4 +144,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_014.html",
     date: "2026-08-02"
   },
+  {
+    id: 17,
+    title: "循环动画停止再循环",
+    category: "表达式实例",
+    description: "如何让循环动画停止两秒再循环...",
+    image: "../../assets/images/exp/detail_015.jpg",
+    url: "exp_detail_015.html",
+    date: "2026-08-04"
+  },
 ];
