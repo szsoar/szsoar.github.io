@@ -153,4 +153,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_015.html",
     date: "2026-08-04"
   },
+  {
+    id: 18,
+    title: "五彩斑澜文字制作",
+    category: "表达式实例",
+    description: "表达式制作五彩斑澜的文字...",
+    image: "../../assets/images/exp/detail_016.jpg",
+    url: "exp_detail_016.html",
+    date: "2026-08-10"
+  },
 ];

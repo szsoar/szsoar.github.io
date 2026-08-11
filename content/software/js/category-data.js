@@ -77,9 +77,18 @@ const softwareArticles = [
     title: "音梳 Audio Comber v2.0.0使用指南",
     category: "软件指南",
     description: "",
-    image: "../../assets/images/sof/detail_008.jpg",
+    image: "../../assets/images/sof/detail_009.jpg",
     url: "sof_detail_009.html",
     date: "2026-02-12"
+  },
+  {
+    id: 10,
+    title: "AE表达式防瞟窃神器 v2.0.0使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/sof/detail_010.jpg",
+    url: "sof_detail_010.html",
+    date: "2026-04-08"
   },
 
 ];
