@@ -162,4 +162,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_016.html",
     date: "2026-08-10"
   },
+  {
+    id: 19,
+    title: "表达式淡入淡出",
+    category: "表达式实例",
+    description: "表达式制作淡入淡出...",
+    image: "../../assets/images/exp/detail_017.jpg",
+    url: "exp_detail_017.html",
+    date: "2026-08-14"
+  },
 ];
