@@ -164,11 +164,11 @@ const aeExpressionsArticles = [
   },
   {
     id: 19,
-    title: "表达式淡入淡出",
+    title: "视频循环三种方法",
     category: "表达式实例",
-    description: "表达式制作淡入淡出...",
+    description: "三种方法制作视频循环...",
     image: "../../assets/images/exp/detail_017.jpg",
     url: "exp_detail_017.html",
-    date: "2026-08-14"
+    date: "2026-08-17"
   },
 ];
