@@ -171,4 +171,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_017.html",
     date: "2026-08-17"
   },
+  {
+    id: 20,
+    title: "表达式图片快闪",
+    category: "表达式实例",
+    description: "表达式制作图片快闪轮播...",
+    image: "../../assets/images/exp/detail_018.jpg",
+    url: "exp_detail_018.html",
+    date: "2026-08-31"
+  },
 ];
