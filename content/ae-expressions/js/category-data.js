@@ -180,4 +180,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_018.html",
     date: "2026-08-31"
   },
+  {
+    id: 21,
+    title: "表达式控制循环停止时间和次数",
+    category: "表达式实例",
+    description: "表达式控制循环停止时间和次数...",
+    image: "../../assets/images/exp/detail_019.jpg",
+    url: "exp_detail_019.html",
+    date: "2026-09-06"
+  },
 ];

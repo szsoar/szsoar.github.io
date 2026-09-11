@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的文档</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <script>
+        // 首屏防闪：在页面渲染前就确定主题
+        (function () {
+            var saved = localStorage.getItem('theme')
+            var prefers = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+            document.documentElement.dataset.theme = saved || prefers
+        })()
+    </script>
+    <style>
+        /* ================= 主题变量 ================= */
+        :root {
+            --rightbar-width: 240px;
+            --topbar-height: 56px;
+            --sidebar-width: 260px;
+
+            /* 亮色 */
+            --bg: #ffffff;
+            --bg-soft: #f6f8fa;
+            --bg-hover: #f0f2f5;
+            --fg: #24292f;
+            --fg-muted: #57606a;
+            --fg-subtle: #8c959f;
+            --border: #eaecef;
+            --accent: #0969da;
+            --accent-soft: rgba(9, 105, 218, .08);
+            --accent-shadow: rgba(9, 105, 218, .12);
+            --code-bg: #f6f8fa;
+            --code-border: #eaecef;
+            --shadow-sm: 0 1px 8px rgba(0, 0, 0, .06);
+            --shadow-md: 0 4px 14px rgba(0, 0, 0, .08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, .12);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0d1117;
+            --bg-soft: #161b22;
+            --bg-hover: #21262d;
+            --fg: #e6edf3;
+            --fg-muted: #8b949e;
+            --fg-subtle: #6e7681;
+            --border: #30363d;
+            --accent: #4493f8;
+            --accent-soft: rgba(68, 147, 248, .12);
+            --accent-shadow: rgba(68, 147, 248, .22);
+            --code-bg: #161b22;
+            --code-border: #30363d;
+            --shadow-sm: 0 1px 8px rgba(0, 0, 0, .3);
+            --shadow-md: 0 4px 14px rgba(0, 0, 0, .4);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, .5);
+        }
+
+        /* ================= 基础 ================= */
+        html,
+        body {
+            background: var(--bg) !important;
+            color: var(--fg);
+            transition: background .2s, color .2s;
+        }
+
+        body,
+        .markdown-section,
+        .sidebar,
+        .sidebar-nav,
+        .rightbar,
+        .topbar {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif !important;
+        }
+
+        /* 顶部阅读进度条 */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, var(--accent), #6cb6ff);
+            z-index: 300;
+            transition: width .08s linear;
+            box-shadow: 0 0 6px var(--accent-shadow);
+        }
+
+        /* ================= 顶部导航栏 ================= */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--topbar-height);
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            box-sizing: border-box;
+            transition: box-shadow .2s, background .2s, border-color .2s;
+        }
+
+        body.scrolled .topbar {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--fg);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color .12s;
+        }
+
+        .topbar-brand:hover {
+            color: var(--accent);
+        }
+
+        .topbar-logo {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .topbar-spacer {
+            flex: 1;
+        }
+
+        .theme-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--fg-muted);
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .15s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-soft);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .topbar-link {
+            display: flex;
+            align-items: center;
+            height: 36px;
+            padding: 0 14px;
+            margin-right: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            color: var(--fg-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all .15s;
+        }
+
+        .topbar-link:hover {
+            background: var(--bg-soft);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* ================= 侧栏 / 内容 / 右栏 让位顶栏 ================= */
+        .sidebar {
+            top: var(--topbar-height) !important;
+            background: var(--bg) !important;
+            border-right: 1px solid var(--border);
+            padding-top: 20px !important;
+            transition: background .2s, border-color .2s;
+        }
+
+        .content {
+            top: var(--topbar-height) !important;
+        }
+
+        /* ================= 正文 ================= */
+        .markdown-section {
+            max-width: 1400px;
+            margin: 0 100px;
+            padding: 40px 0 80px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--fg);
+        }
+
+        .markdown-section h1 {
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin: 0 0 28px;
+            font-weight: 700;
+        }
+
+        .markdown-section h2 {
+            font-size: 1.55rem;
+            line-height: 1.35;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 2.2em;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .markdown-section h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: .9em;
+            background: var(--accent);
+            border-radius: 2px;
+            margin-right: 12px;
+            vertical-align: -2px;
+            box-shadow: 0 0 8px var(--accent-shadow);
+        }
+
+        .markdown-section h3 {
+            font-size: 1.22rem;
+            margin-top: 1.8em;
+            font-weight: 600;
+        }
+
+        .markdown-section h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 1.5em;
+        }
+
+        .markdown-section p,
+        .markdown-section ul,
+        .markdown-section ol,
+        .markdown-section li {
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        /* 正文链接动画下划线 */
+        .markdown-section a {
+            color: var(--accent);
+            text-decoration: none;
+            background-image: linear-gradient(var(--accent), var(--accent));
+            background-size: 0% 1px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            transition: background-size .2s, color .12s;
+        }
+
+        .markdown-section a:hover {
+            background-size: 100% 1px;
+        }
+
+        /* 标题里的锚点不要动画 */
+        .markdown-section h1 a,
+        .markdown-section h2 a,
+        .markdown-section h3 a,
+        .markdown-section h4 a {
+            background: none;
+            color: inherit;
+        }
+
+        /* 代码 */
+        .markdown-section code {
+            background: var(--code-bg);
+            border: 1px solid var(--code-border);
+            padding: .15em .4em;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+            font-size: .85em;
+            color: var(--fg);
+        }
+
+        .markdown-section pre {
+            background: var(--code-bg);
+            border: 1px solid var(--code-border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color .15s;
+        }
+
+        .markdown-section pre:hover {
+            border-color: var(--fg-subtle);
+        }
+
+        .markdown-section pre code {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: .82em;
+            line-height: 1.65;
+            color: var(--fg);
+        }
+
+        /* 代码块语言标签 */
+        .code-lang {
+            position: absolute;
+            top: 10px;
+            right: 74px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--fg-subtle);
+            pointer-events: none;
+            user-select: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* 复制按钮 */
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            padding: 4px 10px;
+            font-size: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            border-radius: 6px;
+            color: var(--fg-muted);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity .15s, color .12s, border-color .12s, background .12s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .markdown-section pre:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .copy-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .copy-btn.copied {
+            color: #1a7f37;
+            border-color: #1a7f37;
+        }
+
+        [data-theme="dark"] .copy-btn.copied {
+            color: #3fb950;
+            border-color: #3fb950;
+        }
+
+        .markdown-section blockquote {
+            border-left: 4px solid var(--border);
+            color: var(--fg-muted);
+            padding: 2px 16px;
+            font-size: 1em;
+        }
+
+        .markdown-section table {
+            font-size: .95em;
+        }
+
+        .markdown-section th,
+        .markdown-section td {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+        }
+
+        .markdown-section th {
+            background: var(--bg-soft);
+        }
+
+        /* 图片圆角阴影 */
+        .markdown-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ================= 首页模式 ================= */
+        body.home-mode .sidebar,
+        body.home-mode .rightbar {
+            display: none !important;
+        }
+
+        body.home-mode .content {
+            left: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+        }
+
+        body.home-mode .markdown-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* 首页卡片 */
+        .home-subtitle {
+            color: var(--fg-muted);
+            font-size: 15px;
+            margin: -8px 0 40px;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 16px 0 40px;
+        }
+
+        .doc-card {
+            display: block;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: all .18s ease;
+            background: var(--bg);
+        }
+
+        .doc-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px) rotate(-.3deg);
+        }
+
+        .doc-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--accent);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        /* ================= 左侧栏章节 ================= */
+        .sidebar .doc-title {
+            padding: 6px 12px 14px;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--fg);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .sidebar .doc-toc {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar .doc-toc a {
+            display: block;
+            padding: 6px 12px;
+            color: var(--fg-muted);
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-left: 2px solid transparent;
+            line-height: 1.5;
+            transition: color .12s, background .12s, border-color .12s;
+        }
+
+        .sidebar .doc-toc a:hover {
+            color: var(--accent);
+            background: var(--bg-soft);
+        }
+
+        .sidebar .doc-toc a.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            font-weight: 600;
+        }
+
+        .sidebar .doc-toc li.lv3 a {
+            padding-left: 26px;
+            font-size: 13px;
+        }
+
+        /* 左侧滚动条 */
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: var(--fg-subtle);
+        }
+
+        /* ================= 右侧栏 ================= */
+        .rightbar {
+            position: fixed;
+            top: var(--topbar-height);
+            right: 0;
+            width: var(--rightbar-width);
+            height: calc(100vh - var(--topbar-height));
+            overflow-y: auto;
+            padding: 40px 24px 40px 20px;
+            border-left: 1px solid var(--border);
+            background: var(--bg);
+            z-index: 10;
+            box-sizing: border-box;
+            font-size: 13px;
+            transition: background .2s, border-color .2s;
+        }
+
+        .rightbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .rightbar::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .rightbar-section {
+            margin-bottom: 32px;
+        }
+
+        .rightbar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .rightbar-title {
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--fg-subtle);
+            margin-bottom: 12px;
+        }
+
+        .rightbar-doc-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--fg);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .rightbar-meta {
+            color: var(--fg-muted);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .rightbar-meta .dot {
+            margin: 0 6px;
+            color: var(--fg-subtle);
+        }
+
+        .rightbar-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            color: var(--fg-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: background .12s, color .12s;
+        }
+
+        .rightbar-btn:hover {
+            background: var(--bg-soft);
+            color: var(--accent);
+        }
+
+        .rightbar-btn .ico {
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+            color: var(--fg-subtle);
+        }
+
+        @media (max-width: 1200px) {
+            .rightbar {
+                display: none !important;
+            }
+
+            .content {
+                right: 0 !important;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .content {
+                right: var(--rightbar-width) !important;
+            }
+        }
+
+        /* ================= 返回顶部按钮 ================= */
+        .scroll-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--fg-muted);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all .2s;
+            pointer-events: none;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 1201px) {
+            .scroll-top {
+                right: calc(var(--rightbar-width) + 24px);
+            }
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
+        }
+
+        .scroll-top:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        /* ================= 分页卡片 ================= */
+        .docsify-pagination-container {
+            display: flex;
+            gap: 16px;
+            margin-top: 3em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-family: inherit;
+        }
+
+        .pagination-item {
+            flex: 1;
+            max-width: calc(50% - 8px);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all .15s ease;
+            background: var(--bg);
+        }
+
+        .pagination-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .pagination-item a {
+            display: block;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .pagination-item-label {
+            display: flex;
+            align-items: center;
+            font-family: inherit;
+            font-size: 12px !important;
+            font-weight: 600;
+            color: var(--fg-subtle) !important;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin: 0 !important;
+        }
+
+        .pagination-item-title {
+            font-family: inherit;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: var(--accent) !important;
+            margin-top: 6px !important;
+            line-height: 1.4;
+        }
+
+        .pagination-item--next {
+            margin-left: auto;
+        }
+
+        .pagination-item--next a {
+            text-align: right;
+        }
+
+        .pagination-item--next .pagination-item-label {
+            justify-content: flex-end;
+        }
+
+        .docsify-pagination-container>.pagination-item:only-child {
+            max-width: 100%;
+        }
+
+        /* ================= 暗色模式下的 Prism 语法高亮 ================= */
+        [data-theme="dark"] .token.comment,
+        [data-theme="dark"] .token.prolog,
+        [data-theme="dark"] .token.doctype,
+        [data-theme="dark"] .token.cdata {
+            color: #8b949e;
+        }
+
+        [data-theme="dark"] .token.punctuation {
+            color: #c9d1d9;
+        }
+
+        [data-theme="dark"] .token.property,
+        [data-theme="dark"] .token.tag,
+        [data-theme="dark"] .token.boolean,
+        [data-theme="dark"] .token.number,
+        [data-theme="dark"] .token.constant,
+        [data-theme="dark"] .token.symbol,
+        [data-theme="dark"] .token.deleted {
+            color: #79c0ff;
+        }
+
+        [data-theme="dark"] .token.selector,
+        [data-theme="dark"] .token.attr-name,
+        [data-theme="dark"] .token.string,
+        [data-theme="dark"] .token.char,
+        [data-theme="dark"] .token.builtin,
+        [data-theme="dark"] .token.inserted {
+            color: #a5d6ff;
+        }
+
+        [data-theme="dark"] .token.operator,
+        [data-theme="dark"] .token.entity,
+        [data-theme="dark"] .token.url,
+        [data-theme="dark"] .language-css .token.string,
+        [data-theme="dark"] .style .token.string {
+            color: #ff7b72;
+        }
+
+        [data-theme="dark"] .token.atrule,
+        [data-theme="dark"] .token.attr-value,
+        [data-theme="dark"] .token.keyword {
+            color: #ff7b72;
+        }
+
+        [data-theme="dark"] .token.function,
+        [data-theme="dark"] .token.class-name {
+            color: #d2a8ff;
+        }
+
+        [data-theme="dark"] .token.regex,
+        [data-theme="dark"] .token.important,
+        [data-theme="dark"] .token.variable {
+            color: #ffa657;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 顶部阅读进度条 -->
+    <div class="reading-progress"></div>
+
+    <!-- 顶部导航栏 -->
+    <header class="topbar">
+        <a class="topbar-brand" href="#/">
+            <span class="topbar-logo">📚</span>
+            <span class="topbar-text">我的文档</span>
+        </a>
+        <div class="topbar-spacer"></div>
+        <a class="topbar-link" href="https://szsoar.com/">← 返回主站</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换主题">🌙</button>
+    </header>
+
+    <div id="app">正在加载文档...</div>
+
+    <!-- 返回顶部 -->
+    <button class="scroll-top" id="scrollTop" aria-label="返回顶部" title="返回顶部">↑</button>
+
+    <script>
+        window.$docsify = {
+            name: '',
+            loadSidebar: true,
+            subMaxLevel: 3,
+            pagination: {
+                previousText: '上一页',
+                nextText: '下一页'
+            }
+        }
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+    <script>
+            (function () {
+                /* ---------------- 主题切换 ---------------- */
+                const themeToggle = document.getElementById('themeToggle')
+                function syncThemeIcon() {
+                    const isDark = document.documentElement.dataset.theme === 'dark'
+                    themeToggle.textContent = isDark ? '☀️' : '🌙'
+                }
+                themeToggle.addEventListener('click', () => {
+                    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
+                    document.documentElement.dataset.theme = next
+                    localStorage.setItem('theme', next)
+                    syncThemeIcon()
+                })
+                syncThemeIcon()
+
+                /* ---------------- 滚动：顶栏阴影、进度条、返回顶部 ---------------- */
+                const progress = document.querySelector('.reading-progress')
+                const scrollTopBtn = document.getElementById('scrollTop')
+
+                function onScroll() {
+                    const doc = document.documentElement
+                    const y = doc.scrollTop
+                    const total = doc.scrollHeight - doc.clientHeight
+
+                    document.body.classList.toggle('scrolled', y > 4)
+                    if (progress) {
+                        progress.style.width = total > 0 ? (y / total * 100) + '%' : '0%'
+                    }
+                    if (scrollTopBtn) {
+                        scrollTopBtn.classList.toggle('show', y > 400)
+                    }
+                }
+                window.addEventListener('scroll', onScroll, { passive: true })
+                onScroll()
+
+                scrollTopBtn?.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                })
+
+                /* ---------------- 工具函数 ---------------- */
+                function isHome() {
+                    const h = location.hash
+                    return !h || h === '#' || h === '#/' || h === '#/?'
+                }
+                function toHash(href) {
+                    if (!href) return '#/'
+                    if (href.startsWith('#')) return href
+                    if (href.startsWith('/')) return '#' + href
+                    return '#/' + href
+                }
+                function whenSidebarReady(cb, tries = 50) {
+                    const nav = document.querySelector('.sidebar-nav')
+                    const list = nav && nav.querySelector('ul')
+                    if (list && list.children.length) return cb(nav, list)
+                    if (tries <= 0) return
+                    setTimeout(() => whenSidebarReady(cb, tries - 1), 40)
+                }
+                function extractDocs(rootList) {
+                    const docs = []
+                    const walk = (ul, group) => {
+                        Array.from(ul.children).forEach(li => {
+                            const sublist = li.querySelector(':scope > ul')
+                            const a = li.querySelector(':scope > a')
+                            if (a) {
+                                const href = a.getAttribute('href') || ''
+                                if (href && href !== '/' && href !== '#/' && href !== '') {
+                                    docs.push({ title: a.textContent.trim(), href, group })
+                                }
+                            }
+                            if (sublist) {
+                                const tn = Array.from(li.childNodes)
+                                    .find(n => n.nodeType === 3 && n.textContent.trim())
+                                const label = tn ? tn.textContent.trim() : group
+                                walk(sublist, label)
+                            }
+                        })
+                    }
+                    walk(rootList, '')
+                    return docs
+                }
+
+                /* ---------------- 代码块增强：语言标签 + 复制按钮 ---------------- */
+                function enhanceCodeBlocks() {
+                    document.querySelectorAll('.markdown-section pre').forEach(pre => {
+                        if (pre.dataset.enhanced) return
+                        pre.dataset.enhanced = '1'
+
+                        const code = pre.querySelector('code')
+                        if (!code) return
+
+                        // 语言标签
+                        const cls = code.className || ''
+                        const m = cls.match(/language-([\w-]+)/)
+                        if (m) {
+                            const lang = document.createElement('span')
+                            lang.className = 'code-lang'
+                            lang.textContent = m[1]
+                            pre.appendChild(lang)
+                        }
+
+                        // 复制按钮
+                        const btn = document.createElement('button')
+                        btn.className = 'copy-btn'
+                        btn.type = 'button'
+                        btn.textContent = '复制'
+                        btn.addEventListener('click', async () => {
+                            try {
+                                await navigator.clipboard.writeText(code.innerText)
+                                btn.textContent = '已复制'
+                                btn.classList.add('copied')
+                                setTimeout(() => {
+                                    btn.textContent = '复制'
+                                    btn.classList.remove('copied')
+                                }, 1500)
+                            } catch (e) {
+                                btn.textContent = '失败'
+                                setTimeout(() => btn.textContent = '复制', 1500)
+                            }
+                        })
+                        pre.appendChild(btn)
+                    })
+                }
+
+                /* ---------------- 首页 ---------------- */
+                function renderHome() {
+                    const section = document.querySelector('.markdown-section')
+                    if (!section) return
+                    whenSidebarReady((nav, list) => {
+                        const docs = extractDocs(list)
+                        const groups = {}
+                        docs.forEach(d => {
+                            const g = d.group || ''
+                            if (!groups[g]) groups[g] = []
+                            groups[g].push(d)
+                        })
+
+                        let html = '<h1>📚 文档中心</h1><p class="home-subtitle">选择下方文档开始阅读</p>'
+                        Object.entries(groups).forEach(([g, arr]) => {
+                            if (g) html += `<h2>${g}</h2>`
+                            html += '<div class="doc-grid">'
+                            arr.forEach(d => {
+                                html += `<a class="doc-card" href="${toHash(d.href)}"><h3>${d.title}</h3></a>`
+                            })
+                            html += '</div>'
+                        })
+                        section.innerHTML = html
+                    })
+                }
+
+                /* ---------------- 文档页 ---------------- */
+                function renderDoc() {
+                    const section = document.querySelector('.markdown-section')
+                    if (!section) return
+
+                    const title = section.querySelector('h1')?.textContent?.trim() || ''
+                    const headings = Array.from(section.querySelectorAll('h2, h3'))
+
+                    headings.forEach(h => {
+                        if (!h.id) {
+                            h.id = h.textContent.trim()
+                                .toLowerCase()
+                                .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
+                                .replace(/^-|-$/g, '')
+                        }
+                    })
+
+                    whenSidebarReady((nav) => {
+                        let leftHtml = ''
+                        if (title) leftHtml += `<div class="doc-title">${title}</div>`
+                        if (headings.length) {
+                            leftHtml += '<ul class="doc-toc">'
+                            headings.forEach(h => {
+                                const cls = h.tagName === 'H3' ? 'lv3' : 'lv2'
+                                leftHtml += `<li class="${cls}"><a data-target="${h.id}">${h.textContent}</a></li>`
+                            })
+                            leftHtml += '</ul>'
+                        } else {
+                            leftHtml += '<div style="padding:6px 12px;color:var(--fg-subtle);font-size:13px;">本页无子章节</div>'
+                        }
+                        nav.innerHTML = leftHtml
+
+                        const links = Array.from(nav.querySelectorAll('.doc-toc a'))
+                        links.forEach(a => {
+                            a.addEventListener('click', e => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                const target = document.getElementById(a.dataset.target)
+                                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                            })
+                        })
+
+                        if (headings.length) {
+                            const io = new IntersectionObserver(entries => {
+                                const visible = entries.filter(e => e.isIntersecting)
+                                if (visible.length) {
+                                    const t = visible[0].target
+                                    links.forEach(a => {
+                                        a.classList.toggle('active', a.dataset.target === t.id)
+                                    })
+                                }
+                            }, { rootMargin: '-80px 0px -70% 0px' })
+                            headings.forEach(h => io.observe(h))
+                        }
+                    })
+
+                    renderRightbar(section, title, headings)
+                }
+
+                function renderRightbar(section, title, headings) {
+                    let bar = document.querySelector('.rightbar')
+                    if (!bar) {
+                        bar = document.createElement('aside')
+                        bar.className = 'rightbar'
+                        document.body.appendChild(bar)
+                    }
+
+                    const rawText = section.textContent || ''
+                    const charCount = rawText.replace(/\s+/g, '').length
+                    const readingTime = Math.max(1, Math.ceil(charCount / 350))
+
+                    bar.innerHTML = `
+          <div class="rightbar-section">
+            <div class="rightbar-title">本页信息</div>
+            <div class="rightbar-doc-title">${title || '未命名文档'}</div>
+            <div class="rightbar-meta">
+              ${headings.length} 个章节 <span class="dot">·</span> 约 ${readingTime} 分钟
+            </div>
+          </div>
+          <div class="rightbar-section">
+            <div class="rightbar-title">快速操作</div>
+            <a class="rightbar-btn" href="#" id="rightbar-top">
+              <span class="ico">↑</span> 回到顶部
+            </a>
+            <a class="rightbar-btn" href="#/">
+              <span class="ico">←</span> 全部文档
+            </a>
+          </div>
+        `
+
+                    bar.querySelector('#rightbar-top')?.addEventListener('click', e => {
+                        e.preventDefault()
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                    })
+                }
+
+                /* ---------------- Docsify 生命周期 ---------------- */
+                window.$docsify = window.$docsify || {}
+                window.$docsify.plugins = (window.$docsify.plugins || []).concat(function (hook) {
+                    hook.doneEach(function () {
+                        if (isHome()) {
+                            document.body.classList.add('home-mode')
+                            document.querySelector('.rightbar')?.remove()
+                            renderHome()
+                        } else {
+                            document.body.classList.remove('home-mode')
+                            renderDoc()
+                        }
+                        enhanceCodeBlocks()
+                    })
+                })
+            })()
+    </script>
+
+    <!-- 复制水印 -->
+    <script>
+        document.addEventListener('copy', e => {
+            const sel = window.getSelection().toString()
+            if (!sel) return
+            if (!e.target.closest?.('.markdown-section')) return
+
+            e.preventDefault()
+            e.clipboardData.setData(
+                'text/plain',
+                sel + '\n\n—— 内容来自 ' + 'szsoar.com' + '，转载请注明出处'
+            )
+        })
+    </script>
+</body>
+
+</html>
