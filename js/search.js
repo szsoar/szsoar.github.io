@@ -1,152 +1,7 @@
+// ============================================
 // 搜索页面功能
-
-// 模拟数据库
-const mockDatabase = {
-  "特效": [
-    {
-      id: 1,
-      title: "摄像机运镜技巧：伏羲训六畜",
-      category: "effects",
-      categoryName: "AE特效",
-      date: "2025-07-08",
-      description: "展示如何通过AE摄像机以及相关技巧制作丝滑流畅的运镜效果...",
-      reads: 1245,
-      likes: 328,
-      favorites: 512,
-      url: "./content/ae-effects/article-1.html"
-    },
-  ],
-  "表达": [
-    {
-      id: 1,
-      title: "表达式保姆级教程零基础15模块实战",
-      category: "expressions",
-      categoryName: "AE表达式",
-      date: "2024-09-15",
-      description: "全网最系统的表达式入门指南！小白也能三天上手自动化动画！",
-      reads: 2890,
-      likes: 512,
-      favorites: 723,
-      url: "./content/ae-expressions/article-1.html"
-    },
-    {
-      id: 2,
-      title: "表达式保姆级教程之导言",
-      category: "expressions",
-      categoryName: "AE表达式",
-      date: "2024-10-15",
-      description: "学习如何使用表达式创建复杂的动态动画效果，提升项目水平...",
-      reads: 2578,
-      likes: 702,
-      favorites: 519,
-      url: "./content/ae-expressions/article-2.html"
-    },
-    {
-      id: 3,
-      title: "表达式保姆级教程第一章第一节",
-      category: "expressions",
-      categoryName: "AE表达式",
-      date: "2024-10-15",
-      description: "表达式的概念及添加...",
-      reads: 1406,
-      likes: 598,
-      favorites: 462,
-      url: "./content/ae-expressions/article-3.html"
-    },
-  ],
-  "脚本": [
-    {
-      id: 1,
-      title: "AE脚本开发零基础入门教程之片头介绍",
-      category: "scripting",
-      categoryName: "AE脚本",
-      date: "2025-02-03",
-      description: "学习如何编写自己的AE脚本，自动化重复任务并提高工作效率。",
-      reads: 1342,
-      likes: 387,
-      favorites: 498,
-      url: "./content/ae-scripting/article-1.html"
-    },
-    {
-      id: 2,
-      title: "AE脚本开发教程之第一章第一节",
-      category: "scripting",
-      categoryName: "AE脚本",
-      date: "2025-02-06",
-      description: "学习AE脚本基础知识，了解什么是AE脚本...。",
-      reads: 1765,
-      likes: 432,
-      favorites: 567,
-      url: "./content/ae-scripting/article-2.html"
-    },
-    {
-      id: 3,
-      title: "AE脚本开发教程之第一章第二节",
-      category: "scripting",
-      categoryName: "AE脚本",
-      date: "2025-02-10",
-      description: "学习AE脚本基础知识，了解脚本、表达式和插件的区别...",
-      reads: 1355,
-      likes: 765,
-      favorites: 787,
-      url: "./content/ae-scripting/article-3.html"
-    },
-    {
-      id: 4,
-      title: "AE脚本开发教程之第一章第三节",
-      category: "scripting",
-      categoryName: "AE脚本",
-      date: "2025-02-17",
-      description: "学习AE脚本基础知识，配置AE脚本的开发环境",
-      reads: 4358,
-      likes: 968,
-      favorites: 988,
-      url: "./content/ae-scripting/article-3.html"
-    },
-    {
-      id: 5,
-      title: "AE脚本开发教程之第一章第四节",
-      category: "scripting",
-      categoryName: "AE脚本",
-      date: "2025-02-24",
-      description: "学习AE脚本基础知识，输出第一个hello world脚本",
-      reads: 3427,
-      likes: 861,
-      favorites: 743,
-      url: "./content/ae-scripting/article-3.html"
-    },
-  ],
-  "插件": [
-    {
-      id: 1,
-      title: "UXP插件开发入门指南(待更新)",
-      category: "plugins",
-      categoryName: "AE插件",
-      date: "2025-09-29",
-      description: "探索Adobe新一代UXP平台，学习现代化AE插件开发技术...",
-      reads: 985,
-      likes: 267,
-      favorites: 389,
-      url: "./content/ae-plugins/article-lead.html"
-    },
-  ],
-  "下载": [
-    {
-      id: 1,
-      title: "AE表达式自学神器",
-      category: "downloads",
-      categoryName: "资源下载",
-      description: "原创AE脚本，一键查询内置表达式功能说明并配备用法示例，支持快速为选中图层属性添加自定义表达式，提升表达式编辑效率，适合动画师与特效师使用。",
-      size: "732KB",
-      downloads: 1242,
-      url: "https://pan.baidu.com/s/1lZpOiRXh2hfYZO0wi2v3ow?pwd=4uf3",
-      type: "template"
-    },
-  ],
-  "粒": [
-
-  ],
-};
+// 数据来源：js/search-data.js（由 build-index.mjs 生成）
+// ============================================
 
 // 当前搜索状态
 let currentSearchState = {
@@ -204,7 +59,6 @@ function performSearch() {
   currentSearchState.query = searchTerm;
   currentSearchState.page = 1;
 
-  // 模拟搜索
   const results = mockSearch(searchTerm);
 
   if (results.length === 0) {
@@ -220,14 +74,35 @@ function performSearch() {
   }
 }
 
-// 模拟搜索函数
+// ============================================
+// 模糊搜索：匹配 title / description / content / categoryName
+// 支持多关键词（空格分隔，全部命中才算）
+// ============================================
 function mockSearch(query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+
+  // 数据没加载完时兜底
+  if (typeof mockDatabase === 'undefined') {
+    console.error('mockDatabase 未加载，请检查 js/search-data.js 是否引入');
+    return [];
+  }
+
+  const terms = q.split(/\s+/).filter(Boolean);
   const results = [];
 
-  // 检查数据库中的每个关键词
-  for (const [keyword, items] of Object.entries(mockDatabase)) {
-    if (query.toLowerCase().includes(keyword.toLowerCase())) {
-      results.push(...items);
+  for (const items of Object.values(mockDatabase)) {
+    for (const item of items) {
+      const text = [
+        item.title,
+        item.description,
+        item.content,
+        item.categoryName
+      ].filter(Boolean).join(' ').toLowerCase();
+
+      if (terms.every(t => text.includes(t))) {
+        results.push(item);
+      }
     }
   }
 
@@ -298,15 +173,10 @@ function renderResults() {
                 <article class="list-item">
                     <div class="list-item-header">
                         <span class="list-item-category">${item.categoryName}</span>
-                        <span class="list-item-date">${item.date}</span>
+                        <span class="list-item-date">${item.date || ''}</span>
                     </div>
                     <h3 class="list-item-title"><a href="${item.url}">${item.title}</a></h3>
-                    <p class="list-item-desc">${item.description}</p>
-                    <div class="list-item-meta">
-                        <span>阅读 ${item.reads}</span>
-                        <span>点赞 ${item.likes}</span>
-                        <span>收藏 ${item.favorites}</span>
-                    </div>
+                    <p class="list-item-desc">${item.description}</p>                    
                 </article>
             `;
     }

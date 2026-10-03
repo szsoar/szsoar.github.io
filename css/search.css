@@ -284,6 +284,12 @@
   gap: 0.3rem;
 }
 
+#page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .page-btn,
 .page-num {
   padding: 0.4rem 0.8rem;
