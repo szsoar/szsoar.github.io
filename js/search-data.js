@@ -221,6 +221,16 @@ window.mockDatabase = {
       "description": "表达式控制循环停止时间和次数...",
       "content": "",
       "url": "./content/ae-expressions/exp_detail_019.html"
+    },
+    {
+      "id": 22,
+      "title": "AE表达式多图层共用函数代码",
+      "category": "expressions",
+      "categoryName": "AE表达式",
+      "date": "2026-10-05",
+      "description": "AE表达式文本层负责构造函数共用，其他图层属性负责用eval注入...",
+      "content": "",
+      "url": "./content/ae-expressions/exp_detail_020.html"
     }
   ],
   "脚本": [
@@ -232,7 +242,7 @@ window.mockDatabase = {
       "date": "2025-02-03",
       "description": "学习如何编写AE脚本，自动化重复任务并提高工作效率...",
       "content": "",
-      "url": "./content/ae-scripting/src_basic_001.html"
+      "url": "./content/ae-scripting/scr_basic_001.html"
     },
     {
       "id": 2,
@@ -242,7 +252,7 @@ window.mockDatabase = {
       "date": "2025-02-06",
       "description": "学习AE脚本基础知识，了解什么是AE脚本...",
       "content": "",
-      "url": "./content/ae-scripting/src_basic_002.html"
+      "url": "./content/ae-scripting/scr_basic_002.html"
     },
     {
       "id": 3,
@@ -252,7 +262,7 @@ window.mockDatabase = {
       "date": "2025-02-10",
       "description": "学习AE脚本基础知识，了解脚本、表达式和插件的区别...",
       "content": "",
-      "url": "./content/ae-scripting/src_basic_003.html"
+      "url": "./content/ae-scripting/scr_basic_003.html"
     },
     {
       "id": 4,
@@ -262,7 +272,7 @@ window.mockDatabase = {
       "date": "2025-02-17",
       "description": "学习AE脚本基础知识，配置AE脚本的开发环境",
       "content": "",
-      "url": "./content/ae-scripting/src_basic_004.html"
+      "url": "./content/ae-scripting/scr_basic_004.html"
     },
     {
       "id": 5,
@@ -272,17 +282,27 @@ window.mockDatabase = {
       "date": "2025-02-24",
       "description": "学习AE脚本基础知识，输出第一个hello world脚本",
       "content": "",
-      "url": "./content/ae-scripting/src_basic_005.html"
+      "url": "./content/ae-scripting/scr_basic_005.html"
     },
     {
       "id": 6,
-      "title": "AE表达式自学神器",
+      "title": "AE表达式自学神器v1.0",
       "category": "scripting",
       "categoryName": "AE脚本",
       "date": "2025-08-24",
       "description": "一款AE脚本，能让你轻松学习表达式",
       "content": "",
-      "url": "./content/ae-scripting/src_detail_001.html"
+      "url": "./content/ae-scripting/scr_detail_001.html"
+    },
+    {
+      "id": 7,
+      "title": "AE表达式自学神器v2.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2026-09-30",
+      "description": "一款AE脚本，能让你轻松学习表达式",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_002.html"
     }
   ],
   "插件": [

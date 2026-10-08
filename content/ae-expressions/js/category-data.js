@@ -189,4 +189,13 @@ const aeExpressionsArticles = [
     url: "exp_detail_019.html",
     date: "2026-09-06"
   },
+  {
+    id: 22,
+    title: "AE表达式多图层共用函数代码",
+    category: "表达式实例",
+    description: "AE表达式文本层负责构造函数共用，其他图层属性负责用eval注入...",
+    image: "../../assets/images/exp/detail_020.jpg",
+    url: "exp_detail_020.html",
+    date: "2026-10-05"
+  },
 ];
