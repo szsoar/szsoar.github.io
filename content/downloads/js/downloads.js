@@ -75,7 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
         <span class="price-tag ${priceClass}">${download.priceType}</span>
         
         <div class="download-icon">${download.icon}</div>
-        <h3>${download.title}</h3>
+
+       
+
+        <h3>${download.detailUrl ? `<a href="${download.detailUrl}">${download.title}</a>` : download.title}</h3>
+
         <p>${download.description}</p>
         
         <div class="price-display">

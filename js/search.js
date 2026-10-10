@@ -159,7 +159,10 @@ function renderResults() {
                 <div class="download-list-item">
                     <div class="download-list-header">
                         <div class="download-list-icon">${item.type === 'plugin' ? '🧩' : '🎬'}</div>
-                        <h3 class="download-list-title">${item.title}</h3>
+                        
+
+                        <h3 class="download-list-title">${item.detailUrl ? `<a href="${item.detailUrl.replace(/^\.\.\//, './content/')}">${item.title}</a>` : item.title}</h3>
+
                     </div>
                     <p class="download-list-desc">${item.description}</p>
                     <div class="download-list-meta">

@@ -430,6 +430,7 @@ window.mockDatabase = {
       "downloads": 2450,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Wth1W9abKGBeW_yob-cypQ?pwd=4ugp",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-10-15"
     },
     {
@@ -442,6 +443,7 @@ window.mockDatabase = {
       "downloads": 11098,
       "type": "script",
       "url": "https://pan.baidu.com/s/1wUfBYdi2kQu0JVGUY_-GoA?pwd=6pd7",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-10-10"
     },
     {
@@ -453,7 +455,8 @@ window.mockDatabase = {
       "size": "732 KB",
       "downloads": 1026,
       "type": "script",
-      "url": "../../assets/downloads/scripts/layer-manager.zip",
+      "url": "#",
+      "detailUrl": "../ae-scripting/scr_detail_001.html",
       "date": "2024-10-05"
     },
     {
@@ -465,7 +468,8 @@ window.mockDatabase = {
       "size": "5.35 GB",
       "downloads": 329,
       "type": "script",
-      "url": "../../assets/downloads/scripts/layer-manager.zip",
+      "url": "#",
+      "detailUrl": "../../docs/index.html",
       "date": "2025-02-08"
     },
     {
@@ -478,6 +482,7 @@ window.mockDatabase = {
       "downloads": 2646,
       "type": "script",
       "url": "https://pan.baidu.com/s/1P_qHeSXHht3lJyDevSZJjg?pwd=6yif",
+      "detailUrl": "",
       "date": "2018-08-01"
     },
     {
@@ -490,6 +495,7 @@ window.mockDatabase = {
       "downloads": 1957,
       "type": "script",
       "url": "https://pan.baidu.com/s/1vDiSgpvgxEaNeQHojMxW5w?pwd=p8pf",
+      "detailUrl": "",
       "date": "2018-08-08"
     },
     {
@@ -502,6 +508,7 @@ window.mockDatabase = {
       "downloads": 1153,
       "type": "script",
       "url": "https://pan.baidu.com/s/14rHo6-Yrur059jOido6xJw?pwd=u5xh",
+      "detailUrl": "",
       "date": "2025-10-10"
     },
     {
@@ -514,6 +521,7 @@ window.mockDatabase = {
       "downloads": 1641,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Urg9_sVvMeVTXwK4Gh-lCQ?pwd=c4u6",
+      "detailUrl": "",
       "date": "2025-10-13"
     },
     {
@@ -526,6 +534,7 @@ window.mockDatabase = {
       "downloads": 3521,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Rq_s8uSqjP_GFZkegl7TQw?pwd=e7i9",
+      "detailUrl": "",
       "date": "2025-10-15"
     },
     {
@@ -538,6 +547,7 @@ window.mockDatabase = {
       "downloads": 1052,
       "type": "script",
       "url": "https://pan.baidu.com/s/1byMUc6T5GvlfbN8-cwNtkg?pwd=a673",
+      "detailUrl": "",
       "date": "2025-10-16"
     },
     {
@@ -550,6 +560,7 @@ window.mockDatabase = {
       "downloads": 1627,
       "type": "script",
       "url": "https://pan.baidu.com/s/1vPcRUo_RXBh6Rkh_Ucxq3g?pwd=s5yh",
+      "detailUrl": "",
       "date": "2025-10-16"
     },
     {
@@ -562,6 +573,7 @@ window.mockDatabase = {
       "downloads": 2162,
       "type": "script",
       "url": "https://pan.baidu.com/s/1JbbKiBCtIvFbTfFMfQPlig?pwd=jy7d",
+      "detailUrl": "",
       "date": "2025-10-24"
     },
     {
@@ -574,6 +586,7 @@ window.mockDatabase = {
       "downloads": 3018,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Zy1U_dvVeT7FbF1qTpf6rw?pwd=ixf3",
+      "detailUrl": "",
       "date": "2025-10-27"
     },
     {
@@ -586,7 +599,34 @@ window.mockDatabase = {
       "downloads": 156,
       "type": "script",
       "url": "https://pan.baidu.com/s/1I3vrwMKuO5SGcrefLEhEmw?pwd=bgce",
+      "detailUrl": "",
       "date": "2026-08-24"
+    },
+    {
+      "id": 15,
+      "title": "批量密钥生成工具 KeyGenerator v1.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "KeyGenerator 是一个运行在 AE宿主程序内的轻量级密钥生成器，用于批量生成指定格式的随机密钥，支持一键切换带/不带分隔符两种格式，并可将结果导出为 TXT 文件。",
+      "size": "775 KB",
+      "downloads": 996,
+      "type": "script",
+      "url": "https://pan.baidu.com/s/1R2MmFzYzG5YX2B5uMr0T4Q?pwd=f5hu",
+      "detailUrl": "",
+      "date": "2026-09-25"
+    },
+    {
+      "id": 16,
+      "title": "AE表达式自学神器AE_Expr_Tool v2.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "一键查询AE内置表达式功能说明并配备用法示例，支持快速为选中图层属性添加自定义表达式，提升表达式编辑效率，适合动画师与特效师使用。同时更新搜索功能",
+      "size": "732 KB",
+      "downloads": 1534,
+      "type": "script",
+      "url": "#",
+      "detailUrl": "../ae-scripting/scr_detail_002.html",
+      "date": "2026-09-30"
     },
     {
       "id": 101,
@@ -598,6 +638,7 @@ window.mockDatabase = {
       "downloads": 1765,
       "type": "expression",
       "url": "https://pan.baidu.com/s/1aqIphvWt9ETwWQovlh_Sqg?pwd=uxx8",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-09-28"
     },
     {
@@ -607,9 +648,10 @@ window.mockDatabase = {
       "categoryName": "资源下载",
       "description": "零基础入门到精通，表达式视频教程。包含15个章节。配有相应的表达式工程文件及解说文档",
       "size": "7.8 GB",
-      "downloads": 552,
+      "downloads": 1526,
       "type": "expression",
-      "url": "../../assets/downloads/expressions/expression-presets.zip",
+      "url": "#",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-09-15"
     },
     {
@@ -621,7 +663,8 @@ window.mockDatabase = {
       "size": "6.15 GB",
       "downloads": 1039,
       "type": "plugin",
-      "url": "../../assets/downloads/templates/text-animations.zip",
+      "url": "#",
+      "detailUrl": "../../docs/index.html",
       "date": "2026-05-20"
     },
     {
@@ -633,7 +676,8 @@ window.mockDatabase = {
       "size": "6.9 GB",
       "downloads": 678,
       "type": "plugin",
-      "url": "../../assets/downloads/templates/text-animations.zip",
+      "url": "#",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-08-20"
     },
     {
@@ -646,6 +690,7 @@ window.mockDatabase = {
       "downloads": 1324,
       "type": "plugin",
       "url": "https://pan.baidu.com/s/19acCU_yFJFCjq1FnnMsG_A?pwd=de6k",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-09-10"
     },
     {
@@ -658,6 +703,7 @@ window.mockDatabase = {
       "downloads": 1543,
       "type": "plugin",
       "url": "https://pan.baidu.com/s/1Qw0P-5OlR7Sb4PiSh_vfow?pwd=eedr",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-09-05"
     },
     {
@@ -670,6 +716,7 @@ window.mockDatabase = {
       "downloads": 1876,
       "type": "plugin",
       "url": "https://pan.baidu.com/s/1D6NTBRHGYoxu_xPmqlGFDg?pwd=irpm",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-08-28"
     },
     {
@@ -682,6 +729,7 @@ window.mockDatabase = {
       "downloads": 1876,
       "type": "plugin",
       "url": "https://pan.baidu.com/s/1uzIDb3uwxQJqOl-xj07tZg?pwd=uruc",
+      "detailUrl": "../../docs/index.html",
       "date": "2024-08-25"
     },
     {
@@ -694,6 +742,7 @@ window.mockDatabase = {
       "downloads": 2210,
       "type": "template",
       "url": "https://pan.baidu.com/s/1zoQ2vuOm51nXhjAbrCK9LA?pwd=h3de",
+      "detailUrl": "",
       "date": "2024-08-15"
     },
     {
@@ -706,6 +755,7 @@ window.mockDatabase = {
       "downloads": 276,
       "type": "software",
       "url": "https://pan.baidu.com/s/16jn8BpSuvXqceltcQjLdBw?pwd=b26n",
+      "detailUrl": "../software/sof_detail_002.html",
       "date": "2025-10-29"
     },
     {
@@ -718,6 +768,7 @@ window.mockDatabase = {
       "downloads": 953,
       "type": "software",
       "url": "https://pan.baidu.com/s/1D3d7UhWkZ27FFjYii_It-A?pwd=k8xd",
+      "detailUrl": "../software/sof_detail_003.html",
       "date": "2025-11-11"
     },
     {
@@ -730,6 +781,7 @@ window.mockDatabase = {
       "downloads": 325,
       "type": "software",
       "url": "https://pan.baidu.com/s/1J0iPlm5XHUvQ9OJ1qG34Cw?pwd=bq5a",
+      "detailUrl": "../software/sof_detail_004.html",
       "date": "2025-11-24"
     },
     {
@@ -742,6 +794,7 @@ window.mockDatabase = {
       "downloads": 975,
       "type": "software",
       "url": "https://pan.baidu.com/s/1Goj5vNN6i4hU1UBJZ0jTng?pwd=ni5p",
+      "detailUrl": "../software/sof_detail_005.html",
       "date": "2025-12-08"
     },
     {
@@ -754,6 +807,7 @@ window.mockDatabase = {
       "downloads": 1026,
       "type": "software",
       "url": "https://pan.baidu.com/s/1muKzxJsYuPNQUhpX-FG2ng?pwd=2vgv",
+      "detailUrl": "../software/sof_detail_006.html",
       "date": "2026-01-14"
     },
     {
@@ -766,6 +820,7 @@ window.mockDatabase = {
       "downloads": 568,
       "type": "software",
       "url": "#",
+      "detailUrl": "../software/sof_detail_007.html",
       "date": "2026-01-26"
     },
     {
@@ -778,6 +833,7 @@ window.mockDatabase = {
       "downloads": 1236,
       "type": "software",
       "url": "https://pan.baidu.com/s/1ESdpjIE62YJJZPhRpmVVfA?pwd=2g7b",
+      "detailUrl": "../software/sof_detail_008.html",
       "date": "2026-01-26"
     },
     {
@@ -790,7 +846,47 @@ window.mockDatabase = {
       "downloads": 669,
       "type": "software",
       "url": "#",
+      "detailUrl": "../software/sof_detail_009.html",
       "date": "2026-02-12"
+    },
+    {
+      "id": 409,
+      "title": "AE表达式防瞟窃神器 v2.0.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "码隐是一款桌面端代码混淆工具，专为JavaScript代码与 AE表达式设计。通过多种混淆技术，将原始代码转化为难以阅读和逆向的形式，有效保护您的逻辑不被轻易窃取。",
+      "size": "76 MB",
+      "downloads": 969,
+      "type": "software",
+      "url": "#",
+      "detailUrl": "../software/sof_detail_010.html",
+      "date": "2026-04-08"
+    },
+    {
+      "id": 410,
+      "title": "Adobe软件语言切换工具 AppLangSwitcher v1.0.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "AppLangSwitcher 是一款 Windows 桌面工具，用于快速切换 Adobe 系列软件的界面语言。只需在图形界面中勾选目标软件、选择语言，一键即可完成切换。",
+      "size": "82 MB",
+      "downloads": 2136,
+      "type": "software",
+      "url": "https://pan.baidu.com/s/17NrvsXt-wBG2Je7mgwmyNQ?pwd=2ppx",
+      "detailUrl": "",
+      "date": "2026-09-14"
+    },
+    {
+      "id": 411,
+      "title": "全量英文词汇学习软件 WordForge v1.0.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "全量英语词汇学习软件工具（WordForge）是一款离线的英语词汇学习工具。包含海量英语词汇。看中文，写英文，锻造你的词汇。",
+      "size": "196 MB",
+      "downloads": 1895,
+      "type": "software",
+      "url": "#",
+      "detailUrl": "",
+      "date": "2026-09-28"
     },
     {
       "id": 501,
@@ -802,6 +898,7 @@ window.mockDatabase = {
       "downloads": 2987,
       "type": "toolkit",
       "url": "https://creativecloud.adobe.com/apps/download/uxp-developer-tools",
+      "detailUrl": "",
       "date": "2025-02-10"
     },
     {
@@ -814,6 +911,7 @@ window.mockDatabase = {
       "downloads": 1987,
       "type": "toolkit",
       "url": "https://pan.baidu.com/s/1khTvZ4gvobQBJqfJYoJfTg?pwd=fmmd",
+      "detailUrl": "",
       "date": "2024-08-05"
     },
     {
@@ -826,6 +924,7 @@ window.mockDatabase = {
       "downloads": 416,
       "type": "toolkit",
       "url": "https://pan.baidu.com/s/1Zf2bDv2EWqF16Kkmj-Km4Q?pwd=pgwc",
+      "detailUrl": "",
       "date": "2010-08-06"
     },
     {
@@ -838,6 +937,7 @@ window.mockDatabase = {
       "downloads": 3432,
       "type": "toolkit",
       "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
+      "detailUrl": "",
       "date": "2025-08-06"
     }
   ]

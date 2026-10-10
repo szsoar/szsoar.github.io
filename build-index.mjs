@@ -58,6 +58,7 @@ for (const [folder, meta] of Object.entries(CATEGORY_MAP)) {
                 downloads: item.downloadCount || 0,
                 type: item.category || 'template',
                 url: item.url || '',
+                detailUrl: item.detailUrl || '',
                 date: item.date || ''
             };
         }

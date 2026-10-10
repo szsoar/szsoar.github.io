@@ -193,6 +193,16 @@
   font-weight: 600;
 }
 
+.download-list-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.download-list-title a:hover {
+  color: var(--accent);
+}
+
 .download-list-desc {
   color: var(--text-secondary);
   margin-bottom: 1rem;
