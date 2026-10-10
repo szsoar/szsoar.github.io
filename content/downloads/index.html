@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../css/footer.css">
   <link rel="stylesheet" href="../../css/common.css">
   <link rel="stylesheet" href="css/downloads.css">
+  <link rel="stylesheet" href="../../css/home.css">
 
   <script>
     var _hmt = _hmt || [];
@@ -53,9 +54,16 @@
   </header>
 
   <!-- 页面标题和描述 -->
-  <section class="downloads-header container">
-    <h1>资源下载中心</h1>
-    <p>获取各种After Effects脚本、模板、表达式、插件和工具，提升您的工作效率和创作能力。</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>获取原创自研的<span>优质资源</span></h1>
+      <p>脚本、插件、软件和设计模板，助您高效完成视频特效、动态图形设计和插件开发</p>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="搜索全站教程、技巧或资源...">
+        <button onclick="performSearch()">搜索</button>
+      </div>
+    </div>
   </section>
 
   <!-- 下载分类筛选 -->

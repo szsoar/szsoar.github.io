@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../css/common.css">
   <link rel="stylesheet" href="../../css/articles-grid.css">
   <link rel="stylesheet" href="css/category.css">
+  <link rel="stylesheet" href="../../css/home.css">
 
   <script>
     var _hmt = _hmt || [];
@@ -54,9 +55,16 @@
   </header>
 
   <!-- 页面标题和描述 -->
-  <section class="category-header container">
-    <h1>软件全面指南</h1>
-    <p>提供从安装、激活到精通应用的完整专业支持，确保您能无忧、高效地使用软件</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>掌握原创软件的<span>使用技巧</span></h1>
+      <p>安装教程、使用指南和实用技巧，帮助您快速上手软件、掌握核心功能、提升工作效率</p>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="搜索全站教程、技巧或资源...">
+        <button onclick="performSearch()">搜索</button>
+      </div>
+    </div>
   </section>
 
   <!-- 文章网格 -->
