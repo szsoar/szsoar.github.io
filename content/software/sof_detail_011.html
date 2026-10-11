@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE极客工坊 - 文章详情</title>
+
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edee0718cc500c919471d2aaa92877f6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <style>
+    .article-detail-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      text-align: center;
+      width: 100%;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .video-container {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .video-player {
+      background: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .video-header {
+      padding: 15px 20px;
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* B站iframe样式 */
+    .bilibili-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-note {
+      padding: 10px 15px;
+      background: #e9ecef;
+      font-size: 0.85rem;
+      color: #666;
+      border-top: 1px solid #dee2e6;
+    }
+
+    /* 文章内容区域优化 - 关键修复 */
+    .article-content {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      width: 100%;
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    /* Markdown内容样式优化 */
+    .markdown-content {
+      color: #333;
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+      line-height: 1.8;
+      /* 增加行高 */
+    }
+
+    .markdown-content h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      /* 增加上下边距 */
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+      color: #2c3e50;
+    }
+
+    .markdown-content h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      /* 增加上下边距 */
+      color: #2c3e50;
+    }
+
+    .markdown-content p {
+      margin-bottom: 1.5rem;
+      /* 增加段落间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+      margin-bottom: 1.5rem;
+      /* 增加列表间距 */
+      padding-left: 2rem;
+      /* 增加列表缩进 */
+    }
+
+    .markdown-content li {
+      margin-bottom: 0.8rem;
+      /* 增加列表项间距 */
+      font-size: 1.1rem;
+      /* 与主页一致的字体大小 */
+    }
+
+    .markdown-content code {
+      background: #f5f7fa;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .markdown-content pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+
+    .markdown-content blockquote {
+      border-left: 4px solid #3498db;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: #f8f9fa;
+      color: #555;
+      font-style: italic;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .markdown-content a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .markdown-content a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .article-content {
+        padding: 25px;
+      }
+
+      .markdown-content {
+        font-size: 1rem;
+      }
+
+      .markdown-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .markdown-content h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* 本地视频播放器样式  */
+    .local-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo-row">
+        <a href="../../index.html" class="logo">
+          <div class="logo-icon">AE</div>
+          <span>极客工坊</span>
+        </a>
+      </div>
+
+      <div class="nav-links-row">
+        <ul class="nav-links">
+          <li><a href="../../index.html">首页</a></li>
+          <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
+          <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
+          <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
+          <li><a href="../../content/ae-plugins/index.html">AE插件</a></li>
+          <li><a href="../../content/software/index.html">软件指南</a></li>
+          <li><a href="../../content/downloads/index.html">资源下载</a></li>
+          <li><a href="../../about.html">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="article-detail-container">
+    <div class="article-header">
+      <h1 class="article-title">Adobe软件语言切换工具 AppLangSwitcher v2.0</h1>
+      <div class="article-meta">
+        <div class="article-author">
+          <span>作者: 老胡</span>
+        </div>
+        <div class="article-date">
+          <span>发布日期: 2026-09-13</span>
+        </div>
+        <div class="article-category">
+          <span>分类: 软件指南</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <!-- 外链视频播放器（使用iframe） -->
+
+
+      <div class="video-player">
+        <div class="video-header">软件使用教程</div>
+        <div class="video-wrapper">
+          <iframe class="bilibili-iframe"
+            src="https://player.bilibili.com/player.html?isOutside=true&aid=117269032078205&bvid=BV16fYy6jE8r&cid=41888845579&p=1"
+            scrolling="no" allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+
+
+      <!-- 本地视频播放器（使用HTML5 video标签） -->
+      <!-- <div class="video-player">
+        <div class="video-header">软件使用指南</div>
+        <div class="video-wrapper">
+          <video class="local-video" id="local-video" controls controlslist="nodownload" preload="metadata"
+            style="background-color: #000;">
+            <source src="../../assets/videos/#" type="video/mp4">
+            您的浏览器不支持HTML5视频播放。
+          </video>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div> -->
+
+    </div>
+
+    <div class="article-content">
+      <div class="markdown-content">
+        <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
+
+        <h2>软件简介</h2>
+        </p>
+        <p>AppLangSwitcher 是一款 Windows 桌面工具，用于快速切换 Adobe 系列软件（After Effects、Premiere Pro、Photoshop、Illustrator
+          等）的界面语言。只需在图形界面中勾选目标软件、选择语言，一键即可完成切换。</p>
+        <p>
+        <h2>版本与更新信息</h2>
+        </p>
+        <p>| 项目 | 内容 |</p>
+        <p>| :----------------- | :------------------ |</p>
+        <p>| <strong>历史版本及日期</strong> | <code>2024年6月  v1.0.0</code> |</p>
+        <p>| <strong>当前版本</strong> | <code>v2.0.0</code> |</p>
+        <p>| <strong>文档更新日期</strong> | <code>2026-9-12</code> |</p>
+        <p>
+        <h2>一、新增功能</h2>
+        </p>
+        <p>
+        <h3>1. 全盘扫描</h3>
+        </p>
+        <p>
+        <ul>
+          <li>不再局限于 C 盘，自动扫描所有盘符（C 到 Z）下的常见 Adobe 安装目录。</li>
+          <li>同时支持从 Windows 注册表读取 Adobe 安装路径，识别更全面。</li>
+        </ul>
+        </p>
+        <p>
+        <h3>2. 自定义扫描路径</h3>
+        </p>
+        <p>
+        <ul>
+          <li>如果软件安装在非常规路径，可手动添加自定义扫描目录。</li>
+          <li>右侧设置栏新增“自定义扫描路径”区域，点击“+ 添加”选择文件夹即可。</li>
+          <li>添加后工具会立即重新扫描并显示该目录下的软件。</li>
+          <li>自定义路径仅在本次运行中有效，关闭应用后不保存。</li>
+        </ul>
+        </p>
+        <p>
+        <h3>3. 新增备份和可自定义备份位置</h3>
+        </p>
+        <p>
+        <ul>
+          <li>默认备份目录为：<code>文档\AppLangSwitcherBackup</code>，修改语言前，工具会自动把原始的 <code>application.xml</code> 备份到该目录，文件名格式为：
+          </li>
+        </ul>
+        </p>
+        <p>
+        <pre>
+<code>
+  软件名_版本_时间戳.xml
+  </code>
+</pre>
+        </p>
+        <p> 例如：<code>After_Effects_2024_2025-01-15T10-30-00-000Z.xml</code> </p>
+        <p>
+        <ul>
+          <li>右侧设置栏新增“备份位置”选项，点击“浏览”选择任意文件夹，可更换备份位置。</li>
+        </ul>
+        </p>
+        <p>
+        <h3>4. 新增选项</h3>
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>修改前自动结束对应软件进程</strong>
+          </li>
+        </ul>
+        </p>
+        <p> 勾选后，工具会在修改配置前自动结束目标软件进程，避免文件被占用。默认开启。</p>
+        <p>
+        <ul>
+          <li>
+            <strong>修改后自动重新启动软件</strong>
+          </li>
+        </ul>
+        </p>
+        <p> 勾选后，修改完成会自动启动对应软件。默认关闭。
+
+
+          <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+      </div>
+    </div>
+  </main>
+
+  <div data-include-footer="../../templates/footer.html"></div>
+  <script src="../../js/include-footer.js"></script>
+  <script src="../../js/video-player-handler.js"></script>
+  <script src="../../js/widget.js"></script>
+
+</body>
+
+</html>

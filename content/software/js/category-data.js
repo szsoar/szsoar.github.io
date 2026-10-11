@@ -90,5 +90,23 @@ const softwareArticles = [
     url: "sof_detail_010.html",
     date: "2026-04-08"
   },
+  {
+    id: 11,
+    title: "Adobe软件语言切换AppLangSwitcher",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/sof/detail_011.jpg",
+    url: "sof_detail_011.html",
+    date: "2026-09-13"
+  },
+  {
+    id: 12,
+    title: "全量英文词汇学习软件 WordForge使用指南",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/sof/detail_012.jpg",
+    url: "sof_detail_012.html",
+    date: "2026-09-28"
+  },
 
 ];
