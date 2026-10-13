@@ -286,7 +286,7 @@ window.mockDatabase = {
     },
     {
       "id": 6,
-      "title": "AE表达式自学神器v1.0",
+      "title": "AE表达式自学神器AE_Expr_Tool v1.0",
       "category": "scripting",
       "categoryName": "AE脚本",
       "date": "2025-08-24",
@@ -296,13 +296,103 @@ window.mockDatabase = {
     },
     {
       "id": 7,
-      "title": "AE表达式自学神器v2.0",
+      "title": "属性匹配名称查询工具 L2IMatcher v1.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2018-08-01",
+      "description": "一款专为AE用户设计的实用脚本工具，快速查询效果和属性的内部匹配名称。",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_002.html"
+    },
+    {
+      "id": 8,
+      "title": "图片转码脚本Base64Imager v1.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2018-08-08",
+      "description": "一款专为AE用户设计的扩展脚本，能够将图片文件转换为 Base64 编码格式。",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_003.html"
+    },
+    {
+      "id": 9,
+      "title": "素材搜索器MaterialSearch v2.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2025-10-10",
+      "description": "一款支持素材导入和替换功能。支持模糊搜索和快速定位素材",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_004.html"
+    },
+    {
+      "id": 10,
+      "title": "图层离散器Layer Disperser v1.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2025-10-15",
+      "description": "一款将单一图层智能拆解为具有空间分布的多元素组合脚本工具",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_005.html"
+    },
+    {
+      "id": 11,
+      "title": "属性路径工具PropertyPathGenerator",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2025-10-24",
+      "description": "一款可以自动生成精确的属性引用路径代码脚本工具",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_006.html"
+    },
+    {
+      "id": 12,
+      "title": "预合成助手 PreComp Assistant v2.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2025-10-27",
+      "description": "一款可以预合成和解预合成的脚本工具",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_007.html"
+    },
+    {
+      "id": 13,
+      "title": "批量表达式助手 BatchExpr v2.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2026-08-24",
+      "description": "一款可以批量给图层属性添加并能删除表达式工具。",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_008.html"
+    },
+    {
+      "id": 14,
+      "title": "批量密钥生成工具 KeyGenerator v1.0",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2026-09-25",
+      "description": "一款用于批量生成指定格式的随机密钥脚本工具",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_009.html"
+    },
+    {
+      "id": 15,
+      "title": "AE表达式自学神器AE_Expr_Tool v2.0",
       "category": "scripting",
       "categoryName": "AE脚本",
       "date": "2026-09-30",
       "description": "一款AE脚本，能让你轻松学习表达式",
       "content": "",
-      "url": "./content/ae-scripting/scr_detail_002.html"
+      "url": "./content/ae-scripting/scr_detail_010.html"
+    },
+    {
+      "id": 16,
+      "title": "潮涌排行动画生成器 TideRank Generator",
+      "category": "scripting",
+      "categoryName": "AE脚本",
+      "date": "2026-10-11",
+      "description": "一款用来把 CSV 表格数据一键在AE中生成动态排行条形图动画",
+      "content": "",
+      "url": "./content/ae-scripting/scr_detail_011.html"
     }
   ],
   "插件": [
@@ -475,7 +565,7 @@ window.mockDatabase = {
       "size": "732 KB",
       "downloads": 1042,
       "type": "script",
-      "url": "#",
+      "url": "https://pan.baidu.com/s/1lZpOiRXh2hfYZO0wi2v3ow?pwd=4uf3",
       "detailUrl": "../ae-scripting/scr_detail_001.html",
       "date": "2024-10-05"
     },
@@ -488,13 +578,13 @@ window.mockDatabase = {
       "size": "5.35 GB",
       "downloads": 643,
       "type": "script",
-      "url": "#",
+      "url": "https://pan.baidu.com/s/1v50esgxvLtcKCkwDgnMU4Q?pwd=yvht",
       "detailUrl": "../../docs/index.html",
       "date": "2025-02-08"
     },
     {
       "id": 5,
-      "title": "AE效果属性匹配名称查询工具",
+      "title": "AE效果属性匹配名称查询工具 L2IMatcher v1.0",
       "category": "downloads",
       "categoryName": "资源下载",
       "description": "一款通过输入AE本地化名称可以查询到相应的匹配名称工具，配有使用文档，提高用户脚本开发效率。",
@@ -502,7 +592,7 @@ window.mockDatabase = {
       "downloads": 2646,
       "type": "script",
       "url": "https://pan.baidu.com/s/1P_qHeSXHht3lJyDevSZJjg?pwd=6yif",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_002.html",
       "date": "2018-08-01"
     },
     {
@@ -515,7 +605,7 @@ window.mockDatabase = {
       "downloads": 1957,
       "type": "script",
       "url": "https://pan.baidu.com/s/1vDiSgpvgxEaNeQHojMxW5w?pwd=p8pf",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_003.html",
       "date": "2018-08-08"
     },
     {
@@ -528,7 +618,7 @@ window.mockDatabase = {
       "downloads": 1153,
       "type": "script",
       "url": "https://pan.baidu.com/s/14rHo6-Yrur059jOido6xJw?pwd=u5xh",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_004.html",
       "date": "2025-10-10"
     },
     {
@@ -541,7 +631,7 @@ window.mockDatabase = {
       "downloads": 1641,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Urg9_sVvMeVTXwK4Gh-lCQ?pwd=c4u6",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_004.html",
       "date": "2025-10-13"
     },
     {
@@ -554,7 +644,7 @@ window.mockDatabase = {
       "downloads": 3536,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Rq_s8uSqjP_GFZkegl7TQw?pwd=e7i9",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_005.html",
       "date": "2025-10-15"
     },
     {
@@ -593,7 +683,7 @@ window.mockDatabase = {
       "downloads": 2162,
       "type": "script",
       "url": "https://pan.baidu.com/s/1JbbKiBCtIvFbTfFMfQPlig?pwd=jy7d",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_006.html",
       "date": "2025-10-24"
     },
     {
@@ -606,7 +696,7 @@ window.mockDatabase = {
       "downloads": 3097,
       "type": "script",
       "url": "https://pan.baidu.com/s/1Zy1U_dvVeT7FbF1qTpf6rw?pwd=ixf3",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_007.html",
       "date": "2025-10-27"
     },
     {
@@ -619,7 +709,7 @@ window.mockDatabase = {
       "downloads": 516,
       "type": "script",
       "url": "https://pan.baidu.com/s/1I3vrwMKuO5SGcrefLEhEmw?pwd=bgce",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_008.html",
       "date": "2026-08-24"
     },
     {
@@ -632,7 +722,7 @@ window.mockDatabase = {
       "downloads": 996,
       "type": "script",
       "url": "https://pan.baidu.com/s/1R2MmFzYzG5YX2B5uMr0T4Q?pwd=f5hu",
-      "detailUrl": "",
+      "detailUrl": "../ae-scripting/scr_detail_009.html",
       "date": "2026-09-25"
     },
     {
@@ -644,9 +734,22 @@ window.mockDatabase = {
       "size": "732 KB",
       "downloads": 1718,
       "type": "script",
-      "url": "#",
-      "detailUrl": "../ae-scripting/scr_detail_002.html",
+      "url": "https://pan.baidu.com/s/1iEhZayupf5TfiQLxqwSwgQ?pwd=v27d",
+      "detailUrl": "../ae-scripting/scr_detail_010.html",
       "date": "2026-09-30"
+    },
+    {
+      "id": 17,
+      "title": "潮涌排行动画生成器 TideRankGenerator v1.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "潮涌排行动画生成器 (TideRankGenerator) 是一个 AE 脚本，用来把 CSV 表格数据一键在AE中生成动态排行条形图动画。只需要准备一份表格,脚本会自动生成",
+      "size": "1.2 MB",
+      "downloads": 152,
+      "type": "script",
+      "url": "https://pan.baidu.com/s/1Oiqu3mfMkYqhZXHz-pFvGQ?pwd=uqrk",
+      "detailUrl": "../ae-scripting/scr_detail_011.html",
+      "date": "2026-10-11"
     },
     {
       "id": 101,
@@ -670,7 +773,7 @@ window.mockDatabase = {
       "size": "7.8 GB",
       "downloads": 1433,
       "type": "expression",
-      "url": "#",
+      "url": "https://pan.baidu.com/s/1Ow8GTQsmxSDCoy22vUMRhw?pwd=jjke",
       "detailUrl": "../../docs/index.html",
       "date": "2024-09-15"
     },
@@ -683,7 +786,7 @@ window.mockDatabase = {
       "size": "6.15 GB",
       "downloads": 1096,
       "type": "plugin",
-      "url": "#",
+      "url": "https://pan.baidu.com/s/137WbjDokzqDOHLl41b7_8A?pwd=mc8y",
       "detailUrl": "../../docs/index.html",
       "date": "2026-05-20"
     },
