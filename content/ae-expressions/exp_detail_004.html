@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../../css/footer.css">
   <link rel="stylesheet" href="../../css/common.css">
   <link rel="stylesheet" href="../../css/responsive.css">
+  <link rel="stylesheet" href="../../css/article-detail.css">
 
   <script>
     var _hmt = _hmt || [];
@@ -23,240 +24,6 @@
     })();
   </script>
 
-  <style>
-    .article-detail-container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      width: 100%;
-    }
-
-    .article-header {
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .article-title {
-      font-size: 2.5rem;
-      color: #2c3e50;
-      margin-bottom: 15px;
-      line-height: 1.3;
-      text-align: center;
-      width: 100%;
-    }
-
-    .article-meta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      color: #7f8c8d;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      text-align: center;
-      width: 100%;
-    }
-
-    .video-container {
-      width: 100%;
-      margin-bottom: 40px;
-    }
-
-    .video-player {
-      background: #f8f9fa;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      margin-bottom: 30px;
-    }
-
-    .video-header {
-      padding: 15px 20px;
-      background: #3498db;
-      color: white;
-      font-weight: 600;
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      /* 16:9 Aspect Ratio */
-      height: 0;
-      overflow: hidden;
-    }
-
-    /* B站iframe样式 */
-    .bilibili-iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .video-note {
-      padding: 10px 15px;
-      background: #e9ecef;
-      font-size: 0.85rem;
-      color: #666;
-      border-top: 1px solid #dee2e6;
-    }
-
-    /* 文章内容区域优化 - 关键修复 */
-    .article-content {
-      background: white;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-      width: 100%;
-      line-height: 1.8;
-      /* 增加行高 */
-    }
-
-    /* Markdown内容样式优化 */
-    .markdown-content {
-      color: #333;
-      font-size: 1.1rem;
-      /* 与主页一致的字体大小 */
-      line-height: 1.8;
-      /* 增加行高 */
-    }
-
-    .markdown-content h2 {
-      font-size: 1.8rem;
-      margin: 2.5rem 0 1.5rem;
-      /* 增加上下边距 */
-      padding-bottom: 10px;
-      border-bottom: 2px solid #3498db;
-      color: #2c3e50;
-    }
-
-    .markdown-content h3 {
-      font-size: 1.5rem;
-      margin: 2rem 0 1rem;
-      /* 增加上下边距 */
-      color: #2c3e50;
-    }
-
-    .markdown-content p {
-      margin-bottom: 1.5rem;
-      /* 增加段落间距 */
-      font-size: 1.1rem;
-      /* 与主页一致的字体大小 */
-    }
-
-    .markdown-content ul,
-    .markdown-content ol {
-      margin-bottom: 1.5rem;
-      /* 增加列表间距 */
-      padding-left: 2rem;
-      /* 增加列表缩进 */
-    }
-
-    .markdown-content li {
-      margin-bottom: 0.8rem;
-      /* 增加列表项间距 */
-      font-size: 1.1rem;
-      /* 与主页一致的字体大小 */
-    }
-
-    .markdown-content code {
-      background: #f5f7fa;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.95rem;
-    }
-
-    .markdown-content pre {
-      background: #2d2d2d;
-      color: #f8f8f2;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
-    }
-
-    .markdown-content pre code {
-      background: none;
-      padding: 0;
-      color: inherit;
-      font-size: 0.95rem;
-    }
-
-    .markdown-content blockquote {
-      border-left: 4px solid #3498db;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background: #f8f9fa;
-      color: #555;
-      font-style: italic;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .markdown-content img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .markdown-content a {
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .markdown-content a:hover {
-      color: #2980b9;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .article-title {
-        font-size: 2rem;
-      }
-
-      .article-meta {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .article-content {
-        padding: 25px;
-      }
-
-      .markdown-content {
-        font-size: 1rem;
-      }
-
-      .markdown-content h2 {
-        font-size: 1.5rem;
-      }
-
-      .markdown-content h3 {
-        font-size: 1.3rem;
-      }
-    }
-
-    /* 本地视频播放器样式  */
-    .local-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  </style>
 </head>
 
 <body>
@@ -300,10 +67,9 @@
       </div>
     </div>
 
+    <!-- 视频播放器区域 -->
     <div class="video-container">
-      <!-- 外链视频播放器（使用iframe） -->
-
-
+      <!--  ========== 方式 1：B站嵌入 ========== -->
       <div class="video-player">
         <div class="video-header">视频教程</div>
         <div class="video-wrapper">
@@ -317,8 +83,20 @@
         </div>
       </div>
 
+      <!-- ========== 方式 2：AcFun嵌入 ========== -->
+      <!-- <div class="video-player">
+                <div class="video-header">视频教程</div>
+                <div class="video-wrapper">
+                    <iframe class="acfun-iframe" src="https://www.acfun.cn/player/ac" scrolling="no"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+                <div class="video-note">
+                    提示: 若视频无法播放请检查网络并联系我们解决！
+                </div>
+            </div> -->
 
-      <!-- 本地视频播放器（使用HTML5 video标签） -->
+      <!-- ========== 方式 3：本地 MP4 ========== -->
       <!--       <div class="video-player">
         <div class="video-header">软件使用指南</div>
         <div class="video-wrapper">
