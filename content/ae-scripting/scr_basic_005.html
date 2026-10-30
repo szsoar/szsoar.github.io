@@ -28,29 +28,7 @@
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo-row">
-                <a href="../../index.html" class="logo">
-                    <div class="logo-icon">AE</div>
-                    <span>极客工坊</span>
-                </a>
-            </div>
-
-            <div class="nav-links-row">
-                <ul class="nav-links">
-                    <li><a href="../../index.html">首页</a></li>
-                    <li><a href="../../content/ae-effects/index.html">AE特效</a></li>
-                    <li><a href="../../content/ae-expressions/index.html">AE表达式</a></li>
-                    <li><a href="../../content/ae-scripting/index.html">AE脚本</a></li>
-                    <li><a href="../../content/ae-plugins/index.html">AE插件</a></li>
-                    <li><a href="../../content/software/index.html">软件指南</a></li>
-                    <li><a href="../../content/downloads/index.html">资源下载</a></li>
-                    <li><a href="../../about.html">关于</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div data-include-header="../../templates/header.html"></div>
 
     <!-- 文章内容 -->
     <main class="article-detail-container">
@@ -315,6 +293,7 @@ alert("Hello World!");
 
     <div data-include-footer="../../templates/footer.html"></div>
     <script src="../../js/video-player-handler.js"></script>
+    <script src="../../js/include-header.js"></script>
     <script src="../../js/include-footer.js"></script>
     <script src="../../js/widget.js"></script>
 

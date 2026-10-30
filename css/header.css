@@ -37,15 +37,18 @@ header {
 }
 
 .logo-icon {
-  width: 32px;
-  height: 32px;
-  background: var(--accent);
-  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(145deg, #8b7bff, #5c47e0);
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: -0.03em;
+  box-shadow: 0 4px 10px -4px rgba(78, 110, 242, 0.6);
 }
 
 .nav-links-row {
