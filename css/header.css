@@ -94,33 +94,9 @@ header {
 
 .nav-links a.active {
   color: var(--accent);
-  background-color: rgba(78, 110, 242, 0.1);
 }
 
 .nav-links a.active::after {
   width: 80%;
   left: 10%;
 }
-
-/* 登录注册按钮样式 */
-
-/* .auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.auth-btn {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: var(--transition);
-  font-weight: 500;
-}
-
-.auth-btn:hover {
-  background: var(--accent);
-  color: white;
-} */
