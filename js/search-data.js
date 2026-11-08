@@ -857,16 +857,29 @@ window.mockDatabase = {
     },
     {
       "id": 301,
-      "title": "AE表达式-条件逻辑(If语句)工程文件",
+      "title": "Ae项目模板-自动化商业动态图表",
       "category": "downloads",
       "categoryName": "资源下载",
-      "description": "该AE工程文件通过具体示例，演示了if条件语句在After Effects表达式中的编写语法与应用方法。",
-      "size": "249 KB",
-      "downloads": 2210,
+      "description": "本套模板项目将使用Ae表达式，创建一个完全自动化、参数可调的数据动态增长动画的动态柱状图系统。",
+      "size": "512 KB",
+      "downloads": 428,
       "type": "template",
-      "url": "https://pan.baidu.com/s/1zoQ2vuOm51nXhjAbrCK9LA?pwd=h3de",
-      "detailUrl": "",
-      "date": "2024-08-15"
+      "url": "#",
+      "detailUrl": "../ae-expressions/exp_detail_021.html",
+      "date": "2025-12-15"
+    },
+    {
+      "id": 302,
+      "title": "Ae项目模板-表达式高级粒子系统",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "一个超越AE内置粒子插件，完全由表达式驱动，通过读取目标图像的颜色和亮度信息的自定义粒子系统",
+      "size": "512 KB",
+      "downloads": 316,
+      "type": "template",
+      "url": "#",
+      "detailUrl": "../ae-expressions/exp_detail_022.html",
+      "date": "2025-12-29"
     },
     {
       "id": 401,

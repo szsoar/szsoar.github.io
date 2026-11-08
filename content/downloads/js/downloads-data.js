@@ -408,22 +408,37 @@ const downloadsData = [
 
 
   // ==================== 项目模板分类  ====================
-
   {
     id: 301,
-    title: "AE表达式-条件逻辑(If语句)工程文件",
+    title: "Ae项目模板-自动化商业动态图表",
     category: "template",
-    description: "该AE工程文件通过具体示例，演示了if条件语句在After Effects表达式中的编写语法与应用方法。",
-    icon: "🔄",
-    fileSize: "249 KB",
+    description: "本套模板项目将使用Ae表达式，创建一个完全自动化、参数可调的数据动态增长动画的动态柱状图系统。",
+    icon: "📈",
+    fileSize: "512 KB",
     version: "工程文件",
-    downloadCount: 2210,
-    url: "https://pan.baidu.com/s/1zoQ2vuOm51nXhjAbrCK9LA?pwd=h3de",
-    detailUrl: "",
-    date: "2024-08-15",
-    priceType: "免费",
-    price: "免费",
-    qrCode: ""
+    downloadCount: 428,
+    url: "#",
+    detailUrl: "../ae-expressions/exp_detail_021.html",
+    date: "2025-12-15",
+    priceType: "收费",
+    price: "¥29.00",
+    qrCode: "../../assets/images/qq_image.png"
+  },
+  {
+    id: 302,
+    title: "Ae项目模板-表达式高级粒子系统",
+    category: "template",
+    description: "一个超越AE内置粒子插件，完全由表达式驱动，通过读取目标图像的颜色和亮度信息的自定义粒子系统",
+    icon: "⚛️",
+    fileSize: "512 KB",
+    version: "工程文件",
+    downloadCount: 316,
+    url: "#",
+    detailUrl: "../ae-expressions/exp_detail_022.html",
+    date: "2025-12-29",
+    priceType: "收费",
+    price: "¥29.00",
+    qrCode: "../../assets/images/qq_image.png"
   },
 
 
