@@ -198,4 +198,22 @@ const aeExpressionsArticles = [
     url: "exp_detail_020.html",
     date: "2026-10-05"
   },
+  {
+    id: 23,
+    title: "AE表达式自动化商业动态图表",
+    category: "项目模板",
+    description: "一个完全自动化、参数可调的数据动态增长动画的动态柱状图系统...",
+    image: "../../assets/images/exp/detail_021.jpg",
+    url: "exp_detail_021.html",
+    date: "2025-12-15"
+  },
+  {
+    id: 24,
+    title: "表达式驱动高级粒子系统",
+    category: "项目模板",
+    description: "一个由表达式驱动，通过读取目标图像的颜色和亮度信息的自定义粒子系统...",
+    image: "../../assets/images/exp/detail_022.jpg",
+    url: "exp_detail_022.html",
+    date: "2025-12-29"
+  },
 ];
