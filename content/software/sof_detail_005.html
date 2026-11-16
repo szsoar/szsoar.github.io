@@ -32,7 +32,8 @@
 
   <main class="article-detail-container">
     <div class="article-header">
-      <h1 class="article-title">Adobe软件语言切换工具 AppLangSwitcher v2.0</h1>
+      <h1 class="article-title">Adobe软件语言切换工具</h1>
+      <h2>AppLangSwitcher v2.0</h2>
       <div class="article-meta">
         <div class="article-author">
           <span>作者: 老胡</span>
@@ -49,8 +50,8 @@
     <div class="video-container">
 
       <!--  ========== 方式 1：B站嵌入 ========== -->
-      <div class="video-player">
-        <div class="video-header">软件使用教程</div>
+      <!-- <div class="video-player">
+        <div class="video-header">软件使用指南</div>
         <div class="video-wrapper">
           <iframe class="bilibili-iframe"
             src="https://player.bilibili.com/player.html?isOutside=true&aid=117269032078205&bvid=BV16fYy6jE8r&cid=41888845579&p=1"
@@ -60,35 +61,20 @@
         <div class="video-note">
           提示: 若视频无法播放请检查网络并联系我们解决！
         </div>
-      </div>
+      </div> -->
 
       <!-- ========== 方式 2：AcFun嵌入 ========== -->
-      <!-- <div class="video-player">
-                <div class="video-header">视频教程</div>
-                <div class="video-wrapper">
-                    <iframe class="acfun-iframe" src="https://www.acfun.cn/player/ac" scrolling="no"
-                        allowfullscreen="true">
-                    </iframe>
-                </div>
-                <div class="video-note">
-                    提示: 若视频无法播放请检查网络并联系我们解决！
-                </div>
-            </div> -->
-
-      <!-- ========== 方式 3：本地 MP4 ========== -->
-      <!-- <div class="video-player">
+      <div class="video-player">
         <div class="video-header">软件使用指南</div>
         <div class="video-wrapper">
-          <video class="local-video" id="local-video" controls controlslist="nodownload" preload="metadata"
-            style="background-color: #000;">
-            <source src="../../assets/videos/#" type="video/mp4">
-            您的浏览器不支持HTML5视频播放。
-          </video>
+          <iframe class="acfun-iframe" src="https://www.acfun.cn/player/ac48994166" scrolling="no"
+            allowfullscreen="true">
+          </iframe>
         </div>
         <div class="video-note">
           提示: 若视频无法播放请检查网络并联系我们解决！
         </div>
-      </div> -->
+      </div>
 
     </div>
 
@@ -97,23 +83,14 @@
         <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
 
 
-        <h2>软件简介</h2>
-        </p>
-        <p>AppLangSwitcher 是一款 Windows 桌面工具，用于快速切换 Adobe 系列软件（After Effects、Premiere Pro、Photoshop、Illustrator
-          等）的界面语言。只需在图形界面中勾选目标软件、选择语言，一键即可完成切换。</p>
         <p>
-        <h2>版本与更新信息</h2>
-        </p>
-        <p>| 项目 | 内容 |</p>
-        <p>| :----------------- | :------------------ |</p>
-        <p>| <strong>历史版本及日期</strong> | <code>2024年6月  v1.0.0</code> |</p>
-        <p>| <strong>当前版本</strong> | <code>v2.0.0</code> |</p>
-        <p>| <strong>文档更新日期</strong> | <code>2026-9-12</code> |</p>
-        <p>
-        <h2>一、新增功能</h2>
+          <strong>AppLangSwitcher v2.0</strong> 是一款 Windows 桌面工具，用于快速切换 Adobe 系列软件（After Effects、Premiere
+          Pro、Photoshop、Illustrator 等）的界面语言。只需在图形界面中勾选目标软件、选择语言，一键即可完成切换。
         </p>
         <p>
-        <h3>1. 全盘扫描</h3>
+          <strong>v2.0 更新内容</strong>
+        </p>
+        <p>1、<strong>全盘扫描</strong>
         </p>
         <p>
         <ul>
@@ -121,8 +98,7 @@
           <li>同时支持从 Windows 注册表读取 Adobe 安装路径，识别更全面。</li>
         </ul>
         </p>
-        <p>
-        <h3>2. 自定义扫描路径</h3>
+        <p>2、<strong>自定义扫描路径</strong>
         </p>
         <p>
         <ul>
@@ -132,50 +108,38 @@
           <li>自定义路径仅在本次运行中有效，关闭应用后不保存。</li>
         </ul>
         </p>
-        <p>
-        <h3>3. 新增备份和可自定义备份位置</h3>
+        <p>3、<strong>新增备份和可自定义备份位置</strong>
         </p>
         <p>
         <ul>
-          <li>默认备份目录为：<code>文档\AppLangSwitcherBackup</code>，修改语言前，工具会自动把原始的 <code>application.xml</code> 备份到该目录，文件名格式为：
-          </li>
-        </ul>
-        </p>
-        <p>
-        <pre>
-<code>
-  软件名_版本_时间戳.xml
-  </code>
-</pre>
-        </p>
-        <p> 例如：<code>After_Effects_2024_2025-01-15T10-30-00-000Z.xml</code> </p>
-        <p>
-        <ul>
+          <li>默认备份目录为：<code>文档\AppLangSwitcherBackup</code>，修改语言前，工具会自动把原始的 <code>application.xml</code>
+            备份到该目录，文件名格式为：软件名_版本_时间戳.xml，例如：<code>After_Effects_2024_2025-01-15T10-30-00-000Z.xml</code> </li>
           <li>右侧设置栏新增“备份位置”选项，点击“浏览”选择任意文件夹，可更换备份位置。</li>
         </ul>
         </p>
-        <p>
-        <h3>4. 新增选项</h3>
+        <p>4、<strong>新增选项</strong>
         </p>
         <p>
         <ul>
-          <li>
-            <strong>修改前自动结束对应软件进程</strong>
-          </li>
+          <li>修改前自动结束对应软件进程。勾选后，工具会在修改配置前自动结束目标软件进程，避免文件被占用。默认开启。</li>
         </ul>
         </p>
-        <p> 勾选后，工具会在修改配置前自动结束目标软件进程，避免文件被占用。默认开启。</p>
         <p>
         <ul>
-          <li>
-            <strong>修改后自动重新启动软件</strong>
-          </li>
+          <li>修改后自动重新启动软件。勾选后，修改完成会自动启动对应软件。默认关闭。</li>
         </ul>
         </p>
-        <p> 勾选后，修改完成会自动启动对应软件。默认关闭。
+
+        <p>本软件免费，供个人学习与创作使用，请勿用于商业倒卖……后续更新视情况而定。</p>
+        <p>
+          <a href="https://pan.baidu.com/s/17NrvsXt-wBG2Je7mgwmyNQ?pwd=2ppx" target="_blank" rel="noopener"
+            style="display:inline-block;padding:10px 20px;background:#2b6cf6;color:#fff;border-radius:8px;text-decoration:none;font-weight:500;">📥
+            百度网盘下载（提取码：2ppx）</a>
+        </p>
+        <p>若上方链接无法下载，请前往导航栏的「资源下载」获取。</p>
 
 
-          <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+        <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
       </div>
     </div>
   </main>

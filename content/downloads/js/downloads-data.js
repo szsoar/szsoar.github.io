@@ -533,7 +533,7 @@ const downloadsData = [
     fileSize: "196 MB",
     version: "自研软件",
     downloadCount: 895,
-    url: "#",
+    url: "https://pan.baidu.com/s/1awK1wnDlXbCfStelomal9g?pwd=fpty",
     detailUrl: "../software/sof_detail_006.html",
     date: "2026-09-28",
     priceType: "收费",

@@ -2,7 +2,7 @@
 const softwareArticles = [
   {
     id: 1,
-    title: "AE脚本UI设计器使用指南",
+    title: "AE脚本UI设计器使用指南ScriptUI Designer",
     category: "软件指南",
     description: "",
     image: "../../assets/images/sof/detail_001.jpg",

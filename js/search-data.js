@@ -430,7 +430,7 @@ window.mockDatabase = {
   "软件": [
     {
       "id": 1,
-      "title": "AE脚本UI设计器使用指南",
+      "title": "AE脚本UI设计器使用指南ScriptUI Designer",
       "category": "software",
       "categoryName": "软件指南",
       "date": "2025-10-29",
@@ -915,7 +915,7 @@ window.mockDatabase = {
       "size": "196 MB",
       "downloads": 895,
       "type": "software",
-      "url": "#",
+      "url": "https://pan.baidu.com/s/1awK1wnDlXbCfStelomal9g?pwd=fpty",
       "detailUrl": "../software/sof_detail_006.html",
       "date": "2026-09-28"
     },
