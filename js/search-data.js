@@ -487,6 +487,26 @@ window.mockDatabase = {
       "description": "",
       "content": "",
       "url": "./content/software/sof_detail_006.html"
+    },
+    {
+      "id": 7,
+      "title": "背景音乐生成器 声梭Tone Weaver v1.0",
+      "category": "software",
+      "categoryName": "软件指南",
+      "date": "2026-11-01",
+      "description": "",
+      "content": "",
+      "url": "./content/software/sof_detail_007.html"
+    },
+    {
+      "id": 8,
+      "title": "背景音乐生成器 声梭Tone Weaver v2.0",
+      "category": "software",
+      "categoryName": "软件指南",
+      "date": "2026-11-16",
+      "description": "",
+      "content": "",
+      "url": "./content/software/sof_detail_008.html"
     }
   ],
   "下载": [
@@ -941,9 +961,9 @@ window.mockDatabase = {
       "size": "115 MB",
       "downloads": 996,
       "type": "software",
-      "url": "#",
+      "url": "https://pan.baidu.com/s/14l5qiok3aXjQtZ5RIvtD9g?pwd=1g4h",
       "detailUrl": "../software/sof_detail_008.html",
-      "date": "2026-11-15"
+      "date": "2026-11-16"
     },
     {
       "id": 501,

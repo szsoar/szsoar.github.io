@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE极客工坊 - 文章详情</title>
+
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+  <link rel="stylesheet" href="../../css/article-detail.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edee0718cc500c919471d2aaa92877f6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+</head>
+
+<body>
+
+  <div data-include-header="../../templates/header.html"></div>
+
+  <main class="article-detail-container">
+    <div class="article-header">
+      <h1 class="article-title">背景音乐生成器-声梭使用指南</h1>
+      <h2>Tone Weaver v1.0.0</h2>
+      <div class="article-meta">
+        <div class="article-author">
+          <span>作者: 老胡</span>
+        </div>
+        <div class="article-date">
+          <span>发布日期: 2026-11-01</span>
+        </div>
+        <div class="article-category">
+          <span>分类: 软件指南</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+
+      <!--  ========== 方式 1：B站嵌入 ========== -->
+      <!-- <div class="video-player">
+        <div class="video-header">软件使用指南</div>
+        <div class="video-wrapper">
+          <iframe class="bilibili-iframe"
+            src="https://player.bilibili.com/player.html?isOutside=true&aid=117625648778264&bvid=BV1zJsP6VEri&cid=43654188688&p=1"
+            scrolling="no" allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div> -->
+
+      <!-- ========== 方式 2：AcFun嵌入 ========== -->
+      <div class="video-player">
+        <div class="video-header">软件使用指南</div>
+        <div class="video-wrapper">
+          <iframe class="acfun-iframe" src="https://www.acfun.cn/player/ac48996059" scrolling="no"
+            allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="video-note">
+          提示: 若视频无法播放请检查网络并联系我们解决！
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-content">
+      <div class="markdown-content">
+        <!-- 这里可以放置由Markdown转换的HTML内容(开始部分) -->
+
+
+        <p>
+          <strong>声梭 (Tone Weaver v1.0.0)</strong> 是一款纯离线的桌面端背景音乐生成器。专为视频创作者、Vlogger 和播客打造。它无需联网，不依赖庞大臃肿的 AI
+          模型，完全通过底层的数学算法与音频合成技术，为你“编织”出零版权风险、独一无二的原创 BGM。
+        </p>
+        <p>
+          <strong>核心操作指南</strong>
+        </p>
+        <p>1、<strong>快速生成一首曲子</strong>
+        </p>
+        <p>
+        <ul>
+          <li>在右侧最上方的<strong>“音乐风格预设”</strong>下拉框中，选择你想要的风格（如 Lo-Fi 慵懒、赛博朋克、8-Bit 等，共 24 种）。</li>
+          <li>调整<strong>“节奏速度 (BPM)”</strong>和<strong>“生成时长 (秒)”</strong>（免费版最高支持60秒，专业版最高支持 600 秒）。</li>
+          <li>点击右下角的蓝色 <strong>“生成音乐”</strong> 按钮。</li>
+          <li>等待几秒钟渲染完毕，软件会自动开始播放。</li>
+        </ul>
+        </p>
+        <p>2、<strong>万物皆可“基因突变”</strong> ——如果你觉得预设出来的旋律不够独特，请看下拉框旁边的 <strong>🧬</strong> 按钮：</p>
+        <p>
+        <ul>
+          <li>点击它，软件会像掷骰子一样，<strong>彻底重构</strong>底层基因（改变调式、根音、和弦走向和音色）。</li>
+          <li>你可以在下方的“随机种子”里输入不同的数字（或点 🎲 按钮），同一种风格也能变幻出无数种旋律。</li>
+          <li>抽到你喜欢的“神仙旋律”后，再点“生成音乐”即可。</li>
+        </ul>
+        </p>
+        <p>3、<strong>编曲混音台（自由控制声部）</strong>——想要只有纯音乐没有人声鼓点？想要鼓点极弱不抢人声？在<strong>“编曲混音台”</strong>中，拖动四个滑块可以实时控制音量：</p>
+        <p>
+        <ul>
+          <li>
+            <strong>铺底和弦 (Pad)</strong>：音乐的底色。
+          </li>
+          <li>
+            <strong>动感琶音 (Arp)</strong>：快速跳跃的电子音符。
+          </li>
+          <li>
+            <strong>主旋律 (Lead)</strong>：引领听觉记忆点的旋律。
+          </li>
+          <li>
+            <strong>节奏鼓点 (Drum)</strong>：动次打次的节奏。
+          </li>
+          <li>
+            <em>(小技巧：把某个滑块拉到 0，不仅听不到，还能极大地加快生成速度。双击滑块可一键恢复默认值。)</em>
+          </li>
+        </ul>
+        </p>
+        <p>4、<strong>播放与时间跳转</strong>
+        </p>
+        <p>
+        <ul>
+          <li>点击左下角的大播放键即可试听。</li>
+          <li>
+            <strong>点击进度条任意位置</strong>，可以立刻从该时间点开始播放（方便反复试听最精彩的副歌部分）。
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>导出音频</strong>——调整满意后，点击右侧面板的 <strong>WAV</strong> 或 <strong>MP3</strong> 按钮导出。
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>WAV</strong>：无损音质，文件较大，适合导入 Premiere / Final Cut 等专业剪辑软件。
+          </li>
+          <li>
+            <strong>MP3</strong>：192kbps 高码率，体积小，兼容性极佳，适合分享。
+          </li>
+          <li>
+            <em>(导出时，软件会弹出保存窗口，请选择你想保存的文件夹。)</em>
+          </li>
+        </ul>
+        </p>
+        <p>
+          <strong>工程保存与加载</strong>——如果你调出了一个极佳的节奏，或者用 🧬 突变出了超好听的旋律，一定要记得存下来！
+        </p>
+        <p>
+        <ul>
+          <li>
+            <strong>💾 保存</strong>：点击 💾 按钮，将当前的音乐基因和所有推子参数保存为 <code>.json</code> 文件。
+          </li>
+          <li>
+            <strong>📂 加载</strong>：点击 📂 按钮，选中之前保存的 <code>.json</code> 文件，软件会瞬间还原你当时的所有参数，随时找回丢失的灵感。
+          </li>
+        </ul>
+        </p>
+        <p><strong>本软件当前1.0版本免费，供个人学习与创作使用，请勿用于商业倒卖……后续会更新2.0专业收费版，敬请期待。。。</strong></p>
+        <p>
+          <a href="https://pan.baidu.com/s/1uL-lOF_1F3psXcEicqABCg?pwd=fqi5" target="_blank" rel="noopener"
+            style="display:inline-block;padding:10px 20px;background:#2b6cf6;color:#fff;border-radius:8px;text-decoration:none;font-weight:500;">📥
+            百度网盘下载（提取码：fqi5）</a>
+        </p>
+        <p>若上方链接无法下载，请前往导航栏的「资源下载」获取。</p>
+
+
+        <!-- 放置的Markdown转换的HTML内容(到这里结束) -->
+      </div>
+    </div>
+  </main>
+
+  <div data-include-footer="../../templates/footer.html"></div>
+  <script src="../../js/include-header.js"></script>
+  <script src="../../js/include-footer.js"></script>
+  <script src="../../js/video-player-handler.js"></script>
+  <script src="../../js/widget.js"></script>
+
+</body>
+
+</html>

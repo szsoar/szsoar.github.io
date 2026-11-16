@@ -565,9 +565,9 @@ const downloadsData = [
     fileSize: "115 MB",
     version: "自研软件",
     downloadCount: 996,
-    url: "#",
+    url: "https://pan.baidu.com/s/14l5qiok3aXjQtZ5RIvtD9g?pwd=1g4h",
     detailUrl: "../software/sof_detail_008.html",
-    date: "2026-11-15",
+    date: "2026-11-16",
     priceType: "收费",
     price: "¥59.00",
     qrCode: "../../assets/images/qq_image.png"

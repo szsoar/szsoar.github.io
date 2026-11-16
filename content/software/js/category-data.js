@@ -54,5 +54,22 @@ const softwareArticles = [
     url: "sof_detail_006.html",
     date: "2026-09-28"
   },
-
+  {
+    id: 7,
+    title: "背景音乐生成器 声梭Tone Weaver v1.0",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/sof/detail_007.jpg",
+    url: "sof_detail_007.html",
+    date: "2026-11-01"
+  },
+  {
+    id: 8,
+    title: "背景音乐生成器 声梭Tone Weaver v2.0",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/sof/detail_008.jpg",
+    url: "sof_detail_008.html",
+    date: "2026-11-16"
+  },
 ];
