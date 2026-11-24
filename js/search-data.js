@@ -430,7 +430,7 @@ window.mockDatabase = {
   "软件": [
     {
       "id": 1,
-      "title": "AE脚本UI设计器使用指南ScriptUI Designer",
+      "title": "脚本UI设计器 ScriptUI Designer v1.0.0",
       "category": "software",
       "categoryName": "软件指南",
       "date": "2025-10-29",
@@ -507,6 +507,16 @@ window.mockDatabase = {
       "description": "",
       "content": "",
       "url": "./content/software/sof_detail_008.html"
+    },
+    {
+      "id": 9,
+      "title": "脚本UI设计器 ScriptUI Designer v2.0.0",
+      "category": "software",
+      "categoryName": "软件指南",
+      "date": "2026-11-30",
+      "description": "",
+      "content": "",
+      "url": "./content/software/sof_detail_009.html"
     }
   ],
   "下载": [
@@ -863,10 +873,10 @@ window.mockDatabase = {
     },
     {
       "id": 401,
-      "title": "AE脚本UI界面设计器 ScriptUI Designer v1.0",
+      "title": "ScriptUI设计器 ScriptUI Designer v1.0.0",
       "category": "downloads",
       "categoryName": "资源下载",
-      "description": "AE脚本UI设计器是一款专业的AE脚本用户界面设计工具，它能够帮助用户快速设计和生成AE脚本的UI界面。",
+      "description": "ScriptUI Designer是一款专业的AE脚本用户界面设计工具，它能够帮助用户快速设计和生成AE脚本的UI界面。",
       "size": "92 MB",
       "downloads": 435,
       "type": "software",
@@ -946,7 +956,7 @@ window.mockDatabase = {
       "categoryName": "资源下载",
       "description": "声梭v1.0是一款专为视频创作者、播客和Vlogger打造的背景音乐生成器。它不依赖庞大臃肿的AI模型，完全通过底层的数学算法与音频合成技术，就能生成零版权风险原创BGM。",
       "size": "110 MB",
-      "downloads": 1218,
+      "downloads": 1326,
       "type": "software",
       "url": "https://pan.baidu.com/s/1uL-lOF_1F3psXcEicqABCg?pwd=fqi5",
       "detailUrl": "../software/sof_detail_007.html",
@@ -959,11 +969,24 @@ window.mockDatabase = {
       "categoryName": "资源下载",
       "description": "声梭v2.0专业版是一款专为视频创作者、播客和Vlogger打造的背景音乐生成器。我们在1.0版本基础上从底层引擎到交互界面进行彻底重构。为你带来了真正专业级的编曲体验。",
       "size": "115 MB",
-      "downloads": 996,
+      "downloads": 1025,
       "type": "software",
       "url": "https://pan.baidu.com/s/14l5qiok3aXjQtZ5RIvtD9g?pwd=1g4h",
       "detailUrl": "../software/sof_detail_008.html",
       "date": "2026-11-16"
+    },
+    {
+      "id": 409,
+      "title": "ScriptUI设计器 ScriptUI Designer v2.0.0",
+      "category": "downloads",
+      "categoryName": "资源下载",
+      "description": "ScriptUI Designer是一款专业的脚本用户界面设计器，能够帮助用户快速设计脚本的UI界面，并导出为jsx。本次更新涉及授权方式调整、程序稳定性加固，以及多项界面与功能改进。",
+      "size": "86 MB",
+      "downloads": 549,
+      "type": "software",
+      "url": "https://pan.baidu.com/s/1EejGHz_1M1gpg4l7qGMNyA?pwd=rtxz",
+      "detailUrl": "../software/sof_detail_009.html",
+      "date": "2026-11-30"
     },
     {
       "id": 501,

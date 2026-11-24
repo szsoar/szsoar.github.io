@@ -2,7 +2,7 @@
 const softwareArticles = [
   {
     id: 1,
-    title: "AE脚本UI设计器使用指南ScriptUI Designer",
+    title: "脚本UI设计器 ScriptUI Designer v1.0.0",
     category: "软件指南",
     description: "",
     image: "../../assets/images/sof/detail_001.jpg",
@@ -71,5 +71,14 @@ const softwareArticles = [
     image: "../../assets/images/sof/detail_008.jpg",
     url: "sof_detail_008.html",
     date: "2026-11-16"
+  },
+  {
+    id: 9,
+    title: "脚本UI设计器 ScriptUI Designer v2.0.0",
+    category: "软件指南",
+    description: "",
+    image: "../../assets/images/sof/detail_009.jpg",
+    url: "sof_detail_009.html",
+    date: "2026-11-30"
   },
 ];
